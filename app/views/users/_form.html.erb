@@ -11,17 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :user_name %>
-  </div>
+  <div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= f.label :name, "Nombre" %>
+      <%= f.text_field :name %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :user_email %>
-  </div>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
 
-  <div class="actions">
-    <%= form.submit %>
+      <%= f.label :password, "Contraseña" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmación de contraseña" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.label :tipo, "Tipo de cuenta" %>
+      <%= f.select :tipo, [ 'admin', 'nutriologo', 'paciente' ],
+        :prompt => 'Selecciona un tipo'%>
+
+      <%= f.submit "Crear cuenta", class: "btn btn-primary" %>
+    <% end %>
   </div>
+</div>
 <% end %>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('select').material_select();
+		});
+	</script>
