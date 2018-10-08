@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Salud360</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+    <!-- beginning of new code -->
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/"
+               class="brand-logo">
+                <img src="<%= asset_path( 'logo.png' ) %>" height="60px" width="80px"/>
+            </a>
+        </div>
+      </nav>
+
+      <!-- end of new code -->
+    <%= yield %>
+    </div>
+</body>
+</html>
