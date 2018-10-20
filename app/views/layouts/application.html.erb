@@ -23,8 +23,12 @@
                 <img src="<%= asset_path( 'logo.png' ) %>" height="60px" width="80px"/>
             </a>
             <ul id="nav-mobile" class ="right hide-on-med-and-down">
-              <% if user_signed_in? || nutriologo_signed_in? %>
+              <% if user_signed_in?%>
                 <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
+              <% elsif nutriologo_signed_in? %>
+                <li><a href="/nutriologos/sign_out" data-method="delete">Logout</a></li>
+              <% elsif paciente_signed_in? %>
+                <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
               <% end %>
             </ul>
         </div>
