@@ -10,8 +10,10 @@ class CreateSesions < ActiveRecord::Migration[5.1]
       t.float :imc
       t.float :grasa_vis
       t.integer :edad_metabolica
+      t.string :meta
 
       t.belongs_to :paciente, index: true
+      t.belongs_to :nutriologo, index: true
 
       t.timestamps
     end
