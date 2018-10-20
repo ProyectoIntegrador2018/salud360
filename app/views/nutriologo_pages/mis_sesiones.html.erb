@@ -1,0 +1,47 @@
+<h1>Mis Sesiones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Paciente</th>
+      <th>Peso</th>
+      <th>Estatura</th>
+      <th>Grasa</th>
+      <th>Musculo</th>
+      <th>Agua</th>
+      <th>IMC</th>
+      <th>Grasa Vis</th>
+      <th>Edad Metabolica</th>
+      <th>Meta</th>
+      <th>Hora</th>
+      <th>Fecha</th>
+      <th colspan="11"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_nutriologo_sesions.each do |sesion| %>
+      <tr>
+        <td><%= sesion.paciente_id %></td>
+        <td><%= sesion.peso %></td>
+        <td><%= sesion.estatura %></td>
+        <td><%= sesion.grasa %></td>
+        <td><%= sesion.musculo %></td>
+        <td><%= sesion.agua %></td>
+        <td><%= sesion.imc %></td>
+        <td><%= sesion.grasa_vis %></td>
+        <td><%= sesion.edad_metabolica %></td>
+        <td><%= sesion.meta %></td>
+        <td><%= sesion.hora %></td>
+        <td><%= sesion.fecha %></td>
+
+        <td><%= link_to 'Edit', edit_sesion_path(sesion) %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Sesion', "" %>

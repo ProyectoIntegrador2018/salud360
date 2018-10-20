@@ -4,6 +4,8 @@ class Nutriologo < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :sesions, dependent: :destroy
+
  def email_required?
    false
  end

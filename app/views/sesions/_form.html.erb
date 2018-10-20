@@ -1,0 +1,57 @@
+<%= form_with(model: sesion, local: true) do |form| %>
+  <% if sesion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sesion.errors.count, "error") %> prohibited this sesion from being saved:</h2>
+
+      <ul>
+      <% sesion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@sesion) do |f| %>
+      <%= f.label :paciente_id, "Paciente" %>
+      <%= f.number_field :paciente_id %>
+
+      <%= f.label :peso %>
+      <%= f.number_field :peso %>
+
+      <%= f.label :estatura %>
+      <%= f.number_field :estatura %>
+
+      <%= f.label :grasa%>
+      <%= f.number_field :grasa %>
+
+      <%= f.label :musculo %>
+      <%= f.number_field :musculo %>
+
+      <%= f.label :agua %>
+      <%= f.number_field :agua %>
+
+      <%= f.label :imc%>
+      <%= f.number_field :imc %>
+
+      <%= f.label :grasa_vis %>
+      <%= f.number_field :grasa_vis %>
+
+      <%= f.label :edad_metabolica %>
+      <%= f.number_field :edad_metabolica %>
+
+      <%= f.label :meta%>
+      <%= f.text_field :meta %>
+
+      <%= f.label :hora %>
+      <%= f.text_field :hora %>
+
+      <%= f.label :fecha %>
+      <%= f.date_field :fecha %>
+
+      <%= f.submit "Guardar", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<% end %>

@@ -45,9 +45,14 @@ ActiveRecord::Schema.define(version: 20181019190030) do
     t.float "imc"
     t.float "grasa_vis"
     t.integer "edad_metabolica"
+    t.string "meta"
+    t.string "hora"
+    t.date "fecha"
     t.integer "paciente_id"
+    t.integer "nutriologo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["nutriologo_id"], name: "index_sesions_on_nutriologo_id"
     t.index ["paciente_id"], name: "index_sesions_on_paciente_id"
   end
 

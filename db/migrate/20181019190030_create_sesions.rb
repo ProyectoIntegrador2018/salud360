@@ -11,6 +11,9 @@ class CreateSesions < ActiveRecord::Migration[5.1]
       t.float :grasa_vis
       t.integer :edad_metabolica
       t.string :meta
+      t.string :hora
+      t.date :fecha
+
 
       t.belongs_to :paciente, index: true
       t.belongs_to :nutriologo, index: true
