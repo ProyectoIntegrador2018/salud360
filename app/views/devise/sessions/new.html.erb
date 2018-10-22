@@ -1,26 +1,41 @@
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
+<div class="card" style="width: 50%"; margin: auto; text-align="center">
+  <div class="card-content">
+    <span class="card-title">Bienvenido</span>
+    <br></br>
+  <form>
+  <table>
+   <tbody>
+    <tr>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <td><label for="id_username">Usuario:</label></td>
+      <td><input type="text" name="username" class="form-control" maxlength="30" required="" id="id_username"></td>
+    </tr>
+    <tr>
+      <td><label for="id_password">Contraseña:</label></td>
+      <td><input type="password" name="password" class="form-control" maxlength="30" required="" id="id_password"></td>
+    </tr>
+   </tbody>
+  </table>
+    
+     <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
-  <% end -%>
+    <% end -%>
+    
+    <div class="card-action" style="padding: 16px 0px 0px">
+                <input style="width: 100%" class="btn btn-success btn-sm pink darken-1" type="submit" value="Iniciar sesión">
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
 <% end %>
+  </form>
+  </div>
+</div>
+
+
+                
 
 <%= render "devise/shared/links" %>
