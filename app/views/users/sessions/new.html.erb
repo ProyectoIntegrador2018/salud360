@@ -16,12 +16,13 @@
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
   </div>
-
+  <div class="col s6 offset-s3">
   <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :Recuerdáme %>
     </div>
+  </div>
   <% end -%>
   <div class="col s6 offset-s3">
   <div class="actions">
