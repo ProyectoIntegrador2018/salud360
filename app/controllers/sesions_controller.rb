@@ -18,8 +18,6 @@ class SesionsController < ApplicationController
     end
   end
 
-<<<<<<< Updated upstream
-=======
   def create
 
 
@@ -38,8 +36,6 @@ class SesionsController < ApplicationController
     end
   end
 
-
->>>>>>> Stashed changes
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sesion
