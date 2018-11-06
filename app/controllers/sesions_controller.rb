@@ -18,6 +18,28 @@ class SesionsController < ApplicationController
     end
   end
 
+<<<<<<< Updated upstream
+=======
+  def create
+
+
+    @sesion= Sesion.new(sesion_params)
+    @sesion.paciente_id = current_paciente.id
+    respond_to do |format|
+
+
+      if @sesion.save
+        format.html { render 'pacientes_pages/mis_sesiones', notice: 'sesion was successfully created.' }
+        format.json { render :show, status: :created, location: @sesion }
+      else
+        format.html { render :new }
+        format.json { render json: @sesion.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
+>>>>>>> Stashed changes
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sesion

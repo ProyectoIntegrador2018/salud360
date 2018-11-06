@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181019190030) do
+ActiveRecord::Schema.define(version: 20181106210240) do
+
+  create_table "metas", force: :cascade do |t|
+    t.string "meta"
+    t.boolean "cumplida", default: false
+    t.integer "sesions_id"
+    t.integer "paciente_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["paciente_id"], name: "index_metas_on_paciente_id"
+    t.index ["sesions_id"], name: "index_metas_on_sesions_id"
+  end
 
   create_table "nutriologos", force: :cascade do |t|
     t.string "username", default: "", null: false
@@ -45,7 +56,6 @@ ActiveRecord::Schema.define(version: 20181019190030) do
     t.float "imc"
     t.float "grasa_vis"
     t.integer "edad_metabolica"
-    t.string "meta"
     t.string "hora"
     t.date "fecha"
     t.integer "paciente_id"

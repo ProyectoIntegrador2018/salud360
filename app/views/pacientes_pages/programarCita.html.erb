@@ -1,0 +1,22 @@
+<% @sesion = Sesion.new %>
+
+
+<h1>Agrega cita</h1>
+
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+  <%= form_for(@sesion) do |f| %>
+
+
+
+    <%= f.label :hora %>
+    <%= f.text_field :hora %>
+
+    <%= f.label :fecha %>
+    <%= f.date_field :fecha %>
+
+    <%= f.submit "Guardar", class: "btn btn-primary" %>
+  <% end %>
+</div>
+</div>

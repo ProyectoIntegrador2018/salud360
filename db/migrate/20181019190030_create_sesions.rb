@@ -10,7 +10,6 @@ class CreateSesions < ActiveRecord::Migration[5.1]
       t.float :imc
       t.float :grasa_vis
       t.integer :edad_metabolica
-      t.string :meta
       t.string :hora
       t.date :fecha
 
