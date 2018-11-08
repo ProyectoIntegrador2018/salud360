@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/user', as: 'rails_admin'
   get 'static_pages/home'
   get 'nutriologo_pages/mis_sesiones'
+  get 'pacientes_pages/mis_sesiones'
   get '/users' => 'user#index', as: :user_root
   get '/nutriologos' => 'nutriologo_pages#index', as: :nutriologo_root
   get '/pacientes' => 'pacientes_pages#index', as: :paciente_root
