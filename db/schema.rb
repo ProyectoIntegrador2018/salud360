@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181106210240) do
+ActiveRecord::Schema.define(version: 20181109194248) do
+
+  create_table "horarios", force: :cascade do |t|
+    t.datetime "hora_disponible"
+    t.boolean "apartada", default: false
+    t.string "sede"
+    t.integer "nutriologo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nutriologo_id"], name: "index_horarios_on_nutriologo_id"
+  end
 
   create_table "metas", force: :cascade do |t|
     t.string "meta"
@@ -56,7 +66,6 @@ ActiveRecord::Schema.define(version: 20181106210240) do
     t.float "imc"
     t.float "grasa_vis"
     t.integer "edad_metabolica"
-    t.string "meta"
     t.string "hora"
     t.date "fecha"
     t.integer "paciente_id"
