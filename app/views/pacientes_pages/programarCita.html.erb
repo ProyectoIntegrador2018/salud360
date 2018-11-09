@@ -16,6 +16,8 @@
     <%= f.label :fecha %>
     <%= f.date_field :fecha %>
 
+    <%= f.hidden_field :paciente_id, :value=>current_paciente.id  %>
+
     <%= f.submit "Guardar", class: "btn btn-primary" %>
   <% end %>
 </div>

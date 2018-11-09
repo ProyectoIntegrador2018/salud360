@@ -22,7 +22,6 @@ class SesionsController < ApplicationController
 
 
     @sesion= Sesion.new(sesion_params)
-    @sesion.paciente_id = current_paciente.id
     respond_to do |format|
 
 

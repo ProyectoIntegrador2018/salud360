@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/users' => 'user#index', as: :user_root
   get '/nutriologos' => 'nutriologo_pages#index', as: :nutriologo_root
   get '/pacientes' => 'pacientes_pages#index', as: :paciente_root
+  get 'pacientes_pages/programarCita'
 
   namespace :user do
     root 'user#index'
