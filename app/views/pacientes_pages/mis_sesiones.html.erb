@@ -27,6 +27,7 @@
       <th>Grasa Vis</th>
       <th>Edad Metabolica</th>
       <th>Hora</th>
+      <th>Nutriologo</th>
       <th colspan="11"></th>
     </tr>
   </thead>
@@ -45,6 +46,7 @@
         <td><%= sesion.grasa_vis %></td>
         <td><%= sesion.edad_metabolica %></td>
         <td><%= getHora(sesion.hora_id) %></td>
+        <td><%=getNutriologoName(sesion.nutriologo_id)%></td>
 
       </tr>
       <% numS+=1%>
