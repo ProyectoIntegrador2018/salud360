@@ -1,9 +1,23 @@
 <h1>Mis Sesiones</h1>
 
+
+<%if(current_paciente_sesions.length>0)%>
+    <p><%= current_paciente_sesions[0] .peso %></p>
+    <p><%= current_paciente_sesions[0] .estatura %></p>
+    <p><%= current_paciente_sesions[0] .grasa %></p>
+    <p><%= current_paciente_sesions[0] .musculo %></p>
+    <p><%= current_paciente_sesions[0] .agua %></p>
+    <p><%= current_paciente_sesions[0] .imc %></p>
+    <p><%= current_paciente_sesions[0] .grasa_vis %></p>
+    <p><%= current_paciente_sesions[0] .edad_metabolica %></p>
+    <p><%= getHora(current_paciente_sesions[0] .hora_id) %></p>
+<%end%>
+
+
 <table>
   <thead>
     <tr>
-      <th>Paciente</th>
+      <th>Numero Sesion</th>
       <th>Peso</th>
       <th>Estatura</th>
       <th>Grasa</th>
@@ -13,15 +27,15 @@
       <th>Grasa Vis</th>
       <th>Edad Metabolica</th>
       <th>Hora</th>
-      <th>Fecha</th>
       <th colspan="11"></th>
     </tr>
   </thead>
-
+<% numS=1%>
   <tbody>
     <% current_paciente_sesions.each do |sesion| %>
+
       <tr>
-        <td><%= sesion.paciente_id %></td>
+        <td><%=numS%></td>
         <td><%= sesion.peso %></td>
         <td><%= sesion.estatura %></td>
         <td><%= sesion.grasa %></td>
@@ -30,12 +44,10 @@
         <td><%= sesion.imc %></td>
         <td><%= sesion.grasa_vis %></td>
         <td><%= sesion.edad_metabolica %></td>
-        <td><%= sesion.hora %></td>
-        <td><%= sesion.fecha %></td>
-
-
+        <td><%= getHora(sesion.hora_id) %></td>
 
       </tr>
+      <% numS+=1%>
     <% end %>
   </tbody>
 </table>

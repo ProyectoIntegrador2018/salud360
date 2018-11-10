@@ -9,4 +9,6 @@ module SesionsHelper
     @current_nutriologo_sesions ||=
       Sesion.where(nutriologo_id: current_nutriologo.id).all
   end
+  
+
 end

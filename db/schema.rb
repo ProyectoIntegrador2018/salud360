@@ -66,8 +66,7 @@ ActiveRecord::Schema.define(version: 20181109194248) do
     t.float "imc"
     t.float "grasa_vis"
     t.integer "edad_metabolica"
-    t.string "hora"
-    t.date "fecha"
+    t.integer "hora_id"
     t.integer "paciente_id"
     t.integer "nutriologo_id"
     t.datetime "created_at", null: false

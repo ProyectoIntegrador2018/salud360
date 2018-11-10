@@ -1,5 +1,6 @@
 class CreateSesions < ActiveRecord::Migration[5.1]
   def change
+
     create_table :sesions do |t|
 
       t.float :peso
@@ -10,8 +11,7 @@ class CreateSesions < ActiveRecord::Migration[5.1]
       t.float :imc
       t.float :grasa_vis
       t.integer :edad_metabolica
-      t.string :hora
-      t.date :fecha
+      t.integer :hora_id
 
 
       t.belongs_to :paciente, index: true

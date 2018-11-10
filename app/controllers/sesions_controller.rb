@@ -22,6 +22,9 @@ class SesionsController < ApplicationController
 
 
     @sesion= Sesion.new(sesion_params)
+    if(@sesion.nutriologo_id==nil && @sesion.hora_id !=nil)
+      @sesion.nutriologo_id = Horario.find(@sesion.hora_id).nutriologo_id
+    end
     respond_to do |format|
 
 
@@ -44,7 +47,6 @@ class SesionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def sesion_params
       params.require(:sesion).permit(:peso, :estatura, :grasa,
-        :musculo, :agua, :imc, :grasa_vis, :edad_metabolica, :meta, :hora,
-        :fecha, :paciente_id)
+        :musculo, :agua, :imc, :grasa_vis, :edad_metabolica, :hora_id, :paciente_id)
     end
 end
