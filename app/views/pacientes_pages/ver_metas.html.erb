@@ -1,0 +1,27 @@
+<h1>Mis Metas</h1>
+
+    <% paciente_metas(current_paciente.id).each do |meta| %>
+      <%= form_for(meta) do |f| %>
+
+      <%= f.text_field :meta, :disabled=>true%>
+
+      <%= f.check_box :cumplida%>
+      <%= f.label :cumplida%>
+
+      <%= f.submit "Guardar", class: "btn btn-primary" %>
+
+      <% end %>
+
+    <% end %>
+
+
+<br>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('checkbox').material_select();
+		});
+	</script>
