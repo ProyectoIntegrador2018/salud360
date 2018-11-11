@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :sesions
   resources :meta, defaults:{format:'json'}
+  resources :documents
 
   mount RailsAdmin::Engine => '/user', as: 'rails_admin'
   get 'static_pages/home'

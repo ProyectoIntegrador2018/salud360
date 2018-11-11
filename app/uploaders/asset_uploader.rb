@@ -10,8 +10,12 @@ class AssetUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+   if Rails.env.test? || Rails.env.cucumber?
+     "#{Rails.root}/public/test/file_uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+   else
+     "#{Rails.root}/public/catalogs/#{model.id}"  ## Should be in public folder
+   end
+ end
 
   def cover
     manipulate! do |frame, index|
