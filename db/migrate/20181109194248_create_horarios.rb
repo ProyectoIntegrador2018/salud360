@@ -7,6 +7,7 @@ class CreateHorarios < ActiveRecord::Migration[5.1]
 
       t.belongs_to :nutriologo, index: true
       t.timestamps
+
     end
   end
 end
