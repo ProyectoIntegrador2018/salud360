@@ -40,6 +40,12 @@ gem 'jbuilder', '~> 2.5'
 
  gem 'devise', '~> 4.5'
 
+ gem 'carrierwave', '~> 1.0'
+
+ gem 'rmagick'
+
+ #gem "mini_magick"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
