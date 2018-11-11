@@ -20,5 +20,17 @@ module SesionsHelper
       Meta.where(sesions_id: cita_id).all
   end
 
+  def paciente_sesions(paciente_id)
+    @paciente_sesions ||=
+      Sesion.where(paciente_id: paciente_id).all
+  end
+
+  def current_pacientes_nutriologo
+    @current_pacientes_nutriologo ||= Sesion.where(nutriologo_id: current_nutriologo.id).select(:paciente_id).distinct
+  end
+
+
+
+
 
 end

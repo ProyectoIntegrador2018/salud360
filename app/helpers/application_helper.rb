@@ -18,4 +18,13 @@ module ApplicationHelper
       @getNutriologoName = Nutriologo.find(nutriologo_id).username
       end
   end
+
+  def getPacienteName(paciente_id)
+      if(paciente_id==nil)
+        @getPacienteName=""
+      else
+      @getPacienteName = Paciente.find(paciente_id).username
+      end
+  end
+
 end

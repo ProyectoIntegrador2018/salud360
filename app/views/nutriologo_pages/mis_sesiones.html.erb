@@ -4,16 +4,6 @@
   <thead>
     <tr>
       <th>Paciente</th>
-      <th>Peso</th>
-      <th>Estatura</th>
-      <th>Grasa</th>
-      <th>Musculo</th>
-      <th>Agua</th>
-      <th>IMC</th>
-      <th>Grasa Vis</th>
-      <th>Edad Metabolica</th>
-      <th>Meta</th>
-      <th>Hora</th>
       <th>Fecha</th>
       <th colspan="11"></th>
     </tr>
@@ -22,26 +12,15 @@
   <tbody>
     <% current_nutriologo_sesions.each do |sesion| %>
       <tr>
-        <td><%= sesion.paciente_id %></td>
-        <td><%= sesion.peso %></td>
-        <td><%= sesion.estatura %></td>
-        <td><%= sesion.grasa %></td>
-        <td><%= sesion.musculo %></td>
-        <td><%= sesion.agua %></td>
-        <td><%= sesion.imc %></td>
-        <td><%= sesion.grasa_vis %></td>
-        <td><%= sesion.edad_metabolica %></td>
-        <td><%= sesion.meta %></td>
-        <td><%= sesion.hora %></td>
-        <td><%= sesion.fecha %></td>
+        <td><%= getPacienteName(sesion.paciente_id) %></td>
+        <td><%= getHora(sesion.hora_id) %></td>
 
-        <td><%= link_to 'Edit', edit_sesion_path(sesion) %></td>
-        
+        <td><%= link_to 'Editar datos', edit_sesion_path(sesion) %></td>
+        <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+sesion.paciente_id.to_s() %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'Nueva Sesion', "" %>

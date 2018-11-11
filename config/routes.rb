@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :sesions
   resources :meta
-  
+
   mount RailsAdmin::Engine => '/user', as: 'rails_admin'
   get 'static_pages/home'
   get 'nutriologo_pages/mis_sesiones'
@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   get '/pacientes' => 'pacientes_pages#index', as: :paciente_root
   get 'pacientes_pages/programarCita'
   get 'pacientes_pages/ver_metas'
+  get '/nutriologo_pages/mis_pacientes'
+
+
+  get '/metas_paciente/:id', to: 'nutriologo_pages#metas_paciente'
+  get '/metas_cita/:id', to: 'nutriologo_pages#metas_cita'
+  get '/sesiones_paciente/:id', to: 'nutriologo_pages#sesiones_paciente'
 
   namespace :user do
     root 'user#index'
