@@ -40,7 +40,7 @@ gem 'jbuilder', '~> 2.5'
 
  gem 'devise', '~> 4.5'
 
- gem 'carrierwave', '~> 1.0'
+ gem 'carrierwave'
 
  gem 'rmagick'
 

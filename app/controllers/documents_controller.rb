@@ -1,6 +1,10 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:edit, :update]
 
+  def index
+    @document = Document.all
+  end
+
   def edit
     @document = Document.find(params[:id])
   end
