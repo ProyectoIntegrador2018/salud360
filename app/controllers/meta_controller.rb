@@ -23,17 +23,14 @@ class MetaController < ApplicationController
 
     @meta= Meta.new(meta_params)
 
-    respond_to do |format|
 
 
       if @meta.save
-        format.html { render 'nutriologo_pages/index', notice: 'meta was successfully added.' }
-        format.json { render :show, status: :created, location: @meta }
+        redirect_back(fallback_location: '/nutriologo_pages/mis_pacientes')
       else
-        format.html { render :new }
-        format.json { render json: @meta.errors, status: :unprocessable_entity }
+
       end
-    end
+    
   end
 
   private

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :sesions
-  resources :meta
+  resources :meta, defaults:{format:'json'}
 
   mount RailsAdmin::Engine => '/user', as: 'rails_admin'
   get 'static_pages/home'

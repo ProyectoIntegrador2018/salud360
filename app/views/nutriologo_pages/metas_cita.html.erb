@@ -1,1 +1,41 @@
-<h1>si<%=@cita%>
+<% @paciente_id=Sesion.find(@cita).paciente_id%>
+  <h1>Metas Paciente <%=getPacienteName(@paciente_id)%></h1>
+
+<h2>Agrega otra meta</h2>
+  <% @nueva_meta = Meta.new %>
+    <%= form_for (@nueva_meta) , :url => meta_path  do |f| %>
+
+    <%= f.text_field :meta%>
+    <%= f.hidden_field :paciente_id, :value=> @paciente_id  %>
+    <%= f.hidden_field :sesions_id, :value=> @cita  %>
+    <%= f.submit "Guardar", class: "btn btn-primary" %>
+
+    <% end %>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Descripcion</th>
+        <th>Lograda</th>
+        <th colspan="11"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @metas.each do |meta| %>
+        <tr>
+          <td><%= meta.meta %></td>
+          <td> <%= meta.cumplida %></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+  <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+@paciente_id.to_s() %></td>
+
+
+
+  <br>
