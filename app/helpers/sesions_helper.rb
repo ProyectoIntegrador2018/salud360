@@ -29,6 +29,17 @@ module SesionsHelper
     @current_pacientes_nutriologo ||= Sesion.where(nutriologo_id: current_nutriologo.id).select(:paciente_id).distinct
   end
 
+
+  def paciente_metas(paciente_id)
+    @paciente_metas ||=
+      TipsYcomentario.where(paciente_id: paciente_id).all
+  end
+
+  def nutriologo_metas(nutriologo_id)
+    @nutriologo_metas ||=
+      TipsYcomentario.where(nutriologo_id: nutriologo_id).all
+  end
+
   def current_paciente_pesos
     pesos = []
     current_paciente_sesions.each_with_index do |sesion, index|
@@ -47,6 +58,7 @@ module SesionsHelper
       grasa.push(grasa_index)
     end
     @current_paciente_grasa ||= grasa
+
   end
 
   def current_paciente_musculo
