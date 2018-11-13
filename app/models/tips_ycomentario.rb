@@ -1,0 +1,2 @@
+class TipsYcomentario < ApplicationRecord
+end

@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181110214627) do
+ActiveRecord::Schema.define(version: 20181113204437) do
+
+  create_table "dieta", force: :cascade do |t|
+    t.string "dietaPDF"
+    t.integer "nutriologo_id"
+    t.integer "paciente_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nutriologo_id"], name: "index_dieta_on_nutriologo_id"
+    t.index ["paciente_id"], name: "index_dieta_on_paciente_id"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.string "asset"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "horarios", force: :cascade do |t|
     t.datetime "hora_disponible"
@@ -20,6 +36,11 @@ ActiveRecord::Schema.define(version: 20181110214627) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nutriologo_id"], name: "index_horarios_on_nutriologo_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "meta", force: :cascade do |t|
@@ -73,6 +94,17 @@ ActiveRecord::Schema.define(version: 20181110214627) do
     t.datetime "updated_at", null: false
     t.index ["nutriologo_id"], name: "index_sesions_on_nutriologo_id"
     t.index ["paciente_id"], name: "index_sesions_on_paciente_id"
+  end
+
+  create_table "tips_ycomentarios", force: :cascade do |t|
+    t.string "tip"
+    t.string "remitente"
+    t.integer "nutriologo_id"
+    t.integer "paciente_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nutriologo_id"], name: "index_tips_ycomentarios_on_nutriologo_id"
+    t.index ["paciente_id"], name: "index_tips_ycomentarios_on_paciente_id"
   end
 
   create_table "users", force: :cascade do |t|

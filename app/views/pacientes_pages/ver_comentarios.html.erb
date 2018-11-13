@@ -1,0 +1,14 @@
+<h1>Tips y Comentarios</h1>
+
+
+    <% paciente_comentarios(current_paciente.id).each do |tip| %>
+
+
+        <%= tip.tip%><br>
+        Atte: <br>
+        <%= tip.remitente %><br><br>
+
+    <% end %>
+
+
+<br>
