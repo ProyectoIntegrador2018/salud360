@@ -43,6 +43,16 @@
             </ul>
         </div>
       </nav>
+    
+  <ul class="sidenav" id="mobile-demo">
+    <% if user_signed_in?%>
+    <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
+    <% elsif nutriologo_signed_in? %>
+    <li><a href="/nutriologos/sign_out" data-method="delete">Logout</a></li>
+    <% elsif paciente_signed_in? %>
+    <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
+    <% end %>
+  </ul>
 
     <%= yield %>
   </body>
