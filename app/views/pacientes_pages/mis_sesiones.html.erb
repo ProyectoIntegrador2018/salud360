@@ -1,19 +1,5 @@
 <h1>Mis Sesiones</h1>
 
-
-<%if(current_paciente_sesions.length>0)%>
-    <p><%= current_paciente_sesions[0] .peso %></p>
-    <p><%= current_paciente_sesions[0] .estatura %></p>
-    <p><%= current_paciente_sesions[0] .grasa %></p>
-    <p><%= current_paciente_sesions[0] .musculo %></p>
-    <p><%= current_paciente_sesions[0] .agua %></p>
-    <p><%= current_paciente_sesions[0] .imc %></p>
-    <p><%= current_paciente_sesions[0] .grasa_vis %></p>
-    <p><%= current_paciente_sesions[0] .edad_metabolica %></p>
-    <p><%= getHora(current_paciente_sesions[0] .hora_id) %></p>
-<%end%>
-
-
 <table>
   <thead>
     <tr>
@@ -55,6 +41,22 @@
 </table>
 
 <br>
+<table>
+  <thead>
+    <tr>
+      <th>Historial de Peso</th>
+      <th>Historial de % de Grasa </th>
+      <th>Historial de % de Musculo </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= line_chart current_paciente_pesos %></td>
+      <td><%= line_chart current_paciente_grasa %></td>
+      <td><%= line_chart current_paciente_musculo %></td>
+    </tr>
+  </tbody>
+</table>
 
 <%= link_to 'Nueva Sesion', "/pacientes_pages/programarCita" %>
 <%= link_to 'Ver Metas', "/pacientes_pages/ver_metas" %>

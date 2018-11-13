@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 20181113204437) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "documents", force: :cascade do |t|
+    t.string "asset"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "horarios", force: :cascade do |t|
     t.datetime "hora_disponible"
     t.boolean "apartada", default: false
