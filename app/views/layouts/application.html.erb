@@ -33,6 +33,7 @@
                class="brand-logo">
                 <img src="<%= asset_path( 'logo.png' ) %>" height="60px" width="80px"/>
             </a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class ="right hide-on-med-and-down">
               <% if user_signed_in?%>
                 <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
