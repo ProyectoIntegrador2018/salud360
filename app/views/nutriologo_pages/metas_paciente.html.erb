@@ -1,5 +1,5 @@
 
-  <h1>Metas Paciente <%=getPacienteName(@paciente)%></h1>
+  <h1>Metas y Comentarios Paciente <%=getPacienteName(@paciente)%></h1>
 
 <h2>Agrega otra meta<h2>
   <% @nueva_meta = Meta.new %>
@@ -32,6 +32,38 @@
       <% end %>
     </tbody>
   </table>
+
+  <h2>Agrega otra comentario o algun tip<h2>
+    <% @nuevo_comment = TipsYcomentario.new %>
+      <%= form_for (@nuevo_comment)   do |f| %>
+
+      <%= f.text_field :tip%>
+      <%= f.hidden_field :paciente_id, :value=> @paciente  %>
+      <%= f.hidden_field :nutriologo_id, :value=> current_nutriologo.id  %>
+      <%= f.hidden_field :remitente, :value=> current_nutriologo.username  %>
+
+      <%= f.submit "Guardar", class: "btn btn-primary" %>
+
+      <% end %>
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tip o comentario</th>
+          <th colspan="11"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @comentarios.each do |tip| %>
+          <tr>
+            <td><%= tip.tip %></td>
+
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
 
   <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+@paciente.to_s() %></td>

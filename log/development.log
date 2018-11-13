@@ -9561,3 +9561,499 @@ Processing by PacientesPagesController#mis_sesiones as HTML
 Completed 200 OK in 294ms (Views: 285.1ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-13 15:58:20 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (51.6ms)
+  [1m[36mUser Load (14.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1433ms (Views: 1418.3ms | ActiveRecord: 52.9ms)
+
+
+Started GET "/pacientes/sign_in" for 127.0.0.1 at 2018-11-13 16:15:48 -0600
+Processing by Devise::SessionsController#new as HTML
+Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-13 16:15:50 -0600
+  [1m[36mPaciente Load (4.4ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pacientes
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 42ms (ActiveRecord: 6.3ms)
+
+
+Processing by PacientesPagesController#mis_sesiones as HTML
+  Rendering pacientes_pages/mis_sesiones.html.erb within layouts/application
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSesion Load (40.4ms)[0m  [1m[34mSELECT "sesions".* FROM "sesions" WHERE "sesions"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mHorario Load (6.8ms)[0m  [1m[34mSELECT  "horarios".* FROM "horarios" WHERE "horarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (10.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (0.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pacientes_pages/mis_sesiones.html.erb within layouts/application (296.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 890ms (Views: 874.2ms | ActiveRecord: 84.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-13 16:15:52 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (7.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 369ms (Views: 367.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/nutriologos/sign_in" for 127.0.0.1 at 2018-11-13 16:15:53 -0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mNutriologo Load (0.3ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/nutriologos
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/nutriologos" for 127.0.0.1 at 2018-11-13 16:15:53 -0600
+Processing by NutriologoPagesController#index as HTML
+  Rendering nutriologo_pages/index.html.erb within layouts/application
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered nutriologo_pages/index.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 304ms (Views: 302.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/nutriologo_pages/mis_pacientes" for 127.0.0.1 at 2018-11-13 16:15:56 -0600
+Processing by NutriologoPagesController#mis_pacientes as HTML
+  Rendering nutriologo_pages/mis_pacientes.html.erb within layouts/application
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSesion Load (2.8ms)[0m  [1m[34mSELECT DISTINCT "sesions"."paciente_id" FROM "sesions" WHERE "sesions"."nutriologo_id" = ?[0m  [["nutriologo_id", 2]]
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered nutriologo_pages/mis_pacientes.html.erb within layouts/application (25.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 304ms (Views: 297.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-13 16:15:59 -0600
+Processing by NutriologoPagesController#metas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/metas_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (6.0ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeta Load (1.7ms)[0m  [1m[34mSELECT "meta".* FROM "meta" WHERE "meta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTipsYcomentario Load (58.9ms)[0m  [1m[34mSELECT "tips_ycomentarios".* FROM "tips_ycomentarios" WHERE "tips_ycomentarios"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered nutriologo_pages/metas_paciente.html.erb within layouts/application (120.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 388ms (Views: 200.7ms | ActiveRecord: 69.6ms)
+
+
+Started POST "/meta" for 127.0.0.1 at 2018-11-13 16:16:04 -0600
+Processing by MetaController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SYWIvCBqKWF7fDLwn2reWnuyg1ngJxPyDmiOl+AcvU342kTIcruQ0g/GA2ja7Qw8MMMx0ocYUHalMyy/zAud9A==", "tips_ycomentario"=>{"tip"=>"jhkjkljlk", "paciente_id"=>"1", "nutriologo_id"=>"2", "remitente"=>"MartinPac"}, "commit"=>"Guardar"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: meta):
+  
+app/controllers/meta_controller.rb:44:in `meta_params'
+app/controllers/meta_controller.rb:24:in `create'
+Started GET "/" for 127.0.0.1 at 2018-11-13 16:44:09 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (24.0ms)
+Started GET "/pacientes/sign_in" for 127.0.0.1 at 2018-11-13 16:44:10 -0600
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 14425ms (Views: 14415.3ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-13 16:44:24 -0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mPaciente Load (0.1ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pacientes
+Processing by PacientesPagesController#mis_sesiones as HTML
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 40ms (ActiveRecord: 1.0ms)
+
+
+  Rendering pacientes_pages/mis_sesiones.html.erb within layouts/application
+  [1m[36mPaciente Load (0.3ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSesion Load (0.2ms)[0m  [1m[34mSELECT "sesions".* FROM "sesions" WHERE "sesions"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mHorario Load (0.1ms)[0m  [1m[34mSELECT  "horarios".* FROM "horarios" WHERE "horarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (0.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pacientes_pages/mis_sesiones.html.erb within layouts/application (163.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 748ms (Views: 731.1ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-13 16:44:25 -0600
+Processing by PacientesPagesController#mis_sesiones as HTML
+  Rendering pacientes_pages/mis_sesiones.html.erb within layouts/application
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSesion Load (2.1ms)[0m  [1m[34mSELECT "sesions".* FROM "sesions" WHERE "sesions"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mHorario Load (0.1ms)[0m  [1m[34mSELECT  "horarios".* FROM "horarios" WHERE "horarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (0.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (0.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.3ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pacientes_pages/mis_sesiones.html.erb within layouts/application (46.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 670ms (Views: 665.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-13 16:47:08 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (17.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 170ms (Views: 167.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/nutriologos/sign_in" for 127.0.0.1 at 2018-11-13 16:47:10 -0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/nutriologos
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 40ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/nutriologos" for 127.0.0.1 at 2018-11-13 16:47:10 -0600
+Processing by NutriologoPagesController#index as HTML
+  Rendering nutriologo_pages/index.html.erb within layouts/application
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered nutriologo_pages/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 217ms (Views: 216.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/nutriologo_pages/mis_sesiones" for 127.0.0.1 at 2018-11-13 16:47:15 -0600
+Processing by NutriologoPagesController#mis_sesiones as HTML
+  Rendering nutriologo_pages/mis_sesiones.html.erb within layouts/application
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSesion Load (0.4ms)[0m  [1m[34mSELECT "sesions".* FROM "sesions" WHERE "sesions"."nutriologo_id" = ?[0m  [["nutriologo_id", 2]]
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Paciente Load (0.0ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered nutriologo_pages/mis_sesiones.html.erb within layouts/application (83.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 251.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/sesiones_paciente/1" for 127.0.0.1 at 2018-11-13 16:47:21 -0600
+Processing by NutriologoPagesController#sesiones_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/sesiones_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (0.1ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSesion Load (0.3ms)[0m  [1m[34mSELECT "sesions".* FROM "sesions" WHERE "sesions"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mHorario Load (0.2ms)[0m  [1m[34mSELECT  "horarios".* FROM "horarios" WHERE "horarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (0.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered nutriologo_pages/sesiones_paciente.html.erb within layouts/application (51.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 348ms (Views: 284.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/metas_cita/1" for 127.0.0.1 at 2018-11-13 16:47:43 -0600
+Processing by NutriologoPagesController#metas_cita as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/metas_cita.html.erb within layouts/application
+  [1m[36mSesion Load (0.3ms)[0m  [1m[34mSELECT  "sesions".* FROM "sesions" WHERE "sesions"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPaciente Load (0.1ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeta Load (0.5ms)[0m  [1m[34mSELECT "meta".* FROM "meta" WHERE "meta"."sesions_id" = ?[0m  [["sesions_id", 1]]
+  Rendered nutriologo_pages/metas_cita.html.erb within layouts/application (36.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 375ms (Views: 339.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-13 16:47:48 -0600
+Processing by NutriologoPagesController#metas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/metas_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeta Load (0.4ms)[0m  [1m[34mSELECT "meta".* FROM "meta" WHERE "meta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mNutriologo Load (0.4ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTipsYcomentario Load (0.2ms)[0m  [1m[34mSELECT "tips_ycomentarios".* FROM "tips_ycomentarios" WHERE "tips_ycomentarios"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered nutriologo_pages/metas_paciente.html.erb within layouts/application (50.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 350ms (Views: 323.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/meta" for 127.0.0.1 at 2018-11-13 16:47:52 -0600
+Processing by MetaController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gKXlC6TCfJ9QGYBTLlkC7HoLgEqcG00ef6ScoWhSWBAx+il/9hPFLCSjsctr3tCKMXoywfskDprU/z6JREV4qQ==", "tips_ycomentario"=>{"tip"=>"kjhkjh", "paciente_id"=>"1", "nutriologo_id"=>"2", "remitente"=>"MartinPac"}, "commit"=>"Guardar"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: meta):
+  
+app/controllers/meta_controller.rb:44:in `meta_params'
+app/controllers/meta_controller.rb:24:in `create'
+Started POST "/meta" for 127.0.0.1 at 2018-11-13 16:48:38 -0600
+Processing by MetaController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gKXlC6TCfJ9QGYBTLlkC7HoLgEqcG00ef6ScoWhSWBAx+il/9hPFLCSjsctr3tCKMXoywfskDprU/z6JREV4qQ==", "tips_ycomentario"=>{"tip"=>"kjhkjh", "paciente_id"=>"1", "nutriologo_id"=>"2", "remitente"=>"MartinPac"}, "commit"=>"Guardar"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: meta):
+  
+app/controllers/meta_controller.rb:44:in `meta_params'
+app/controllers/meta_controller.rb:24:in `create'
+Started POST "/meta" for 127.0.0.1 at 2018-11-13 16:49:11 -0600
+Processing by MetaController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gKXlC6TCfJ9QGYBTLlkC7HoLgEqcG00ef6ScoWhSWBAx+il/9hPFLCSjsctr3tCKMXoywfskDprU/z6JREV4qQ==", "tips_ycomentario"=>{"tip"=>"kjhkjh", "paciente_id"=>"1", "nutriologo_id"=>"2", "remitente"=>"MartinPac"}, "commit"=>"Guardar"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: meta):
+  
+app/controllers/meta_controller.rb:44:in `meta_params'
+app/controllers/meta_controller.rb:24:in `create'
+Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-13 16:49:34 -0600
+Processing by NutriologoPagesController#metas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/metas_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeta Load (0.3ms)[0m  [1m[34mSELECT "meta".* FROM "meta" WHERE "meta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTipsYcomentario Load (0.3ms)[0m  [1m[34mSELECT "tips_ycomentarios".* FROM "tips_ycomentarios" WHERE "tips_ycomentarios"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered nutriologo_pages/metas_paciente.html.erb within layouts/application (22.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 523ms (Views: 519.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/tips_ycomentarios" for 127.0.0.1 at 2018-11-13 16:49:39 -0600
+  
+SyntaxError (/home/martin/Desktop/salud360/app/controllers/tips_ycomentarios_controller.rb:46: syntax error, unexpected ',', expecting ')'
+        , :remitente, :nutriologo_id,
+        ^):
+  
+app/controllers/tips_ycomentarios_controller.rb:46: syntax error, unexpected ',', expecting ')'
+Started POST "/tips_ycomentarios" for 127.0.0.1 at 2018-11-13 16:50:10 -0600
+Processing by TipsYcomentariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KekRo6cdnwJ6EIh0JG4OtGEDFk3yAZ1hVaCCZuBLfmyNwQg1cR9fNHjZNDFhFrLfwZNrC78mv+010fCdPxUPg==", "tips_ycomentario"=>{"tip"=>"jhj", "paciente_id"=>"1", "nutriologo_id"=>"2", "remitente"=>"MartinPac"}, "commit"=>"Guardar"}
+Completed 400 Bad Request in 10ms
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: tips_ycomentarios):
+  
+app/controllers/tips_ycomentarios_controller.rb:45:in `tips_params'
+app/controllers/tips_ycomentarios_controller.rb:25:in `create'
+Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-13 16:51:00 -0600
+Processing by NutriologoPagesController#metas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/metas_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (0.3ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeta Load (14.8ms)[0m  [1m[34mSELECT "meta".* FROM "meta" WHERE "meta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTipsYcomentario Load (0.2ms)[0m  [1m[34mSELECT "tips_ycomentarios".* FROM "tips_ycomentarios" WHERE "tips_ycomentarios"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered nutriologo_pages/metas_paciente.html.erb within layouts/application (172.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 633ms (Views: 566.9ms | ActiveRecord: 37.2ms)
+
+
+Started POST "/tips_ycomentarios" for 127.0.0.1 at 2018-11-13 16:51:03 -0600
+Processing by TipsYcomentariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kr9OKcuupSSdzdPm5PWoVdHEZm5CVdHJvIR8kaO8ZWBAL+5PkPauJEXG9Rfx4Eqkf0Ynm1thTUONBblaTMEcpw==", "tips_ycomentario"=>{"tip"=>"jhj", "paciente_id"=>"1", "nutriologo_id"=>"2", "remitente"=>"MartinPac"}, "commit"=>"Guardar"}
+Unpermitted parameters: :utf8, :authenticity_token, :tips_ycomentario, :commit
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (278.9ms)[0m  [1m[32mINSERT INTO "tips_ycomentarios" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-11-13 22:51:03.409019"], ["updated_at", "2018-11-13 22:51:03.409019"]]
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/metas_paciente/1
+Completed 302 Found in 312ms (ActiveRecord: 295.0ms)
+
+
+Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-13 16:51:03 -0600
+Processing by NutriologoPagesController#metas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/metas_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (0.1ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeta Load (0.3ms)[0m  [1m[34mSELECT "meta".* FROM "meta" WHERE "meta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTipsYcomentario Load (0.2ms)[0m  [1m[34mSELECT "tips_ycomentarios".* FROM "tips_ycomentarios" WHERE "tips_ycomentarios"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered nutriologo_pages/metas_paciente.html.erb within layouts/application (17.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 335ms (Views: 323.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/tips_ycomentarios" for 127.0.0.1 at 2018-11-13 16:51:10 -0600
+Processing by TipsYcomentariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nz6/8y13EQrsht3+aIn9lwjx2I2TSzXffMeyIs/iMp9drh+Vdi8aCjSN+w99nB9mpnOZeIp/qVVNRnfpIJ9LWA==", "tips_ycomentario"=>{"tip"=>"kjhkj", "paciente_id"=>"1", "nutriologo_id"=>"2", "remitente"=>"MartinPac"}, "commit"=>"Guardar"}
+Unpermitted parameters: :utf8, :authenticity_token, :tips_ycomentario, :commit
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.3ms)[0m  [1m[32mINSERT INTO "tips_ycomentarios" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-11-13 22:51:10.051160"], ["updated_at", "2018-11-13 22:51:10.051160"]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/metas_paciente/1
+Completed 302 Found in 42ms (ActiveRecord: 24.5ms)
+
+
+Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-13 16:51:10 -0600
+Processing by NutriologoPagesController#metas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/metas_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeta Load (0.2ms)[0m  [1m[34mSELECT "meta".* FROM "meta" WHERE "meta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTipsYcomentario Load (0.2ms)[0m  [1m[34mSELECT "tips_ycomentarios".* FROM "tips_ycomentarios" WHERE "tips_ycomentarios"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered nutriologo_pages/metas_paciente.html.erb within layouts/application (44.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 351ms (Views: 348.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-13 16:51:31 -0600
+Processing by NutriologoPagesController#metas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/metas_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (0.3ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeta Load (4.6ms)[0m  [1m[34mSELECT "meta".* FROM "meta" WHERE "meta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mNutriologo Load (0.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTipsYcomentario Load (0.2ms)[0m  [1m[34mSELECT "tips_ycomentarios".* FROM "tips_ycomentarios" WHERE "tips_ycomentarios"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered nutriologo_pages/metas_paciente.html.erb within layouts/application (171.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 782ms (Views: 724.7ms | ActiveRecord: 21.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-13 16:51:36 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (1.8ms)
+  Rendered users/sessions/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 420ms (Views: 418.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tips_ycomentarios" for 127.0.0.1 at 2018-11-13 16:51:37 -0600
+Processing by TipsYcomentariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I7yWPyA7dVrgzjOeLB/nafTtY7NFK7tA1Dm1ratTg81JLDZZe2N+WjjFFW85CgWYWm8iRlwfJ8rluHBmRC76Cg==", "tips_ycomentario"=>{"tip"=>"kjhk", "paciente_id"=>"1", "nutriologo_id"=>"2", "remitente"=>"MartinPac"}, "commit"=>"Guardar"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.2ms)[0m  [1m[32mINSERT INTO "tips_ycomentarios" ("tip", "remitente", "nutriologo_id", "paciente_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tip", "kjhk"], ["remitente", "MartinPac"], ["nutriologo_id", 2], ["paciente_id", 1], ["created_at", "2018-11-13 22:51:37.944869"], ["updated_at", "2018-11-13 22:51:37.944869"]]
+  [1m[35m (208.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/metas_paciente/1
+Completed 302 Found in 231ms (ActiveRecord: 218.1ms)
+
+
+Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-13 16:51:38 -0600
+Processing by NutriologoPagesController#metas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/metas_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeta Load (0.2ms)[0m  [1m[34mSELECT "meta".* FROM "meta" WHERE "meta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTipsYcomentario Load (1.9ms)[0m  [1m[34mSELECT "tips_ycomentarios".* FROM "tips_ycomentarios" WHERE "tips_ycomentarios"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered nutriologo_pages/metas_paciente.html.erb within layouts/application (45.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 676ms (Views: 671.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/tips_ycomentarios" for 127.0.0.1 at 2018-11-13 16:51:44 -0600
+Processing by TipsYcomentariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wBo0O3/hIv+rxOAD42kNQ6kRnc9UtL/lowWbFxgKBo6qipRdJLkp/3PPxvL2fO+yB5PcOk2AI2+ShF7c93d/SQ==", "tips_ycomentario"=>{"tip"=>"nbbjkkl", "paciente_id"=>"1", "nutriologo_id"=>"2", "remitente"=>"MartinPac"}, "commit"=>"Guardar"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (16.8ms)[0m  [1m[32mINSERT INTO "tips_ycomentarios" ("tip", "remitente", "nutriologo_id", "paciente_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["tip", "nbbjkkl"], ["remitente", "MartinPac"], ["nutriologo_id", 2], ["paciente_id", 1], ["created_at", "2018-11-13 22:51:44.288865"], ["updated_at", "2018-11-13 22:51:44.288865"]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/metas_paciente/1
+Completed 302 Found in 39ms (ActiveRecord: 30.8ms)
+
+
+Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-13 16:51:44 -0600
+Processing by NutriologoPagesController#metas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/metas_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (0.1ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMeta Load (0.3ms)[0m  [1m[34mSELECT "meta".* FROM "meta" WHERE "meta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTipsYcomentario Load (0.2ms)[0m  [1m[34mSELECT "tips_ycomentarios".* FROM "tips_ycomentarios" WHERE "tips_ycomentarios"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered nutriologo_pages/metas_paciente.html.erb within layouts/application (38.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 347ms (Views: 344.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-13 16:52:00 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (16.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 187ms (Views: 183.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pacientes/sign_in" for 127.0.0.1 at 2018-11-13 16:52:02 -0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pacientes
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 43ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/pacientes" for 127.0.0.1 at 2018-11-13 16:52:02 -0600
+Processing by PacientesPagesController#index as HTML
+  Rendering pacientes_pages/index.html.erb within layouts/application
+  [1m[36mPaciente Load (0.4ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pacientes_pages/index.html.erb within layouts/application (16.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 147ms (Views: 143.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-13 16:52:04 -0600
+Processing by PacientesPagesController#mis_sesiones as HTML
+  Rendering pacientes_pages/mis_sesiones.html.erb within layouts/application
+  [1m[36mPaciente Load (0.3ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSesion Load (0.2ms)[0m  [1m[34mSELECT "sesions".* FROM "sesions" WHERE "sesions"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mHorario Load (0.3ms)[0m  [1m[34mSELECT  "horarios".* FROM "horarios" WHERE "horarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (0.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (0.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pacientes_pages/mis_sesiones.html.erb within layouts/application (126.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 446ms (Views: 437.4ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-13 16:55:58 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 272ms (Views: 268.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/pacientes/sign_in" for 127.0.0.1 at 2018-11-13 16:56:00 -0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mPaciente Load (0.1ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pacientes
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 84ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/pacientes" for 127.0.0.1 at 2018-11-13 16:56:00 -0600
+Processing by PacientesPagesController#index as HTML
+  Rendering pacientes_pages/index.html.erb within layouts/application
+  [1m[36mPaciente Load (0.5ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pacientes_pages/index.html.erb within layouts/application (9.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 233ms (Views: 231.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pacientes" for 127.0.0.1 at 2018-11-13 16:56:12 -0600
+Processing by PacientesPagesController#index as HTML
+  Rendering pacientes_pages/index.html.erb within layouts/application
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pacientes_pages/index.html.erb within layouts/application (19.3ms)
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 360ms (Views: 352.3ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/pacientes_pages/ver_comentarios" for 127.0.0.1 at 2018-11-13 16:56:14 -0600
+Processing by PacientesPagesController#ver_comentarios as HTML
+  Rendering pacientes_pages/ver_comentarios.html.erb within layouts/application
+  [1m[36mPaciente Load (0.3ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTipsYcomentario Load (0.2ms)[0m  [1m[34mSELECT "tips_ycomentarios".* FROM "tips_ycomentarios" WHERE "tips_ycomentarios"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered pacientes_pages/ver_comentarios.html.erb within layouts/application (33.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 301ms (Views: 299.0ms | ActiveRecord: 1.3ms)
+
+

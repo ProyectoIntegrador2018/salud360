@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :sesions
   resources :meta, defaults:{format:'json'}
   resources :documents
+  resources :tips_ycomentarios
 
   mount RailsAdmin::Engine => '/user', as: 'rails_admin'
   get 'static_pages/home'
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get 'pacientes_pages/programarCita'
   get 'pacientes_pages/ver_metas'
   get '/nutriologo_pages/mis_pacientes'
+  get '/pacientes_pages/ver_comentarios'
 
 
   get '/metas_paciente/:id', to: 'nutriologo_pages#metas_paciente'
