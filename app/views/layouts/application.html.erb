@@ -9,11 +9,13 @@
   </head>
 
   <body>
-     <script type="text/javascript">
-    $(document).ready(function(){
-    $('.sidenav').sidenav();
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
   });
-        </script>
+  });
+  </script>
     
     <% if notice %>
   <script type="text/javascript">
