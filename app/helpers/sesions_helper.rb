@@ -30,13 +30,13 @@ module SesionsHelper
   end
 
 
-  def paciente_metas(paciente_id)
-    @paciente_metas ||=
+  def paciente_tips(paciente_id)
+    @paciente_tips ||=
       TipsYcomentario.where(paciente_id: paciente_id).all
   end
 
-  def nutriologo_metas(nutriologo_id)
-    @nutriologo_metas ||=
+  def nutriologo_tips(nutriologo_id)
+    @nutriologo_tips ||=
       TipsYcomentario.where(nutriologo_id: nutriologo_id).all
   end
 
