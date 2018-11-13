@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20181110214627) do
 
+  create_table "documents", force: :cascade do |t|
+    t.string "asset"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "horarios", force: :cascade do |t|
     t.datetime "hora_disponible"
     t.boolean "apartada", default: false
@@ -20,6 +26,11 @@ ActiveRecord::Schema.define(version: 20181110214627) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nutriologo_id"], name: "index_horarios_on_nutriologo_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "meta", force: :cascade do |t|

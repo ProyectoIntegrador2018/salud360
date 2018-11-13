@@ -44,6 +44,10 @@ gem 'jbuilder', '~> 2.5'
 
  gem 'rmagick'
 
+ gem 'chartkick'
+
+ gem 'highcharts-rails'
+
  #gem "mini_magick"
 
 # Use Capistrano for deployment
