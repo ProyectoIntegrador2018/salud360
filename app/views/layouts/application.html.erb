@@ -37,15 +37,15 @@
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class ="right hide-on-med-and-down">
               <% if user_signed_in?%>
-                <li><a href="/users" data-method="delete">Administración</a></li>
+                <li><a href="/users">Administración</a></li>
                 <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
               <% elsif nutriologo_signed_in? %>
-                <li><a href="/nutriologo_pages/mis_sesiones" data-method="delete">Mis Sesiones</a></li>
-                <li><a href="/nutriologo_pages/mis_pacientes" data-method="delete">Mis Pacientes</a></li>
+                <li><a href="/nutriologo_pages/mis_sesiones">Mis Sesiones</a></li>
+                <li><a href="/nutriologo_pages/mis_pacientes">Mis Pacientes</a></li>
                 <li><a href="/nutriologos/sign_out" data-method="delete">Logout</a></li>
               <% elsif paciente_signed_in? %>
-                <li><a href="/pacientes_pages/mis_sesiones" data-method="delete">Mis Sesiones</a></li>
-                <li><a href="/documents" data-method="delete">Mis Documentos</a></li>
+                <li><a href="/pacientes_pages/mis_sesiones">Mis Sesiones</a></li>
+                <li><a href="/documents">Mis Documentos</a></li>
                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
               <% end %>
             </ul>
@@ -54,15 +54,15 @@
     
   <ul class="sidenav" id="mobile-demo">
     <% if user_signed_in?%>
-                <li><a href="/admin" data-method="delete">Administración</a></li>
+                <li><a href="/users">Administración</a></li>
                 <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
               <% elsif nutriologo_signed_in? %>
-                <li><a href="/nutriologo_pages/mis_sesiones" data-method="delete">Mis Sesiones</a></li>
-                <li><a href="/nutriologo_pages/mis_pacientes" data-method="delete">Mis Pacientes</a></li>
+                <li><a href="/nutriologo_pages/mis_sesiones">Mis Sesiones</a></li>
+                <li><a href="/nutriologo_pages/mis_pacientes">Mis Pacientes</a></li>
                 <li><a href="/nutriologos/sign_out" data-method="delete">Logout</a></li>
               <% elsif paciente_signed_in? %>
-                <li><a href="/pacientes_pages/mis_sesiones" data-method="delete">Mis Sesiones</a></li>
-                <li><a href="/documents" data-method="delete">Mis Documentos</a></li>
+                <li><a href="/pacientes_pages/mis_sesiones">Mis Sesiones</a></li>
+                <li><a href="/documents">Mis Documentos</a></li>
                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
               <% end %>
   </ul>
