@@ -1,46 +1,104 @@
 
   <h1>Sesiones paciente <%=getPacienteName(@paciente) %></h1>
 
-
+  <% numS=1%>
   <table>
     <thead>
       <tr>
-        <th>Numero Sesion</th>
-        <th>Peso</th>
-        <th>Estatura</th>
-        <th>Grasa</th>
-        <th>Musculo</th>
-        <th>Agua</th>
-        <th>IMC</th>
-        <th>Grasa Vis</th>
-        <th>Edad Metabolica</th>
-        <th>Hora</th>
-        <th>Nutriologo</th>
-        <th colspan="11"></th>
-      </tr>
-    </thead>
-  <% numS=1%>
-    <tbody>
-      <% @sesions.each do |sesion| %>
-
+        <th>Información <%=getPacienteName(@paciente)%></th>
+        <% @sesions.each do |sesion| %>
+          <th>Sesión <%=numS%></th>
+          <% numS+=1%>
+        <% end %>
+        <% if numS<7
+            while numS<7%>
+              <th>Sesión <%=numS%></th>
+              <% numS+=1%>
+            <%end
+           end %>
+           <th colspan="11"></th>
+        </thead>
+        <tbody>
         <tr>
-          <td><%=numS%></td>
-          <td><%= sesion.peso %></td>
+          <td>Peso</td>
+        <% @sesions.each do |sesion| %>
+            <td><%= sesion.peso %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Estatura</td>
+      <% @sesions.each do |sesion| %>
           <td><%= sesion.estatura %></td>
-          <td><%= sesion.grasa %></td>
-          <td><%= sesion.musculo %></td>
-          <td><%= sesion.agua %></td>
-          <td><%= sesion.imc %></td>
-          <td><%= sesion.grasa_vis %></td>
-          <td><%= sesion.edad_metabolica %></td>
-          <td><%= getHora(sesion.hora_id) %></td>
-          <td><%=getNutriologoName(sesion.nutriologo_id)%></td>
-          <td><%= link_to 'Editar datos', edit_sesion_path(sesion) %></td>
-          <td><%= link_to 'Ver Metas Cita', "/metas_cita/"+sesion.id.to_s() %></td>
-
-        </tr>
-        <% numS+=1%>
       <% end %>
+    </tr>
+    <tr>
+      <td>Grasa</td>
+    <% @sesions.each do |sesion| %>
+        <td><%= sesion.grasa %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td>Musculo</td>
+  <% @sesions.each do |sesion| %>
+      <td><%= sesion.musculo %></td>
+  <% end %>
+</tr>
+<tr>
+  <td>Agua</td>
+<% @sesions.each do |sesion| %>
+    <td><%= sesion.agua %></td>
+<% end %>
+</tr>
+<tr>
+  <td>IMC</td>
+<% @sesions.each do |sesion| %>
+    <td><%= sesion.imc %></td>
+<% end %>
+</tr>
+<tr>
+  <td>Grasa Vis</td>
+<% @sesions.each do |sesion| %>
+    <td><%= sesion.grasa_vis %></td>
+<% end %>
+</tr>
+<tr>
+  <td>Edad Metabolica</td>
+<% @sesions.each do |sesion| %>
+    <td><%= sesion.edad_metabolica %></td>
+<% end %>
+</tr>
+<tr>
+  <td>Hora</td>
+<% @sesions.each do |sesion| %>
+    <td><%= getHora(sesion.hora_id) %></td>
+<% end %>
+</tr>
+<tr>
+  <td>Nutriologo</td>
+<% @sesions.each do |sesion| %>
+    <td><%=getNutriologoName(sesion.nutriologo_id) %></td>
+<% end %>
+
+
+</tr>
+<tr>
+  <td>Datos</td>
+<% @sesions.each do |sesion| %>
+    <td><%=link_to 'Editar datos', edit_sesion_path(sesion) %></td>
+<% end %>
+
+
+</tr>
+<tr>
+  <td>Citas</td>
+<% @sesions.each do |sesion| %>
+    <td><%=link_to 'Ver Metas Cita', "/metas_cita/"+sesion.id.to_s()%></td>
+<% end %>
+
+
+</tr>
+
+
     </tbody>
   </table>
 
