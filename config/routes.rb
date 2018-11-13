@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'nutriologo_pages/mis_sesiones'
   get 'pacientes_pages/mis_sesiones'
   get '/users' => 'user#index', as: :user_root
+  get '/admin', to: redirect('/users/sign_in')
   get '/nutriologos' => 'nutriologo_pages#index', as: :nutriologo_root
   get '/pacientes' => 'pacientes_pages#index', as: :paciente_root
   get 'pacientes_pages/programarCita'
