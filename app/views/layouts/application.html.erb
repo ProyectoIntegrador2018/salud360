@@ -37,7 +37,7 @@
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class ="right hide-on-med-and-down">
               <% if user_signed_in?%>
-                <li><a href="/admin" data-method="delete">Administración</a></li>
+                <li><a href="/users" data-method="delete">Administración</a></li>
                 <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
               <% elsif nutriologo_signed_in? %>
                 <li><a href="/nutriologo_pages/mis_sesiones" data-method="delete">Mis Sesiones</a></li>
