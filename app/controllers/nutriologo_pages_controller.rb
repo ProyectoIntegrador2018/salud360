@@ -15,4 +15,9 @@ class NutriologoPagesController < ApplicationController
     @paciente = params[:id]
     @sesions = paciente_sesions(@paciente)
   end
+
+  def dietas_paciente
+    @paciente=params[:id]
+    @dietas = paciente_dietas(@paciente)
+  end
 end

@@ -10192,3 +10192,429 @@ Processing by NutriologoPagesController#sesiones_paciente as HTML
 Completed 200 OK in 303ms (Views: 298.3ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-13 17:37:00 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (954.3ms)
+Started GET "/" for 127.0.0.1 at 2018-11-13 17:37:09 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (12.1ms)
+  [1m[36mUser Load (359.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 23336ms (Views: 22975.3ms | ActiveRecord: 359.5ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 31985ms (Views: 31851.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pacientes/sign_in" for 127.0.0.1 at 2018-11-13 17:37:39 -0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mPaciente Load (1.0ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pacientes
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 215ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/pacientes/sign_in" for 127.0.0.1 at 2018-11-13 17:37:39 -0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pacientes
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/pacientes" for 127.0.0.1 at 2018-11-13 17:37:40 -0600
+Processing by PacientesPagesController#index as HTML
+  Rendering pacientes_pages/index.html.erb within layouts/application
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pacientes_pages/index.html.erb within layouts/application (8.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 341ms (Views: 339.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-13 17:37:45 -0600
+Processing by PacientesPagesController#mis_sesiones as HTML
+  Rendering pacientes_pages/mis_sesiones.html.erb within layouts/application
+  [1m[36mPaciente Load (0.3ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSesion Load (13.6ms)[0m  [1m[34mSELECT "sesions".* FROM "sesions" WHERE "sesions"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  [1m[36mHorario Load (0.4ms)[0m  [1m[34mSELECT  "horarios".* FROM "horarios" WHERE "horarios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (0.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mNutriologo Load (0.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Nutriologo Load (0.0ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pacientes_pages/mis_sesiones.html.erb within layouts/application (168.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 308ms (Views: 292.0ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-13 20:29:05 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (51764.9ms)
+Completed 200 OK in 53761ms (Views: 53733.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/nutriologos/sign_in" for 127.0.0.1 at 2018-11-13 20:30:09 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering nutriologos/sessions/new.html.erb within layouts/application
+  Rendered nutriologos/sessions/new.html.erb within layouts/application (646.0ms)
+Completed 200 OK in 1357ms (Views: 1197.5ms | ActiveRecord: 134.4ms)
+
+
+Started POST "/nutriologos/sign_in" for 127.0.0.1 at 2018-11-13 20:30:25 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fxztI2KMz10l7BlW7SjL84WMPmzZZvzj3AC2fTdqfxoZXKyNflGVm01V7SRttoKg1P+ZOiMHLUQs2ab8o+1Vbw==", "nutriologo"=>{"username"=>"MartinPac", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mNutriologo Load (354.1ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."username" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["username", "MartinPac"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/nutriologos
+Completed 302 Found in 956ms (ActiveRecord: 354.1ms)
+
+
+Started GET "/nutriologos" for 127.0.0.1 at 2018-11-13 20:30:26 -0600
+Processing by NutriologoPagesController#index as HTML
+  Rendering nutriologo_pages/index.html.erb within layouts/application
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered nutriologo_pages/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 335ms (Views: 333.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-13 20:30:30 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (6.3ms)
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 389ms (Views: 345.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pacientes/sign_in" for 127.0.0.1 at 2018-11-13 20:30:32 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering pacientes/sessions/new.html.erb within layouts/application
+  Rendered pacientes/sessions/new.html.erb within layouts/application (14.6ms)
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 381ms (Views: 319.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/pacientes/sign_in" for 127.0.0.1 at 2018-11-13 20:30:41 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PQRJ2ide8zSkdt/36HA0SpP1ol+ds9HfBciLYsrOWv2nOhF48f8Zcd0XSaEEOMLM5AmjX26LAM1RPNZ0VbPfvw==", "paciente"=>{"username"=>"MartinPac", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mPaciente Load (7.8ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."username" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["username", "MartinPac"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pacientes
+Completed 302 Found in 386ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/pacientes" for 127.0.0.1 at 2018-11-13 20:30:41 -0600
+Processing by PacientesPagesController#index as HTML
+  Rendering pacientes_pages/index.html.erb within layouts/application
+  [1m[36mPaciente Load (0.4ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pacientes_pages/index.html.erb within layouts/application (10.9ms)
+  [1m[36mNutriologo Load (0.2ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 444ms (Views: 441.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pacientes/ver_dietas" for 127.0.0.1 at 2018-11-13 20:31:24 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/pacientes/ver_dietas"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/pacientes_pages/ver_dietas" for 127.0.0.1 at 2018-11-13 20:31:45 -0600
+Processing by PacientesPagesController#ver_dietas as HTML
+  Rendering pacientes_pages/ver_dietas.html.erb within layouts/application
+  [1m[36mPaciente Load (22.0ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDieta Load (17.8ms)[0m  [1m[34mSELECT "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered pacientes_pages/ver_dietas.html.erb within layouts/application (91.5ms)
+  [1m[36mNutriologo Load (0.3ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 1325ms (Views: 1283.3ms | ActiveRecord: 40.5ms)
+
+
+Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:32:14 -0600
+Processing by NutriologoPagesController#dietas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/dietas_paciente.html.erb within layouts/application
+  [1m[36mDieta Load (0.2ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  Rendered nutriologo_pages/dietas_paciente.html.erb within layouts/application (1812.0ms)
+Completed 500 Internal Server Error in 1904ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dieta' for #<#<Class:0x00007f0903dfce70>:0x00007f0903540598>
+Did you mean?  @dietas):
+    3: <h1>Dietas</h1>
+    4: 
+    5: <h2>Agregar dietas</h2>
+    6: <%= form_with(model: dieta, local: true) do |form| %>
+    7:   <% if dieta.errors.any? %>
+    8:     <div id="error_explanation">
+    9:       <h2><%= pluralize(dieta.errors.count, "error") %> prohibited this document from being saved:</h2>
+  
+app/views/nutriologo_pages/dietas_paciente.html.erb:6:in `_app_views_nutriologo_pages_dietas_paciente_html_erb__1870708867167588481_69838343636960'
+Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:32:42 -0600
+Processing by NutriologoPagesController#dietas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/dietas_paciente.html.erb within layouts/application
+  [1m[36mDieta Load (0.2ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  Rendered nutriologo_pages/dietas_paciente.html.erb within layouts/application (645.0ms)
+Completed 500 Internal Server Error in 675ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `dieta_index_path' for #<#<Class:0x00007f0903dfce70>:0x00007f0903268b18>
+Did you mean?  dieta_path):
+    3: <h1>Dietas</h1>
+    4: 
+    5: <h2>Agregar dietas</h2>
+    6: <%= form_with(model: Dieta, local: true) do |form| %>
+    7:   <% if dieta.errors.any? %>
+    8:     <div id="error_explanation">
+    9:       <h2><%= pluralize(dieta.errors.count, "error") %> prohibited this document from being saved:</h2>
+  
+app/views/nutriologo_pages/dietas_paciente.html.erb:6:in `_app_views_nutriologo_pages_dietas_paciente_html_erb__1870708867167588481_69838342146720'
+Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:33:41 -0600
+Processing by NutriologoPagesController#dietas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/dietas_paciente.html.erb within layouts/application
+  [1m[36mDieta Load (0.2ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  Rendered nutriologo_pages/dietas_paciente.html.erb within layouts/application (617.5ms)
+Completed 500 Internal Server Error in 651ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `dieta_index_path' for #<#<Class:0x00007f0903dfce70>:0x00007f0903d7b910>
+Did you mean?  dieta_path):
+    4: 
+    5: <h2>Agregar dietas</h2>
+    6: <% @dieta=Dieta.new%>
+    7: <%= form_for(@dieta) do |form| %>
+    8:   <% if dieta.errors.any? %>
+    9:     <div id="error_explanation">
+   10:       <h2><%= pluralize(dieta.errors.count, "error") %> prohibited this document from being saved:</h2>
+  
+app/views/nutriologo_pages/dietas_paciente.html.erb:7:in `_app_views_nutriologo_pages_dietas_paciente_html_erb__1870708867167588481_69838347960800'
+Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:34:16 -0600
+Processing by NutriologoPagesController#dietas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/dietas_paciente.html.erb within layouts/application
+  Rendered nutriologo_pages/dietas_paciente.html.erb within layouts/application (32.2ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/dietas_paciente.html.erb:7: syntax error, unexpected =>, expecting keyword_end
+...end=  form_for(@dieta), :url => dieta_path do |form| @output...
+...                             ^~):
+  
+app/views/nutriologo_pages/dietas_paciente.html.erb:7: syntax error, unexpected =>, expecting keyword_end
+Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:36:30 -0600
+Processing by NutriologoPagesController#dietas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/dietas_paciente.html.erb within layouts/application
+  [1m[36mDieta Load (0.4ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.1ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Dieta Load (0.0ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 11]]
+  Rendered nutriologo_pages/dietas_paciente.html.erb within layouts/application (1401.0ms)
+Completed 500 Internal Server Error in 1446ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dieta' for #<#<Class:0x00007f0903dfce70>:0x00007f09017facb8>
+Did you mean?  @dieta
+               @dietas):
+     5: <h2>Agregar dietas</h2>
+     6: <% @dieta=Dieta.new%>
+     7: <%= form_for (@dieta), :url => dieta_path do |form| %>
+     8:   <% if dieta.errors.any? %>
+     9:     <div id="error_explanation">
+    10:       <h2><%= pluralize(dieta.errors.count, "error") %> prohibited this document from being saved:</h2>
+    11: 
+  
+app/views/nutriologo_pages/dietas_paciente.html.erb:8:in `block in _app_views_nutriologo_pages_dietas_paciente_html_erb__1870708867167588481_69838328290160'
+app/views/nutriologo_pages/dietas_paciente.html.erb:7:in `_app_views_nutriologo_pages_dietas_paciente_html_erb__1870708867167588481_69838328290160'
+Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:38:14 -0600
+Processing by NutriologoPagesController#dietas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/dietas_paciente.html.erb within layouts/application
+  Rendered nutriologo_pages/dietas_paciente.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/dietas_paciente.html.erb:11: syntax error, unexpected =>, expecting keyword_end
+...end=  form_for(@dieta), :url => dieta_path do |f| @output_bu...
+...                             ^~
+/home/martin/Desktop/salud360/app/views/nutriologo_pages/dietas_paciente.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/nutriologo_pages/dietas_paciente.html.erb:11: syntax error, unexpected =>, expecting keyword_end
+app/views/nutriologo_pages/dietas_paciente.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:38:25 -0600
+Processing by NutriologoPagesController#dietas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/dietas_paciente.html.erb within layouts/application
+  Rendered nutriologo_pages/dietas_paciente.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/dietas_paciente.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/nutriologo_pages/dietas_paciente.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:38:40 -0600
+Processing by NutriologoPagesController#dietas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/dietas_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (2.0ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDieta Load (0.3ms)[0m  [1m[34mSELECT "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered nutriologo_pages/dietas_paciente.html.erb within layouts/application (435.7ms)
+  [1m[36mNutriologo Load (0.3ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 861ms (Views: 842.9ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/dieta" for 127.0.0.1 at 2018-11-13 20:40:52 -0600
+Processing by DietaController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j58liS+jpW26EoNeFbCQLrT8RT0sBtT2yCDmSallo/6s/PlnyBB3lD4D1aCKQtRpfhSczqRE4ZeQPKlXdmtbZg==", "dieta"=>{"dietaPDF"=>#<ActionDispatch::Http::UploadedFile:0x00007f0902373c70 @tempfile=#<Tempfile:/tmp/RackMultipart20181113-3734-14lf5zh.pdf>, @original_filename="Torfs Brauer-Short-R-Intro.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"dieta[dietaPDF]\"; filename=\"Torfs+Brauer-Short-R-Intro.pdf\"\r\nContent-Type: application/pdf\r\n">, "paciente_id"=>"1", "nutriologo_id"=>"1"}, "commit"=>"Guardar"}
+  [1m[35m (32.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 1083ms (ActiveRecord: 32.9ms)
+
+
+  
+ActionView::MissingTemplate (Missing template dieta/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
+  * "/home/martin/Desktop/salud360/app/views"
+  * "/home/martin/.rvm/gems/ruby-2.5.1/gems/devise-4.5.0/app/views"
+  * "/home/martin/.rvm/gems/ruby-2.5.1/gems/rails_admin-1.4.2/app/views"
+  * "/home/martin/.rvm/gems/ruby-2.5.1/gems/kaminari-core-1.1.1/app/views"
+):
+  
+app/controllers/dieta_controller.rb:36:in `block (2 levels) in create'
+app/controllers/dieta_controller.rb:29:in `create'
+Started POST "/dieta" for 127.0.0.1 at 2018-11-13 20:44:46 -0600
+Processing by DietaController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j58liS+jpW26EoNeFbCQLrT8RT0sBtT2yCDmSallo/6s/PlnyBB3lD4D1aCKQtRpfhSczqRE4ZeQPKlXdmtbZg==", "dieta"=>{"dietaPDF"=>#<ActionDispatch::Http::UploadedFile:0x00007f0903ad8b68 @tempfile=#<Tempfile:/tmp/RackMultipart20181113-3734-ahc9bx.pdf>, @original_filename="Torfs Brauer-Short-R-Intro.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"dieta[dietaPDF]\"; filename=\"Torfs+Brauer-Short-R-Intro.pdf\"\r\nContent-Type: application/pdf\r\n">, "paciente_id"=>"1", "nutriologo_id"=>"1"}, "commit"=>"Guardar"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 14.1ms)
+
+
+  
+ActionView::MissingTemplate (Missing template paciente_dietas/1 with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
+  * "/home/martin/Desktop/salud360/app/views"
+  * "/home/martin/.rvm/gems/ruby-2.5.1/gems/devise-4.5.0/app/views"
+  * "/home/martin/.rvm/gems/ruby-2.5.1/gems/rails_admin-1.4.2/app/views"
+  * "/home/martin/.rvm/gems/ruby-2.5.1/gems/kaminari-core-1.1.1/app/views"
+):
+  
+app/controllers/dieta_controller.rb:36:in `block (2 levels) in create'
+app/controllers/dieta_controller.rb:29:in `create'
+Started POST "/dieta" for 127.0.0.1 at 2018-11-13 20:46:08 -0600
+Processing by DietaController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j58liS+jpW26EoNeFbCQLrT8RT0sBtT2yCDmSallo/6s/PlnyBB3lD4D1aCKQtRpfhSczqRE4ZeQPKlXdmtbZg==", "dieta"=>{"dietaPDF"=>#<ActionDispatch::Http::UploadedFile:0x00007f0903796a90 @tempfile=#<Tempfile:/tmp/RackMultipart20181113-3734-1i3h0iq.pdf>, @original_filename="Torfs Brauer-Short-R-Intro.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"dieta[dietaPDF]\"; filename=\"Torfs+Brauer-Short-R-Intro.pdf\"\r\nContent-Type: application/pdf\r\n">, "paciente_id"=>"1", "nutriologo_id"=>"1"}, "commit"=>"Guardar"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 406 Not Acceptable in 74ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/dieta_controller.rb:29:in `create'
+Started POST "/dieta" for 127.0.0.1 at 2018-11-13 20:46:29 -0600
+Processing by DietaController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j58liS+jpW26EoNeFbCQLrT8RT0sBtT2yCDmSallo/6s/PlnyBB3lD4D1aCKQtRpfhSczqRE4ZeQPKlXdmtbZg==", "dieta"=>{"dietaPDF"=>#<ActionDispatch::Http::UploadedFile:0x00007f09034c1680 @tempfile=#<Tempfile:/tmp/RackMultipart20181113-3734-1u4da89.pdf>, @original_filename="Torfs Brauer-Short-R-Intro.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"dieta[dietaPDF]\"; filename=\"Torfs+Brauer-Short-R-Intro.pdf\"\r\nContent-Type: application/pdf\r\n">, "paciente_id"=>"1", "nutriologo_id"=>"1"}, "commit"=>"Guardar"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+No template found for DietaController#create, rendering head :no_content
+Completed 204 No Content in 187ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:46:39 -0600
+Processing by NutriologoPagesController#dietas_paciente as HTML
+  Parameters: {"id"=>"1"}
+  Rendering nutriologo_pages/dietas_paciente.html.erb within layouts/application
+  [1m[36mPaciente Load (14.7ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDieta Load (21.2ms)[0m  [1m[34mSELECT "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ?[0m  [["paciente_id", 1]]
+  Rendered nutriologo_pages/dietas_paciente.html.erb within layouts/application (84.9ms)
+  [1m[36mNutriologo Load (2.6ms)[0m  [1m[34mSELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."id" = ? ORDER BY "nutriologos"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 1593ms (Views: 1531.5ms | ActiveRecord: 41.0ms)
+
+
+Started POST "/dieta" for 127.0.0.1 at 2018-11-13 20:46:46 -0600
+Processing by DietaController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DWT/au1iWyFPTK9Mch2ubXaa5/LfBsv3XY3jqYHQ9vIuByOECtGJ2Mtd+bLt7+oqvHI+AVdE/pYFkay3Xt4Oag==", "dieta"=>{"dietaPDF"=>#<ActionDispatch::Http::UploadedFile:0x00007f090224a3f8 @tempfile=#<Tempfile:/tmp/RackMultipart20181113-3734-qguj5g.pdf>, @original_filename="Torfs Brauer-Short-R-Intro.pdf", @content_type="application/pdf", @headers="Content-Disposition: form-data; name=\"dieta[dietaPDF]\"; filename=\"Torfs+Brauer-Short-R-Intro.pdf\"\r\nContent-Type: application/pdf\r\n">, "paciente_id"=>"1", "nutriologo_id"=>"1"}, "commit"=>"Guardar"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+No template found for DietaController#create, rendering head :no_content
+Completed 204 No Content in 172ms (ActiveRecord: 0.2ms)
+
+

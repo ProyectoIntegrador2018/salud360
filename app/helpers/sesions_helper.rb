@@ -25,6 +25,11 @@ module SesionsHelper
       Sesion.where(paciente_id: paciente_id).all
   end
 
+  def paciente_dietas(paciente_id)
+    @paciente_dietas ||=
+      Dieta.where(paciente_id: paciente_id).all
+  end
+
   def current_pacientes_nutriologo
     @current_pacientes_nutriologo ||= Sesion.where(nutriologo_id: current_nutriologo.id).select(:paciente_id).distinct
   end
