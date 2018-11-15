@@ -30,10 +30,18 @@
 
 <nav>
         <div class="nav-wrapper grey darken-4">
+          <% if paciente_signed_in? %>
+          <a href="/pacientes"
+               class="brand-logo">
+                <img src="<%= asset_path( 'logo.png' ) %>" height="60px" width="80px"/>
+            </a>
+          <% else %>
           <a href="/"
                class="brand-logo">
                 <img src="<%= asset_path( 'logo.png' ) %>" height="60px" width="80px"/>
             </a>
+          <% end %>
+          
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class ="right hide-on-med-and-down">
               <% if user_signed_in?%>
@@ -44,8 +52,8 @@
                 <li><a href="/nutriologo_pages/mis_pacientes">Mis Pacientes</a></li>
                 <li><a href="/nutriologos/sign_out" data-method="delete">Logout</a></li>
               <% elsif paciente_signed_in? %>
-                <li><a href="/pacientes_pages/mis_sesiones">Mis Sesiones</a></li>
-                <li><a href="/documents">Mis Documentos</a></li>
+                <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
+                <li><a href="/documents">Programa Salud 360</a></li>
                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
               <% end %>
             </ul>
@@ -61,8 +69,8 @@
                 <li><a href="/nutriologo_pages/mis_pacientes">Mis Pacientes</a></li>
                 <li><a href="/nutriologos/sign_out" data-method="delete">Logout</a></li>
               <% elsif paciente_signed_in? %>
-                <li><a href="/pacientes_pages/mis_sesiones">Mis Sesiones</a></li>
-                <li><a href="/documents">Mis Documentos</a></li>
+                <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
+                <li><a href="/documents">Programa Salud 360</a></li>
                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
               <% end %>
   </ul>
