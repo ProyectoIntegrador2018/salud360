@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'pacientes_pages/mis_sesiones'
   get '/users' => 'user#index', as: :user_root
   get '/admin', to: redirect('/users/sign_in')
-  get '/nutriologos' => 'nutriologo_pages#mis_sesiones', as: :nutriologo_root
+  get '/nutriologos' => 'nutriologo_pages#index', as: :nutriologo_root
   get '/pacientes' => 'pacientes_pages#index', as: :paciente_root
   get 'pacientes_pages/programarCita'
   get 'pacientes_pages/ver_metas'
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   end
 
   namespace :nutriologo do
-    root 'nutriologo_pages#mis_sesiones'
+    root 'nutriologo_pages#index'
   end
 
   namespace :paciente do
