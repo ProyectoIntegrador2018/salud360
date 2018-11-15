@@ -1,21 +1,22 @@
 class AssetUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
    include CarrierWave::RMagick
+   include Cloudinary::CarrierWave
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  #storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-   if Rails.env.test? || Rails.env.cucumber?
-     "#{Rails.root}/public/test/file_uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-   else
-     "#{Rails.root}/public/catalogs/#{model.id}"  ## Should be in public folder
-   end
- end
+  #def store_dir
+  # if Rails.env.test? || Rails.env.cucumber?
+  #   "#{Rails.root}/public/test/file_uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  # else
+  #   "#{Rails.root}/public/catalogs/#{model.id}"  ## Should be in public folder
+  # end
+ #end
 
   def cover
     manipulate! do |frame, index|
@@ -59,6 +60,10 @@ class AssetUploader < CarrierWave::Uploader::Base
    def extension_whitelist
      %w(jpg jpeg gif png pdf)
    end
+
+   def public_id
+    return "salud360/" + model.asset.file.original_filename
+  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
