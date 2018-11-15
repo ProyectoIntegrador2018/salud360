@@ -40,6 +40,8 @@ gem 'jbuilder', '~> 2.5'
 
  gem 'devise', '~> 4.5'
 
+ gem 'figaro'
+
  gem 'carrierwave'
 
  gem 'rmagick'
@@ -47,6 +49,8 @@ gem 'jbuilder', '~> 2.5'
  gem 'chartkick'
 
  gem 'highcharts-rails'
+
+ gem 'cloudinary'
 
  #gem "mini_magick"
 
