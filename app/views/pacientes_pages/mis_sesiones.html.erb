@@ -1,15 +1,74 @@
 <div class="card" style="width: 90%; margin: auto; text-align="center">
 
-  <h4>Hola <%= current_paciente.username %>, tu plan es "plan" y estos son tus datos:</h4>                                                               
-                                                                      
-                                                                      
-<h3>Datos Iniciales</h3>                                                            
+  <h4>Hola <%= current_paciente.username %>, tu plan es bajar de peso y estos son tus datos:</h4>
 
-                                                              
+
+<h3>Datos Iniciales</h3>
+<%if current_paciente_sesions.first != nil%>
+  <div class="row">
+    <div class="col s1 offset-s2">
+      <div class="card">
+        <span class="card-title">Peso</span>
+
+        <p> <%= current_paciente_sesions.first.peso %> </p>
+      </div>
+    </div>
+    <div class="col s1">
+      <div class="card">
+        <span class="card-title">Estatura</span>
+
+        <p><%= current_paciente_sesions.first.estatura %></p>
+        </div>
+      </div>
+      <div class="col s1">
+        <div class="card">
+          <span class="card-title">Grasa</span>
+
+          <p><%= current_paciente_sesions.first.grasa %>%</p>
+          </div>
+        </div>
+        <div class="col s1">
+          <div class="card">
+            <span class="card-title">Musculo</span>
+
+            <p><%= current_paciente_sesions.first.musculo %>%</p>
+            </div>
+          </div>
+          <div class="col s1">
+            <div class="card">
+              <span class="card-title">Agua</span>
+
+              <p><%= current_paciente_sesions.first.agua %></p>
+              </div>
+            </div>
+            <div class="col s1">
+              <div class="card">
+                <span class="card-title">IMC</span>
+
+                <p><%= current_paciente_sesions.first.imc %></p>
+                </div>
+              </div>
+              <div class="col s1">
+                <div class="card">
+                  <span class="card-title">G.V.</span>
+
+                  <p><%= current_paciente_sesions.first.grasa_vis %></p>
+                  </div>
+                </div>
+                <div class="col s1">
+                  <div class="card">
+                    <span class="card-title">E.M.</span>
+
+                    <p><%= current_paciente_sesions.first.edad_metabolica %></p>
+                  </div>
+                </div>
+  </div>
+<% end %>
+
 <h5 class="grey-text text-darken-1">*IMC: Índice de Masa Corporal *G.V.: Grasa Visceral *E.M.: Edad Metabólica</h5>
-                
+
 <h3>Seguimiento</h3>
-                                   
+
 <table>
   <thead>
     <tr>
@@ -67,8 +126,8 @@
     </tr>
   </tbody>
 </table>
-                      
-                      
+
+
                       <br></br>
   <div class="row">
   <div class="col s5 offset-s1">
