@@ -1,5 +1,5 @@
 <div class="card" style="width: 90%; margin: auto; text-align="center">
-<div class="row">
+<div class="row" style="width: 90%; margin: auto; text-algin="center">
 
 <h1>Mis Sesiones</h1>
 
@@ -60,9 +60,14 @@
     </tr>
   </tbody>
 </table>
-
-<%= link_to 'Nueva Sesion', "/pacientes_pages/programarCita", class: "btn-large pink darken-1" %>
-<%= link_to 'Ver Metas', "/pacientes_pages/ver_metas", class: "btn-large pink darken-1" %>
-
+<div class="row">
+  <div class="col s5 offset-s1">
+    <%= link_to 'Nueva Sesion', "/pacientes_pages/programarCita", class: "btn-large pink darken-1" %>
+  </div>
+  <div class="col s5 offset-s1">
+    <%= link_to 'Ver Metas', "/pacientes_pages/ver_metas", class: "btn-large pink darken-1" %>
+  </div>
+</div>
+                      <br></br>
                       </div>
                       </div>
