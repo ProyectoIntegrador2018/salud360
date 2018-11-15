@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Documentos</h1>
+<div class="card" style="width: 90%; margin: auto; text-align="center">
+
+<h1>Bienvenido al programa...</h1>
 
 <table>
   <thead>
@@ -16,10 +18,12 @@
       <tr>
         <td><%= document.id %></td>
         <td><%= link_to document.asset.file.filename, document.asset.url %></td>
-        <td><%= image_tag document.asset.preview.url %> </td>
+        <td><%= cl_image_tag(document.asset.file.public_id + ".png",
+          :width => 200, :height => 250, :crop => :fill) %> </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+                     </div>
