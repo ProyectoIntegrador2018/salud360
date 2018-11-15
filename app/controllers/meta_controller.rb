@@ -7,15 +7,8 @@ class MetaController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @meta.update(meta_params)
-        format.html { render 'pacientes_pages/ver_metas', notice: 'meta was successfully updated.' }
-        format.json { render :show, status: :ok, location: @meta }
-      else
-        format.html { render :edit }
-        format.json { render json: @meta.errors, status: :unprocessable_entity }
-      end
-    end
+    @meta.update(meta_params)
+          redirect_back(fallback_location: '/nutriologo_pages/mis_pacientes')
   end
 
   def create
@@ -30,7 +23,7 @@ class MetaController < ApplicationController
       else
 
       end
-    
+
   end
 
   private

@@ -25,6 +25,7 @@ class SesionsController < ApplicationController
     if(@sesion.nutriologo_id==nil && @sesion.hora_id !=nil)
       @sesion.nutriologo_id = Horario.find(@sesion.hora_id).nutriologo_id
     end
+    Horario.where(id: @sesion.hora_id).update(apartada: true)
     respond_to do |format|
 
 
