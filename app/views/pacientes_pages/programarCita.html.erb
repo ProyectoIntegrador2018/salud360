@@ -1,12 +1,33 @@
 <% @sesion = Sesion.new %>
+<%if current_paciente_next_sessions.count>0%>
+  <div class="card" style="width: 90%; margin: auto; text-align="center">
+      <h1>No olvides tus citas <%=current_paciente.username%></h1>
+      <br>
+        <div class="row">
+        <div class="col s9 offset-s1">
+
+          <%current_paciente_next_sessions.each do |sesion|%>
+            <p class="flow-text">Esta cita es el <%=getHora(sesion.hora_id)%> en <%=getSede(sesion.hora_id)%> con <%=getNutriologoName(sesion.nutriologo_id)%>
+          <%end%>
+
+        </div>
+        </div>
+        <br>
+    </div>
+  <%end%>
 
 <div class="card" style="width: 90%; margin: auto; text-align="center">
 <h1>Agrega cita</h1>
-
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
+  <br>
   <%if horarios_disponibles.length >0%>
-  <h3> Elije un horario </h3>
+  <div class="row">
+  <div class="col offset-s1">
+    <h3> Elije un horario </h3>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col s9 offset-s1">
       <%= form_for(@sesion) do |f| %>
 
 
@@ -16,7 +37,7 @@
           $a=[]
           horarios_disponibles.each do |horario|
 
-              $a.push( [ horario.hora_disponible.to_s() +" en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo_id), horario.id])
+              $a.push( [ horario.hora_disponible.strftime("El %d/%m/%Y a las %r") +" en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo_id), horario.id])
           end
 
 
@@ -28,17 +49,18 @@
 
         <%= f.submit "Guardar", class: "btn btn-primary" %>
       <% end %>
+    </div>
+    </div>
     <%else%>
       <h2>Lo sentimos, pero por ahora no hay horarios disponibles</h2>
     <%end%>
-</div>
-</div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<!-- Compiled and minified JavaScript -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			$('select').material_select();
-		});
+<br>
+
+<script >
+  M.AutoInit()
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, {});
+  });
 	</script>
 												     </div>

@@ -1,20 +1,57 @@
 <div class="card" style="width: 90%; margin: auto; text-align="center">
-<h1>Mis Metas</h1>
+<h1>Estas son tus metas <%=current_paciente.username%>, ¡¡Ánimo!!</h1>
+<br>
+<br>
+<%@metas = paciente_metas(current_paciente.id)%>
+<%
+@porcentaje = 0
+if @metas.count >0
+  @porcentaje = (@metas.where(cumplida: true).count*1.0/(@metas.count*1.0)*100).to_i()
+end
 
-    <% paciente_metas(current_paciente.id).each do |meta| %>
-      <%= form_for(meta) do |f| %>
 
-      <%= f.text_field :meta, :disabled=>true%>
+%>
+<div class = "row">
+<div class = "col s10 offset-s1 ">
+    <div id="progressbar" class = "teal lighten-4">
+      <div class="determinate light-green accent-4" style="width: <%= @porcentaje%>%"></div>
+  </div>
+  <br>
+  <h3>Llevas <%=@porcentaje%>% completado</h3>
+</div>
+</div>
+<br>
+<br>
+    <% @metas.each do |meta| %>
+      <div class = "row">
+      <div class = "col s10 offset-s1 ">
+      <div class="card">
+        <br>
+        <div class = "row">
+          <div class = "col s10 offset-s1 ">
+          <div class="flow-text">
+            <%=meta.meta%>
+          </div>
+          </div>
+          <br>
+          <br>
+          <div class = "col s10 offset-s1 ">
+          <%= form_for(meta) do |f| %>
 
-      <label>
-        <%= f.check_box :cumplida %>
-        <span>Cumplida </span>
-      </label>
+          <label>
+            <%= f.check_box :cumplida %>
+            <span>Cumplida&nbsp&nbsp&nbsp&nbsp</span>
+          </label>
 
-      <%= f.submit "Guardar", class: "btn btn-primary" %>
+          <%= f.submit "Guardar", class: "btn btn-primary" %>
 
-      <% end %>
-
+          <% end %>
+          </div>
+        </div>
+        <br>
+      </div>
+      </div>
+      </div>
     <% end %>
 
 

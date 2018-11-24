@@ -4,20 +4,21 @@
 
 
 <h3>Datos Iniciales</h3>
+<div class="flow-text">
 <%if current_paciente_sesions.first != nil%>
   <div class="row">
     <div class="col s1 offset-s2">
       <div class="card">
         <span class="card-title">Peso</span>
 
-        <p> <%= current_paciente_sesions.first.peso %> </p>
+        <p> <%= current_paciente_sesions.first.peso %>kg </p>
       </div>
     </div>
     <div class="col s1">
       <div class="card">
         <span class="card-title">Estatura</span>
 
-        <p><%= current_paciente_sesions.first.estatura %></p>
+        <p><%= current_paciente_sesions.first.estatura %>m</p>
         </div>
       </div>
       <div class="col s1">
@@ -38,7 +39,7 @@
             <div class="card">
               <span class="card-title">Agua</span>
 
-              <p><%= current_paciente_sesions.first.agua %></p>
+              <p><%= current_paciente_sesions.first.agua %>%</p>
               </div>
             </div>
             <div class="col s1">
@@ -64,12 +65,15 @@
                 </div>
   </div>
 <% end %>
-
+</div>
 <h5 class="grey-text text-darken-1">*IMC: Índice de Masa Corporal *G.V.: Grasa Visceral *E.M.: Edad Metabólica</h5>
 
 <h3>Seguimiento</h3>
+<div class="flow-text">
+<div class="row">
+<div class="col s12">
 
-<table>
+<table class="responsive-table centered highlight">
   <thead>
     <tr>
       <th>Numero Sesion</th>
@@ -79,8 +83,8 @@
       <th>Musculo</th>
       <th>Agua</th>
       <th>IMC</th>
-      <th>Grasa Vis</th>
-      <th>Edad Metabolica</th>
+      <th>G.V.</th>
+      <th>E.M.</th>
       <th>Hora</th>
       <th>Nutriologo</th>
       <th colspan="11"></th>
@@ -92,15 +96,15 @@
 
       <tr>
         <td><%=numS%></td>
-        <td><%= sesion.peso %></td>
-        <td><%= sesion.estatura %></td>
-        <td><%= sesion.grasa %></td>
-        <td><%= sesion.musculo %></td>
-        <td><%= sesion.agua %></td>
+        <td><%= sesion.peso %>kg</td>
+        <td><%= sesion.estatura %>m</td>
+        <td><%= sesion.grasa %>%</td>
+        <td><%= sesion.musculo %>%</td>
+        <td><%= sesion.agua %>%</td>
         <td><%= sesion.imc %></td>
         <td><%= sesion.grasa_vis %></td>
         <td><%= sesion.edad_metabolica %></td>
-        <td><%= getHora(sesion.hora_id) %></td>
+        <td><%= getDia(sesion.hora_id) %></td>
         <td><%=getNutriologoName(sesion.nutriologo_id)%></td>
 
       </tr>
@@ -108,32 +112,43 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
+</div>
+</div>
 <br>
-<table>
-  <thead>
-    <tr>
-      <th>Historial de Peso</th>
-      <th>Historial de % de Grasa </th>
-      <th>Historial de % de Musculo </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= line_chart current_paciente_pesos %></td>
-      <td><%= line_chart current_paciente_grasa %></td>
-      <td><%= line_chart current_paciente_musculo %></td>
-    </tr>
-  </tbody>
-</table>
+<br>
+<br>
+<div class="row">
+  <h5>
+  <div class = "col s4">
+      Historial de Peso
+  </div>
+  <div class = "col s4">
+      Historial de % de Grasa
+  </div>
+  <div class = "col s4">
+      Historial de % de Musculo
+  </div>
+</h5>
+  <br>
+  <div class = "col s4">
+      <%= line_chart current_paciente_pesos %>
+  </div>
+  <div class = "col s4">
+      <%= line_chart current_paciente_grasa %>
+  </div>
+  <div class = "col s4">
+      <%= line_chart current_paciente_musculo %>
+  </div>
 
+</div>
 
                       <br></br>
   <div class="row">
-  <div class="col s5 offset-s1">
-    <%= link_to 'Nueva Sesion', "/pacientes_pages/programarCita", class: "btn-large pink darken-1 btn-block" %>
+  <div class="col s4 offset-s1">
+    <%= link_to 'Citas', "/pacientes_pages/programarCita", class: "btn-large pink darken-1 btn-block" %>
   </div>
-  <div class="col s5 offset-s1">
+  <div class="col s4 offset-s2">
     <%= link_to 'Ver Metas', "/pacientes_pages/ver_metas", class: "btn-large pink darken-1 btn-block" %>
   </div>
 </div>
