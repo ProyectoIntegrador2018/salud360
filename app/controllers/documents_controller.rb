@@ -1,5 +1,7 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:edit, :update]
+  before_action :user_is_not_nutriologo
+
 
   def index
     @document = Document.all
@@ -36,6 +38,12 @@ class DocumentsController < ApplicationController
         format.html { render :new }
         format.json { render json: @document.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def user_is_not_nutriologo
+    unless paciente_signed_in? || user_signed_in?
+      redirect_to root_url
     end
   end
 
