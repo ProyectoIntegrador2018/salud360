@@ -2,6 +2,15 @@
   <h1>Metas y Objetivo del paciente <%=getPacienteName(@paciente)%></h1>
   <br>
   <br>
+
+<h2>Cambia el objetivo del paciente</h2>
+<%= form_for (@ppaciente) , :url => '/cambiar_objetivo/'+@paciente.to_s()  do |f| %>
+
+<%= f.text_field :objetivo%>
+
+<%= f.submit "Cambiar", class: "btn btn-primary" %>
+
+<% end %>
 <h2>Agrega otra meta</h2>
   <% @nueva_meta = Meta.new %>
     <%= form_for (@nueva_meta) , :url => meta_path  do |f| %>

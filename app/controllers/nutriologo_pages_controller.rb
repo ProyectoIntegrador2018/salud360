@@ -1,6 +1,7 @@
 class NutriologoPagesController < ApplicationController
   def metas_paciente
     @paciente = params[:id]
+    @ppaciente = Paciente.find_by(id: @paciente)
     @metas = paciente_metas(@paciente)
     @porcentaje = 0
     if @metas.count >0
@@ -27,5 +28,13 @@ class NutriologoPagesController < ApplicationController
   def dietas_paciente
     @paciente=params[:id]
     @dietas = paciente_dietas(@paciente)
+  end
+
+  def cambiar_objetivo
+    if @paciente = Paciente.find_by(id: params[:id])
+       if @paciente.update(objetivo: params[:paciente][:objetivo])
+       end
+    end
+    redirect_back(fallback_location: '/nutriologo_pages/mis_pacientes')
   end
 end
