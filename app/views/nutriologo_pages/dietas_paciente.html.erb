@@ -14,7 +14,7 @@
       <%= f.file_field :dietaPDF %>
       <%= f.hidden_field :paciente_id, :value => @paciente%>
 
-      <%= f.hidden_field :nutriologo_id, :value => current_paciente.id%>
+      <%= f.hidden_field :nutriologo_id, :value => current_nutriologo.id%>
 
       <%= f.submit "Guardar", class: "btn btn-primary" %>
     <% end %>
@@ -37,7 +37,8 @@
       <tr>
         <td><%= getNutriologoName(dieta.nutriologo_id) %></td>
         <td><%= link_to dieta.dietaPDF.file.filename, dieta.dietaPDF.url %></td>
-        <td><%= image_tag dieta.dietaPDF.preview.url %> </td>
+        <td><%= cl_image_tag(dieta.dietaPDF.file.public_id + ".png",
+          :width => 200, :height => 250, :crop => :fill) %> </td>
       </tr>
     <% end %>
   </tbody>

@@ -26,16 +26,9 @@ class DietaController < ApplicationController
 
 
     @dieta= Dieta.new(dieta_params)
-    respond_to do |format|
 
-
-      if @dieta.save
-        format.html { render 'paciente_dietas/'+@dieta.paciente_id.to_s(), notice: 'dieta was successfully created.' }
-        format.json { render :show, status: :created, location: @dieta }
-      else
-        format.html { render 'paciente_dietas/'+@dieta.paciente_id.to_s() }
-        format.json { render json: @dieta.errors, status: :unprocessable_entity }
-      end
+    if @dieta.save
+      redirect_back fallback_location: ('nutriologo_pages/mis_sesiones')
     end
   end
 

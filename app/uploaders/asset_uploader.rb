@@ -18,22 +18,6 @@ class AssetUploader < CarrierWave::Uploader::Base
   # end
  #end
 
-  def cover
-    manipulate! do |frame, index|
-      frame if index.zero? # take only the first page of the file
-    end
-  end
-
-  version :preview do
-    process :cover
-    process :resize_to_fit => [310, 438]
-    process :convert => :jpg
-
-    def full_filename (for_file = model.source.file)
-      super.chomp(File.extname(super)) + '.jpg'
-    end
-  end
-
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
@@ -62,7 +46,11 @@ class AssetUploader < CarrierWave::Uploader::Base
    end
 
    def public_id
-    return "salud360/" + model.asset.file.original_filename
+    if model.has_attribute?(:asset)
+      return "salud360/" + model.asset.file.original_filename
+    else
+      return "salud360/" + model.dietaPDF.file.original_filename
+    end
   end
 
   # Override the filename of the uploaded files:
