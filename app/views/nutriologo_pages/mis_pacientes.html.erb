@@ -12,10 +12,10 @@
   <tbody>
     <% current_pacientes_nutriologo.each do |paciente| %>
       <tr>
-        <td><%= getPacienteName(paciente.paciente_id) %></td>
+        <td><%= paciente.username %></td>
 
-        <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+paciente.paciente_id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
-        <td><%= link_to 'Ver Metas y Objetivo Paciente', "/metas_paciente/"+paciente.paciente_id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
+        <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+paciente.id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
+        <td><%= link_to 'Ver Metas y Objetivo Paciente', "/metas_paciente/"+paciente.id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
 
       </tr>
     <% end %>

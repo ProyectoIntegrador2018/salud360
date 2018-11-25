@@ -40,7 +40,17 @@ module SesionsHelper
   end
 
   def current_pacientes_nutriologo
-    @current_pacientes_nutriologo ||= Sesion.where(nutriologo_id: current_nutriologo.id).select(:paciente_id).distinct.joins("INNER JOIN pacientes ON pacientes.id = paciente_id").order("pacientes.created_at desc")
+    nutr_sesions = current_nutriologo.sesions
+    ids_pacientes = []
+    nutr_sesions.each do |sesion|
+      ids_pacientes.push(sesion.paciente_id)
+    end
+    ids_pacientes = ids_pacientes.uniq
+    pacientes = []
+    ids_pacientes.each do |id|
+      pacientes.push(Paciente.find(id))
+    end
+    @current_pacientes_nutriologo ||= pacientes
   end
 
 
