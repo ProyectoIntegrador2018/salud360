@@ -19,3 +19,20 @@
 body {
       background: rgb(233, 235, 238);
     }
+
+
+
+    #progressbar {
+      background-color: black;
+      border-radius: 13px;
+      /* (height of inner div) / 2 + padding */
+      padding: 2px;
+    }
+
+    #progressbar>div {
+      background-color: orange;
+
+      /* Adjust with JavaScript */
+      height: 20px;
+      border-radius: 10px;
+    }

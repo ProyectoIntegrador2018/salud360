@@ -16,7 +16,7 @@
     var instances = M.Sidenav.init(elems, {});
   });
   </script>
-    
+
     <% if notice %>
   <script type="text/javascript">
     Materialize.toast('<%= notice %>', 4000)
@@ -41,36 +41,42 @@
                 <img src="<%= asset_path( 'logo.png' ) %>" height="60px" width="80px"/>
             </a>
           <% end %>
-          
+
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class ="right hide-on-med-and-down">
               <% if user_signed_in?%>
                 <li><a href="/users">Administración</a></li>
                 <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
-              <% elsif nutriologo_signed_in? %>
+              <% end
+              if nutriologo_signed_in? %>
                 <li><a href="/nutriologo_pages/mis_sesiones">Mis Sesiones</a></li>
                 <li><a href="/nutriologo_pages/mis_pacientes">Mis Pacientes</a></li>
                 <li><a href="/nutriologos/sign_out" data-method="delete">Logout</a></li>
-              <% elsif paciente_signed_in? %>
+              <% end
+              if paciente_signed_in? %>
                 <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
                 <li><a href="/documents">Programa Salud 360</a></li>
+                <li><a href="/pacientes_pages/programarCita">Citas</a></li>
                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
               <% end %>
             </ul>
         </div>
       </nav>
-    
+
   <ul class="sidenav" id="mobile-demo">
     <% if user_signed_in?%>
                 <li><a href="/users">Administración</a></li>
                 <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
-              <% elsif nutriologo_signed_in? %>
+              <%end
+               if nutriologo_signed_in? %>
                 <li><a href="/nutriologo_pages/mis_sesiones">Mis Sesiones</a></li>
                 <li><a href="/nutriologo_pages/mis_pacientes">Mis Pacientes</a></li>
                 <li><a href="/nutriologos/sign_out" data-method="delete">Logout</a></li>
-              <% elsif paciente_signed_in? %>
+              <% end
+                if paciente_signed_in? %>
                 <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
                 <li><a href="/documents">Programa Salud 360</a></li>
+                <li><a href="/pacientes_pages/programarCita">Citas</a></li>
                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
               <% end %>
   </ul>

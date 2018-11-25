@@ -13,9 +13,9 @@
   <% end %>
 
   <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 col offset-s1 s3">
+    <div class="flow-text">
     <%= form_for(@sesion) do |f| %>
-
       <%= f.label :peso %>
       <%= f.number_field :peso %>
 
@@ -43,6 +43,7 @@
 
       <%= f.submit "Guardar", class: "btn btn-primary" %>
     <% end %>
+  </div>
   </div>
 </div>
 <% end %>

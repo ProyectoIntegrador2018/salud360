@@ -1,14 +1,32 @@
 module ApplicationHelper
   def horarios_disponibles
     @horarios_disponibles ||=
-      Horario.where(apartada: false).all
+      Horario.where(apartada: false).where( ['hora_disponible >= ?', DateTime.now.getlocal-0.3.day]).all
   end
   def getHora(hora_id)
     if(hora_id==nil)
 
     else
-     @getHora ||=
-      Horario.find(hora_id).hora_disponible
+     @getHora =
+      Horario.find(hora_id).hora_disponible.strftime("%d/%m/%Y a las %r")
+    end
+  end
+
+  def getDia(hora_id)
+    if(hora_id==nil)
+
+    else
+     @getDia =
+      Horario.find(hora_id).hora_disponible.strftime("%d/%m/%Y")
+    end
+  end
+
+  def getSede(hora_id)
+    if(hora_id==nil)
+
+    else
+     @getSede =
+      Horario.find(hora_id).sede
     end
   end
   def getNutriologoName(nutriologo_id)

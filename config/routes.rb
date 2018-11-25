@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   get '/sesiones_paciente/:id', to: 'nutriologo_pages#sesiones_paciente'
   get '/dietas_paciente/:id', to: 'nutriologo_pages#dietas_paciente'
 
+  patch '/cambiar_objetivo/:id', to: 'nutriologo_pages#cambiar_objetivo'
+
   namespace :user do
     root 'user#index'
   end

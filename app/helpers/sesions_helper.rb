@@ -2,46 +2,55 @@ module SesionsHelper
 
   def current_paciente_sesions
     @current_paciente_sesions ||=
-      Sesion.where(paciente_id: current_paciente.id).all
+      paciente_sesions( current_paciente.id).all
+  end
+
+  def current_paciente_next_sessions
+    @current_paciente_next_sessions ||= current_paciente_sesions.joins("INNER JOIN horarios ON horarios.id = sesions.hora_id").where( ['horarios.hora_disponible >= ?', DateTime.now.getlocal-0.3.day]).order("horarios.hora_disponible asc").all
   end
 
   def current_nutriologo_sesions
     @current_nutriologo_sesions ||=
-      Sesion.where(nutriologo_id: current_nutriologo.id).all
+      Sesion.where(nutriologo_id: current_nutriologo.id).joins("INNER JOIN horarios ON horarios.id = sesions.hora_id").where( ['horarios.hora_disponible >= ?', DateTime.now.getlocal-1.day]).order("horarios.hora_disponible asc").all
+  end
+
+  def current_nutriologo_sesionss
+    @current_nutriologo_sesionss ||=
+      Sesion.where(nutriologo_id: current_nutriologo.id).joins("INNER JOIN horarios ON horarios.id = sesions.hora_id").where.not( ['horarios.hora_disponible >= ?', DateTime.now.getlocal-1.day]).order("horarios.hora_disponible desc")
   end
 
   def paciente_metas(paciente_id)
-    @paciente_metas ||=
-      Meta.where(paciente_id: paciente_id).all
+    @paciente_metas =
+      Meta.where(paciente_id: paciente_id).order(cumplida: :asc).all
   end
 
   def cita_metas(cita_id)
-    @cita_metas ||=
+    @cita_metas =
       Meta.where(sesions_id: cita_id).all
   end
 
   def paciente_sesions(paciente_id)
-    @paciente_sesions ||=
-      Sesion.where(paciente_id: paciente_id).all
+    @paciente_sesions =
+      Sesion.where(paciente_id: paciente_id).order(created_at: :asc).all
   end
 
   def paciente_dietas(paciente_id)
-    @paciente_dietas ||=
+    @paciente_dietas =
       Dieta.where(paciente_id: paciente_id).all
   end
 
   def current_pacientes_nutriologo
-    @current_pacientes_nutriologo ||= Sesion.where(nutriologo_id: current_nutriologo.id).select(:paciente_id).distinct
+    @current_pacientes_nutriologo ||= Sesion.where(nutriologo_id: current_nutriologo.id).select(:paciente_id).distinct.joins("INNER JOIN pacientes ON pacientes.id = paciente_id").order("pacientes.created_at desc")
   end
 
 
   def paciente_tips(paciente_id)
-    @paciente_tips ||=
+    @paciente_tips =
       TipsYcomentario.where(paciente_id: paciente_id).all
   end
 
   def nutriologo_tips(nutriologo_id)
-    @nutriologo_tips ||=
+    @nutriologo_tips =
       TipsYcomentario.where(nutriologo_id: nutriologo_id).all
   end
 

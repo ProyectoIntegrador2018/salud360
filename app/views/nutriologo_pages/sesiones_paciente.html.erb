@@ -2,7 +2,7 @@
   <h1>Sesiones paciente <%=getPacienteName(@paciente) %></h1>
 
   <% numS=1%>
-  <table>
+  <table class="responsive-table centered highlight">
     <thead>
       <tr>
         <th>Información <%=getPacienteName(@paciente)%></th>
@@ -84,7 +84,7 @@
 <tr>
   <td>Datos</td>
 <% @sesions.each do |sesion| %>
-    <td><%=link_to 'Editar datos', edit_sesion_path(sesion) %></td>
+    <td><%=link_to 'Editar datos', edit_sesion_path(sesion), class: "btn-small pink lighten-2 btn-block" %></td>
 <% end %>
 
 
@@ -92,7 +92,7 @@
 <tr>
   <td>Citas</td>
 <% @sesions.each do |sesion| %>
-    <td><%=link_to 'Ver Metas Cita', "/metas_cita/"+sesion.id.to_s()%></td>
+    <td><%=link_to 'Ver Metas Cita', "/metas_cita/"+sesion.id.to_s(), class: "btn-small pink lighten-2 btn-block"%></td>
 <% end %>
 
 
@@ -101,9 +101,13 @@
 
     </tbody>
   </table>
-
-
-  <td><%= link_to 'Ver Metas Paciente', "/metas_paciente/"+@paciente.to_s() %></td>
-
+<br>
+<br>
+<br>
+  <div class="row">
+  <div class="col s4 offset-s0">
+  <%= link_to 'Ver Metas y Objetivo Paciente', "/metas_paciente/"+@paciente.to_s(), class: "btn pink darken-1 btn-block" %>
+</div>
+</div>
   <br>
                            </div>
