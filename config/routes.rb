@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get '/users/sign_up' => 'home_page#home'
+  get '/nutriologos/sign_up' => 'home_page#home'
+  get '/pacientes/sign_up' => 'home_page#home'
+
   devise_for :pacientes
   devise_for :nutriologos
   devise_for :users
@@ -23,6 +27,7 @@ Rails.application.routes.draw do
   get '/nutriologo_pages/mis_pacientes'
   get '/pacientes_pages/ver_comentarios'
   get '/pacientes_pages/ver_dietas'
+
 
 
   get '/metas_paciente/:id', to: 'nutriologo_pages#metas_paciente'
