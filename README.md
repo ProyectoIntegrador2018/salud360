@@ -24,8 +24,8 @@ Página web para el manejo de información del programa salud 360
 
 ### Environment URLS
 
-* **Production** - [TBD](TBD)
-* **Development** - https://frozen-ravine-21552.herokuapp.com/
+* **Production** - https://sistemasalud360.herokuapp.com/
+* **Development** - https://sistemasalud360.herokuapp.com/
 
 ### Da team
 
