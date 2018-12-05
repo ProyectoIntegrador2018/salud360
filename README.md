@@ -1,5 +1,7 @@
 # Salud360
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/c73a06f13786a69e4a4d/maintainability)](https://codeclimate.com/github/ProyectoIntegrador2018/salud360/maintainability)
+
 Página web para el manejo de información del programa salud 360
 
 ## Table of contents
