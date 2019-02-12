@@ -23758,3 +23758,154 @@ Processing by HomePageController#home as HTML
 Completed 200 OK in 315ms (Views: 313.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-12 17:16:54 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (947.7ms)
+  [1m[36mPaciente Load (0.6ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1515ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `dieta' for nil:NilClass):
+    57:                 <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
+    58:                 <li><a href="/documents">Programa Salud 360</a></li>
+    59:                 <li><a href="/pacientes_pages/programarCita">Citas</a></li>
+    60:                 <li><a><%= link_to 'Mi Dieta', current_user.dieta.dietaPDF.url %></a></li>
+    61:                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
+    62:               <% end %>
+    63:             </ul>
+  
+app/views/layouts/application.html.erb:60:in `_app_views_layouts_application_html_erb__1902400226807325264_70182492287040'
+Started GET "/" for 127.0.0.1 at 2019-02-12 17:17:49 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (2.6ms)
+  [1m[36mPaciente Load (0.4ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 275ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `dieta' for #<Paciente:0x007fa9411aa9e0>):
+    57:                 <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
+    58:                 <li><a href="/documents">Programa Salud 360</a></li>
+    59:                 <li><a href="/pacientes_pages/programarCita">Citas</a></li>
+    60:                 <li><a><%= link_to 'Mi Dieta', current_paciente.dieta.dietaPDF.url %></a></li>
+    61:                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
+    62:               <% end %>
+    63:             </ul>
+  
+app/views/layouts/application.html.erb:60:in `_app_views_layouts_application_html_erb__1902400226807325264_70182459692560'
+Started GET "/" for 127.0.0.1 at 2019-02-12 17:18:45 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (2.2ms)
+  [1m[36mPaciente Load (0.5ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 261ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `dieta' for #<Paciente:0x007fa93feb91d8>
+Did you mean?  dietas
+               dietas=):
+    57:                 <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
+    58:                 <li><a href="/documents">Programa Salud 360</a></li>
+    59:                 <li><a href="/pacientes_pages/programarCita">Citas</a></li>
+    60:                 <li><a><%= link_to 'Mi Dieta', current_paciente.dieta.dietaPDF.url %></a></li>
+    61:                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
+    62:               <% end %>
+    63:             </ul>
+  
+app/views/layouts/application.html.erb:60:in `_app_views_layouts_application_html_erb__1902400226807325264_70182502335740'
+Started GET "/" for 127.0.0.1 at 2019-02-12 17:18:56 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (2.3ms)
+  [1m[36mPaciente Load (0.6ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDieta Load (1.8ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 425ms (Views: 419.8ms | ActiveRecord: 6.3ms)
+
+
+Started DELETE "/pacientes/sign_out" for 127.0.0.1 at 2019-02-12 17:19:03 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QUYNxnBu6WeBrW6vNW+4CX6JlObXxa1yn7ZEQVxsntJ+z17HJtUJIHZzmaeYLQ/p/L2GBMQ9iif4KqYFZNz7/A=="}
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-12 17:19:03 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 208ms (Views: 204.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pacientes/sign_in" for 127.0.0.1 at 2019-02-12 17:19:06 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering pacientes/sessions/new.html.erb within layouts/application
+  Rendered pacientes/sessions/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 174ms (Views: 171.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pacientes/sign_in" for 127.0.0.1 at 2019-02-12 17:19:15 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aDCVpaBjjyFA05/UCOj4Shsqf5qKlD2Lo8G96YHCBVyIo7S5e3uUaOeSN5744I4FcBF5fgZbuVD0k3aJKl79bQ==", "paciente"=>{"username"=>"Eugenia Vita", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mPaciente Load (0.7ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."username" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["username", "Eugenia Vita"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pacientes
+Completed 302 Found in 175ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/pacientes" for 127.0.0.1 at 2019-02-12 17:19:15 -0600
+Processing by PacientesPagesController#index as HTML
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pacientes_pages/index.html.erb within layouts/application
+  Rendered pacientes_pages/index.html.erb within layouts/application (7.2ms)
+  [1m[36mDieta Load (0.2ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 2], ["LIMIT", 1]]
+Completed 200 OK in 250ms (Views: 246.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/pacientes/sign_out" for 127.0.0.1 at 2019-02-12 17:19:36 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KGQVtixbOqco+QUel8oet80xs/fxcEnFe9an2Q/gXJZIMKhjw9mLzUYLVNCd/opbm18zSH3x+x29UgBIZ/lqXA=="}
+  [1m[36mPaciente Load (0.3ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-12 17:19:36 -0600
+Processing by HomePageController#home as HTML
+  Rendering home_page/home.html.erb within layouts/application
+  Rendered home_page/home.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 159ms (Views: 156.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pacientes/sign_in" for 127.0.0.1 at 2019-02-12 17:19:38 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering pacientes/sessions/new.html.erb within layouts/application
+  Rendered pacientes/sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 192ms (Views: 190.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/pacientes/sign_in" for 127.0.0.1 at 2019-02-12 17:19:45 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ajgab5aEl4td5N/yZ0AjYA1beJwAKjPEKdIM3mGSF+vkQHm7zuDNpjaqriBTgv53WecMsI+ug+gJG3KzC4Xfuw==", "paciente"=>{"username"=>"Victoria Elizalde", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mPaciente Load (0.6ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."username" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["username", "Victoria Elizalde"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pacientes
+Completed 302 Found in 179ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/pacientes" for 127.0.0.1 at 2019-02-12 17:19:45 -0600
+Processing by PacientesPagesController#index as HTML
+  [1m[36mPaciente Load (0.2ms)[0m  [1m[34mSELECT  "pacientes".* FROM "pacientes" WHERE "pacientes"."id" = ? ORDER BY "pacientes"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pacientes_pages/index.html.erb within layouts/application
+  Rendered pacientes_pages/index.html.erb within layouts/application (6.5ms)
+  [1m[36mDieta Load (0.2ms)[0m  [1m[34mSELECT  "dieta".* FROM "dieta" WHERE "dieta"."paciente_id" = ? LIMIT ?[0m  [["paciente_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 215ms (Views: 210.2ms | ActiveRecord: 0.4ms)
+
+

@@ -5,6 +5,7 @@ class Paciente < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :sesions, dependent: :destroy
+  has_one :dieta
 
  def email_required?
    false
