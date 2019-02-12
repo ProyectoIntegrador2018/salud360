@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Nutriologo</th>
-      <th>Link</th>
+      <th>Dieta</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,10 +14,9 @@
   <tbody>
     <% @dietas.each do |dieta| %>
       <tr>
-        <td><%= getNutriologoName(dieta.nutriologo_id) %></td>
-        <td><%= link_to dieta.dietaPDF.file.filename, dieta.dietaPDF.url %></td>
+        <td style="vertical-align: top;"><%= getNutriologoName(dieta.nutriologo_id) %></td>
         <td><%= cl_image_tag(dieta.dietaPDF.file.public_id + ".png",
-          :width => 200, :height => 250, :crop => :fill) %> </td>
+          :width => 700, :height => 800, :crop => :scale) %> </td>
       </tr>
     <% end %>
   </tbody>
