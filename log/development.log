@@ -418,9 +418,9 @@ Completed 200 OK in 201ms (Views: 120.5ms | ActiveRecord: 3.6ms)
 
 Started GET "/admin" for 127.0.0.1 at 2018-11-09 14:23:50 -0600
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 ActionController::RoutingError (No route matches [GET] "/admin"):
-  
+
 actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -633,14 +633,14 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/pacientes_pages/programarCita.html.erb:22: syntax error, unexpected '=', expecting &. or :: or '[' or '.'
       for i=0:5
            ^
 /home/martin/Desktop/salud360/app/views/pacientes_pages/programarCita.html.erb:32: syntax error, unexpected keyword_end, expecting end-of-input
-'.freeze;   end 
+'.freeze;   end
             ^~~):
-  
+
 app/views/pacientes_pages/programarCita.html.erb:22: syntax error, unexpected '=', expecting &. or :: or '[' or '.'
 app/views/pacientes_pages/programarCita.html.erb:32: syntax error, unexpected keyword_end, expecting end-of-input
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-09 19:10:07 -0600
@@ -660,16 +660,16 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 191ms (ActiveRecord: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (wrong number of arguments (given 2, expected 4..6)):
     27:       end
-    28: 
+    28:
     29:     %>
     30:     <%= f.collection_select :peso, :collection=>a, :value_method=>b%>
-    31: 
+    31:
     32:     <%= f.submit "Guardar", class: "btn btn-primary" %>
     33:   <% end %>
-  
+
 app/views/pacientes_pages/programarCita.html.erb:30:in `block in _app_views_pacientes_pages_programar_ita_html_erb__1612196753063558424_69933982108720'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb__1612196753063558424_69933982108720'
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-09 19:11:51 -0600
@@ -689,16 +689,16 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.3ms)
 
 
-  
+
 ActionView::Template::Error (wrong number of arguments (given 2, expected 4..6)):
     27:       end
-    28: 
+    28:
     29:     %>
     30:     <%= f.collection_select :peso, :collection=>$a, :value_method=>$b%>
-    31: 
+    31:
     32:     <%= f.submit "Guardar", class: "btn btn-primary" %>
     33:   <% end %>
-  
+
 app/views/pacientes_pages/programarCita.html.erb:30:in `block in _app_views_pacientes_pages_programar_ita_html_erb__1612196753063558424_69933883630740'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb__1612196753063558424_69933883630740'
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-09 19:15:35 -0600
@@ -717,11 +717,11 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/pacientes_pages/programarCita.html.erb:30: syntax error, unexpected ',', expecting =>
 ...tion=>$a, :value_method=>$b,{},{:required=>true});@output_bu...
 ...                              ^):
-  
+
 app/views/pacientes_pages/programarCita.html.erb:30: syntax error, unexpected ',', expecting =>
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-09 19:49:08 -0600
 Processing by PacientesPagesController#mis_sesiones as HTML
@@ -739,14 +739,14 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/pacientes_pages/programarCita.html.erb:28: syntax error, unexpected '(', expecting ')'
 ...ect :peso, :options_for_select($a));@output_buffer.safe_appe...
 ...                              ^
 /home/martin/Desktop/salud360/app/views/pacientes_pages/programarCita.html.erb:36: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/pacientes_pages/programarCita.html.erb:28: syntax error, unexpected '(', expecting ')'
 app/views/pacientes_pages/programarCita.html.erb:36: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-09 19:50:03 -0600
@@ -820,9 +820,9 @@ Completed 200 OK in 224ms (Views: 222.7ms | ActiveRecord: 0.2ms)
 
 
 Started GET "/sesions" for 127.0.0.1 at 2018-11-09 20:10:05 -0600
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -883,14 +883,14 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/pacientes_pages/programarCita.html.erb:27: syntax error, unexpected '(', expecting ')'
 ...ect :peso, :options_for_select($a));@output_buffer.safe_appe...
 ...                              ^
 /home/martin/Desktop/salud360/app/views/pacientes_pages/programarCita.html.erb:38: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/pacientes_pages/programarCita.html.erb:27: syntax error, unexpected '(', expecting ')'
 app/views/pacientes_pages/programarCita.html.erb:38: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-09 20:11:35 -0600
@@ -948,9 +948,9 @@ Completed 200 OK in 233ms (Views: 232.2ms | ActiveRecord: 0.2ms)
 
 
 Started GET "/sesions" for 127.0.0.1 at 2018-11-09 20:21:14 -0600
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -1333,16 +1333,16 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 1213ms (ActiveRecord: 0.6ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `horarios_disponibles' for #<#<Class:0x00007f96c42f0de8>:0x00007f96bddfad80>):
-    16: 
+    16:
     17:     <%
     18:       $a=[]
     19:       horarios_disponibles.each do |horario|
-    20: 
+    20:
     21:           $a.push( [horario.hora_disponible, horario.id])
     22:       end
-  
+
 app/views/pacientes_pages/programarCita.html.erb:19:in `block in _app_views_pacientes_pages_programar_ita_html_erb__3161400940356051490_70142703688620'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb__3161400940356051490_70142703688620'
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-10 11:46:50 -0600
@@ -1361,16 +1361,16 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 748ms (ActiveRecord: 0.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `horarios_disponibles' for #<#<Class:0x000055fdf4308340>:0x00007f96d069e150>):
-    16: 
+    16:
     17:     <%
     18:       $a=[]
     19:       horarios_disponibles.each do |horario|
-    20: 
+    20:
     21:           $a.push( [horario.hora_disponible, horario.id])
     22:       end
-  
+
 app/views/pacientes_pages/programarCita.html.erb:19:in `block in _app_views_pacientes_pages_programar_ita_html_erb__3161400940356051490_70142859212140'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb__3161400940356051490_70142859212140'
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-10 11:49:26 -0600
@@ -1390,17 +1390,17 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 286ms (ActiveRecord: 25.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `horarios' for #<Sesion:0x00007f96d08af520>
 Did you mean?  hora_id):
-    23: 
-    24: 
+    23:
+    24:
     25:     %>
     26:     <%= f.select :horarios,$a%>
-    27: 
+    27:
     28:     <%= f.hidden_field :paciente_id, :value=>current_paciente.id  %>
-    29: 
-  
+    29:
+
 app/views/pacientes_pages/programarCita.html.erb:26:in `block in _app_views_pacientes_pages_programar_ita_html_erb__3161400940356051490_70142860383820'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb__3161400940356051490_70142860383820'
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-10 11:50:28 -0600
@@ -1710,7 +1710,7 @@ Unpermitted parameter: :hora_id
 Completed 500 Internal Server Error in 145ms (ActiveRecord: 69.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `hora' for #<Sesion:0x00007f96d032dc28>
 Did you mean?  hora_id):
     30:         <td><%= sesion.imc %></td>
@@ -1718,9 +1718,9 @@ Did you mean?  hora_id):
     32:         <td><%= sesion.edad_metabolica %></td>
     33:         <td><%= sesion.hora %></td>
     34:         <td><%= sesion.fecha %></td>
-    35: 
-    36: 
-  
+    35:
+    36:
+
 app/views/pacientes_pages/mis_sesiones.html.erb:33:in `block in _app_views_pacientes_pages_mis_sesiones_html_erb___219913512676916938_70142857796780'
 app/views/pacientes_pages/mis_sesiones.html.erb:22:in `_app_views_pacientes_pages_mis_sesiones_html_erb___219913512676916938_70142857796780'
 app/controllers/sesions_controller.rb:29:in `block (2 levels) in create'
@@ -1739,7 +1739,7 @@ Unpermitted parameter: :hora_id
 Completed 500 Internal Server Error in 217ms (ActiveRecord: 15.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `hora' for #<Sesion:0x00007f96bdfad1c8>
 Did you mean?  hora_id):
     30:         <td><%= sesion.imc %></td>
@@ -1747,9 +1747,9 @@ Did you mean?  hora_id):
     32:         <td><%= sesion.edad_metabolica %></td>
     33:         <td><%= sesion.hora %></td>
     34:         <td><%= sesion.fecha %></td>
-    35: 
-    36: 
-  
+    35:
+    36:
+
 app/views/pacientes_pages/mis_sesiones.html.erb:33:in `block in _app_views_pacientes_pages_mis_sesiones_html_erb___219913512676916938_70142700175120'
 app/views/pacientes_pages/mis_sesiones.html.erb:22:in `_app_views_pacientes_pages_mis_sesiones_html_erb___219913512676916938_70142700175120'
 app/controllers/sesions_controller.rb:29:in `block (2 levels) in create'
@@ -1769,9 +1769,9 @@ Unpermitted parameter: :hora_id
 Completed 500 Internal Server Error in 153ms (ActiveRecord: 43.4ms)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find Horario with 'id'=):
-  
+
 app/helpers/application_helper.rb:8:in `getHora'
 app/views/pacientes_pages/mis_sesiones.html.erb:33:in `block in _app_views_pacientes_pages_mis_sesiones_html_erb___219913512676916938_70142757258340'
 app/views/pacientes_pages/mis_sesiones.html.erb:22:in `_app_views_pacientes_pages_mis_sesiones_html_erb___219913512676916938_70142757258340'
@@ -1835,19 +1835,19 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 90ms (ActiveRecord: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `horario_disponible' for #<Horario:0x00007f96bd217db0>
 Did you mean?  hora_disponible
                hora_disponible?
                hora_disponible=):
     18:       $a=[]
     19:       horarios_disponibles.each do |horario|
-    20: 
+    20:
     21:           $a.push( [horario.id, horario.horario_disponible])
     22:       end
-    23: 
-    24: 
-  
+    23:
+    24:
+
 app/views/pacientes_pages/programarCita.html.erb:21:in `block (2 levels) in _app_views_pacientes_pages_programar_ita_html_erb__3161400940356051490_70142697794460'
 app/views/pacientes_pages/programarCita.html.erb:19:in `block in _app_views_pacientes_pages_programar_ita_html_erb__3161400940356051490_70142697794460'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb__3161400940356051490_70142697794460'
@@ -1887,9 +1887,9 @@ Completed 200 OK in 400ms (Views: 349.9ms | ActiveRecord: 37.4ms)
 
 
 Started GET "/sesions" for 127.0.0.1 at 2018-11-10 12:06:33 -0600
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -2877,23 +2877,23 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 189ms (ActiveRecord: 6.3ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `round' for " en ":String):
     15:       $a=[]
     16:       horarios_disponibles.each do |horario|
-    17: 
+    17:
     18:           $a.push( [horario.hora_disponible + " en " +horario.sede + " con "+ getNutriologoName(horario.nutrologo), horario.id])
     19:       end
-    20: 
-    21: 
-  
+    20:
+    21:
+
 app/views/pacientes_pages/programarCita.html.erb:18:in `block (2 levels) in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954940056500'
 app/views/pacientes_pages/programarCita.html.erb:16:in `block in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954940056500'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954940056500'
 Started GET "/sesions" for 127.0.0.1 at 2018-11-10 15:06:05 -0600
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -2955,24 +2955,24 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `nutrologo' for #<Horario:0x00007f3f4d7328d0>
 Did you mean?  nutriologo_id):
     15:       $a=[]
     16:       horarios_disponibles.each do |horario|
-    17: 
+    17:
     18:           $a.push( [ " en " +horario.sede + " con "+ getNutriologoName(horario.nutrologo), horario.id])
     19:       end
-    20: 
-    21: 
-  
+    20:
+    21:
+
 app/views/pacientes_pages/programarCita.html.erb:18:in `block (2 levels) in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954929381340'
 app/views/pacientes_pages/programarCita.html.erb:16:in `block in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954929381340'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954929381340'
 Started GET "/sesions" for 127.0.0.1 at 2018-11-10 15:06:32 -0600
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -3034,17 +3034,17 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `nutriologo' for #<Horario:0x00007f3f4e3435c0>
 Did you mean?  nutriologo_id):
     15:       $a=[]
     16:       horarios_disponibles.each do |horario|
-    17: 
+    17:
     18:           $a.push( [ " en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo), horario.id])
     19:       end
-    20: 
-    21: 
-  
+    20:
+    21:
+
 app/views/pacientes_pages/programarCita.html.erb:18:in `block (2 levels) in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954935936800'
 app/views/pacientes_pages/programarCita.html.erb:16:in `block in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954935936800'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954935936800'
@@ -3067,17 +3067,17 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `nutriologo' for #<Horario:0x000055b0bed1a2a8>
 Did you mean?  nutriologo_id):
     15:       $a=[]
     16:       horarios_disponibles.each do |horario|
-    17: 
+    17:
     18:           $a.push( [ " en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo), horario.id])
     19:       end
-    20: 
-    21: 
-  
+    20:
+    21:
+
 app/views/pacientes_pages/programarCita.html.erb:18:in `block (2 levels) in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_47108800316320'
 app/views/pacientes_pages/programarCita.html.erb:16:in `block in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_47108800316320'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_47108800316320'
@@ -3101,9 +3101,9 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 43ms (ActiveRecord: 8.9ms)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find Nutriologo with 'id'=):
-  
+
 app/helpers/application_helper.rb:14:in `getNutriologoName'
 app/views/pacientes_pages/programarCita.html.erb:18:in `block (2 levels) in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954922106480'
 app/views/pacientes_pages/programarCita.html.erb:16:in `block in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954922106480'
@@ -3136,16 +3136,16 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.3ms)
 
 
-  
+
 ActionView::Template::Error (no implicit conversion of nil into String):
     15:       $a=[]
     16:       horarios_disponibles.each do |horario|
-    17: 
+    17:
     18:           $a.push( [ " en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo_id), horario.id])
     19:       end
-    20: 
-    21: 
-  
+    20:
+    21:
+
 app/views/pacientes_pages/programarCita.html.erb:18:in `+'
 app/views/pacientes_pages/programarCita.html.erb:18:in `block (2 levels) in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954934512040'
 app/views/pacientes_pages/programarCita.html.erb:16:in `block in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954934512040'
@@ -3189,17 +3189,17 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 433ms (ActiveRecord: 12.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `to_str' for #<#<Class:0x00007f3f4e78a930>:0x00007f3f4ec9e7a0>
 Did you mean?  to_s):
     15:       $a=[]
     16:       horarios_disponibles.each do |horario|
-    17: 
+    17:
     18:           $a.push( [ to_str(horario.hora_disponible) +" en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo_id), horario.id])
     19:       end
-    20: 
-    21: 
-  
+    20:
+    21:
+
 app/views/pacientes_pages/programarCita.html.erb:18:in `block (2 levels) in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954940762360'
 app/views/pacientes_pages/programarCita.html.erb:16:in `block in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954940762360'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954940762360'
@@ -3222,16 +3222,16 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.5ms)
 
 
-  
+
 ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
     15:       $a=[]
     16:       horarios_disponibles.each do |horario|
-    17: 
+    17:
     18:           $a.push( [ to_s(horario.hora_disponible) +" en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo_id), horario.id])
     19:       end
-    20: 
-    21: 
-  
+    20:
+    21:
+
 app/views/pacientes_pages/programarCita.html.erb:18:in `to_s'
 app/views/pacientes_pages/programarCita.html.erb:18:in `block (2 levels) in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954942350140'
 app/views/pacientes_pages/programarCita.html.erb:16:in `block in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954942350140'
@@ -3263,9 +3263,9 @@ Processing by SesionsController#create as HTML
 Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (uninitialized constant SesionsController::Hora):
-  
+
 app/controllers/sesions_controller.rb:26:in `create'
 Started POST "/sesions" for 127.0.0.1 at 2018-11-10 15:12:58 -0600
 Processing by SesionsController#create as HTML
@@ -3273,9 +3273,9 @@ Processing by SesionsController#create as HTML
 Completed 500 Internal Server Error in 861ms (ActiveRecord: 1.1ms)
 
 
-  
+
 NameError (undefined local variable or method `hora_id' for #<SesionsController:0x00007f3f4eb8f710>):
-  
+
 app/controllers/sesions_controller.rb:26:in `create'
 Started POST "/sesions" for 127.0.0.1 at 2018-11-10 15:14:09 -0600
 Processing by SesionsController#create as HTML
@@ -3284,12 +3284,12 @@ Processing by SesionsController#create as HTML
 Completed 500 Internal Server Error in 110ms (ActiveRecord: 2.7ms)
 
 
-  
+
 NoMethodError (undefined method `nutrilogo_id' for #<Horario:0x00007f3f4e351eb8>
 Did you mean?  nutriologo_id
                nutriologo_id?
                nutriologo_id=):
-  
+
 app/controllers/sesions_controller.rb:26:in `create'
 Started POST "/sesions" for 127.0.0.1 at 2018-11-10 15:14:44 -0600
 Processing by SesionsController#create as HTML
@@ -3308,9 +3308,9 @@ Completed 200 OK in 1241ms (Views: 914.2ms | ActiveRecord: 238.2ms)
 
 
 Started GET "/sesions" for 127.0.0.1 at 2018-11-10 15:15:46 -0600
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -3711,16 +3711,16 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `id' for nil:NilClass):
     22:     %>
     23:     <%= f.select :hora_id,$a%>
-    24: 
+    24:
     25:     <%= f.hidden_field :paciente_id, :value=>current_paciente.id  %>
-    26: 
-    27: 
+    26:
+    27:
     28:     <%= f.submit "Guardar", class: "btn btn-primary" %>
-  
+
 app/views/pacientes_pages/programarCita.html.erb:25:in `block in _app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954926179440'
 app/views/pacientes_pages/programarCita.html.erb:9:in `_app_views_pacientes_pages_programar_ita_html_erb___3714515726605173287_69954926179440'
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-10 15:26:45 -0600
@@ -3730,14 +3730,14 @@ Processing by PacientesPagesController#mis_sesiones as HTML
 Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/pacientes_pages/mis_sesiones.html.erb:56: syntax error, unexpected keyword_end
-     end 
+     end
      ^~~
 /home/martin/Desktop/salud360/app/views/pacientes_pages/mis_sesiones.html.erb:67: syntax error, unexpected end-of-input, expecting keyword_end
           end
              ^):
-  
+
 app/views/pacientes_pages/mis_sesiones.html.erb:56: syntax error, unexpected keyword_end
 app/views/pacientes_pages/mis_sesiones.html.erb:67: syntax error, unexpected end-of-input, expecting keyword_end
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-10 15:27:59 -0600
@@ -4648,16 +4648,16 @@ Processing by PacientesPagesController#ver_metas as HTML
 Completed 500 Internal Server Error in 501ms (ActiveRecord: 0.6ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `metum_path' for #<#<Class:0x000055fa26a18710>:0x000055fa261028b0>):
     1: <h1>Mis Metas</h1>
-    2: 
+    2:
     3:     <% paciente_metas(current_paciente.id).each do |meta| %>
     4:       <%= form_for(meta) do |f| %>
-    5: 
+    5:
     6:         <%= f.text :meta%>
-    7: 
-  
+    7:
+
 app/views/pacientes_pages/ver_metas.html.erb:4:in `block in _app_views_pacientes_pages_ver_metas_html_erb__1462209858339271793_47266434391280'
 app/views/pacientes_pages/ver_metas.html.erb:3:in `_app_views_pacientes_pages_ver_metas_html_erb__1462209858339271793_47266434391280'
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-10 16:53:17 -0600
@@ -4691,16 +4691,16 @@ Processing by PacientesPagesController#ver_metas as HTML
 Completed 500 Internal Server Error in 511ms (ActiveRecord: 1.3ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `text' for #<ActionView::Helpers::FormBuilder:0x00007fc318f52a20>):
     3:     <% paciente_metas(current_paciente.id).each do |meta| %>
     4:       <%= form_for(meta) do |f| %>
-    5: 
+    5:
     6:         <%= f.text :meta%>
-    7: 
+    7:
     8:         <%= f.check_box :cumplida  %>
-    9: 
-  
+    9:
+
 app/views/pacientes_pages/ver_metas.html.erb:6:in `block (2 levels) in _app_views_pacientes_pages_ver_metas_html_erb___561231302258398192_70237975850180'
 app/views/pacientes_pages/ver_metas.html.erb:4:in `block in _app_views_pacientes_pages_ver_metas_html_erb___561231302258398192_70237975850180'
 app/views/pacientes_pages/ver_metas.html.erb:3:in `_app_views_pacientes_pages_ver_metas_html_erb___561231302258398192_70237975850180'
@@ -4725,17 +4725,17 @@ Processing by PacientesPagesController#ver_metas as HTML
 Completed 500 Internal Server Error in 590ms (ActiveRecord: 2.8ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `label_tag' for #<ActionView::Helpers::FormBuilder:0x00007fc318257aa0>
 Did you mean?  label):
     3:     <% paciente_metas(current_paciente.id).each do |meta| %>
     4:       <%= form_for(meta) do |f| %>
-    5: 
+    5:
     6:         <%= f.label_tag :meta%>
-    7: 
+    7:
     8:         <%= f.check_box :cumplida  %>
-    9: 
-  
+    9:
+
 app/views/pacientes_pages/ver_metas.html.erb:6:in `block (2 levels) in _app_views_pacientes_pages_ver_metas_html_erb___561231302258398192_70237953042740'
 app/views/pacientes_pages/ver_metas.html.erb:4:in `block in _app_views_pacientes_pages_ver_metas_html_erb___561231302258398192_70237953042740'
 app/views/pacientes_pages/ver_metas.html.erb:3:in `_app_views_pacientes_pages_ver_metas_html_erb___561231302258398192_70237953042740'
@@ -4787,9 +4787,9 @@ Completed 200 OK in 319ms (Views: 282.2ms | ActiveRecord: 18.3ms)
 
 
 Started GET "/meta/1" for 127.0.0.1 at 2018-11-10 17:07:07 -0600
-  
+
 AbstractController::ActionNotFound (The action 'show' could not be found for MetaController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -4880,9 +4880,9 @@ Completed 200 OK in 360ms (Views: 336.2ms | ActiveRecord: 1.0ms)
 
 
 Started GET "/meta/1" for 127.0.0.1 at 2018-11-10 17:10:17 -0600
-  
+
 AbstractController::ActionNotFound (The action 'show' could not be found for MetaController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -5092,16 +5092,16 @@ Processing by PacientesPagesController#ver_metas as HTML
 Completed 500 Internal Server Error in 33ms (ActiveRecord: 4.1ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `merge' for false:FalseClass):
-     5: 
+     5:
      6:         <%= f.text_field :meta, :disabled=>true%>
-     7: 
+     7:
      8:         <%= f.check_box :cumplida, meta.cumplida  %>
-     9: 
-    10: 
+     9:
+    10:
     11:         <%= f.submit "Guardar", class: "btn btn-primary" %>
-  
+
 app/views/pacientes_pages/ver_metas.html.erb:8:in `block (2 levels) in _app_views_pacientes_pages_ver_metas_html_erb___561231302258398192_70238010200140'
 app/views/pacientes_pages/ver_metas.html.erb:4:in `block in _app_views_pacientes_pages_ver_metas_html_erb___561231302258398192_70238010200140'
 app/views/pacientes_pages/ver_metas.html.erb:3:in `_app_views_pacientes_pages_ver_metas_html_erb___561231302258398192_70238010200140'
@@ -5370,9 +5370,9 @@ Completed 200 OK in 659ms (Views: 306.1ms | ActiveRecord: 290.9ms)
 
 Started GET "/metas_paciente" for 127.0.0.1 at 2018-11-10 18:39:03 -0600
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 ActionController::RoutingError (No route matches [GET] "/metas_paciente"):
-  
+
 actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -5779,7 +5779,7 @@ Processing by NutriologoPagesController#mis_sesiones as HTML
 Completed 500 Internal Server Error in 74ms (ActiveRecord: 5.7ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `meta' for #<Sesion:0x00007f2095c67250>):
     31:         <td><%= sesion.imc %></td>
     32:         <td><%= sesion.grasa_vis %></td>
@@ -5787,8 +5787,8 @@ ActionView::Template::Error (undefined method `meta' for #<Sesion:0x00007f2095c6
     34:         <td><%= sesion.meta %></td>
     35:         <td><%= sesion.hora %></td>
     36:         <td><%= sesion.fecha %></td>
-    37: 
-  
+    37:
+
 app/views/nutriologo_pages/mis_sesiones.html.erb:34:in `block in _app_views_nutriologo_pages_mis_sesiones_html_erb___1506413796259385800_69888964342700'
 app/views/nutriologo_pages/mis_sesiones.html.erb:23:in `_app_views_nutriologo_pages_mis_sesiones_html_erb___1506413796259385800_69888964342700'
 Started GET "/nutriologo_pages/mis_sesiones" for 127.0.0.1 at 2018-11-10 19:09:51 -0600
@@ -5800,7 +5800,7 @@ Processing by NutriologoPagesController#mis_sesiones as HTML
 Completed 500 Internal Server Error in 1457ms (ActiveRecord: 140.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `getPacienteName' for #<#<Class:0x00007f2092160080>:0x00007f2091ff16e0>):
     22:   <tbody>
     23:     <% current_nutriologo_sesions.each do |sesion| %>
@@ -5809,7 +5809,7 @@ ActionView::Template::Error (undefined method `getPacienteName' for #<#<Class:0x
     26:         <td><%= sesion.peso %></td>
     27:         <td><%= sesion.estatura %></td>
     28:         <td><%= sesion.grasa %></td>
-  
+
 app/views/nutriologo_pages/mis_sesiones.html.erb:25:in `block in _app_views_nutriologo_pages_mis_sesiones_html_erb___1506413796259385800_69888933300900'
 app/views/nutriologo_pages/mis_sesiones.html.erb:23:in `_app_views_nutriologo_pages_mis_sesiones_html_erb___1506413796259385800_69888933300900'
 Started GET "/nutriologo_pages/mis_sesiones" for 127.0.0.1 at 2018-11-10 19:10:35 -0600
@@ -5835,16 +5835,16 @@ Processing by SesionsController#edit as HTML
 Completed 500 Internal Server Error in 113ms (ActiveRecord: 0.3ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `meta' for #<Sesion:0x00007f2095571298>):
     42:       <%= f.number_field :edad_metabolica %>
-    43: 
+    43:
     44:       <%= f.label :meta%>
     45:       <%= f.text_field :meta %>
-    46: 
+    46:
     47:       <%= f.label :hora %>
     48:       <%= f.text_field :hora %>
-  
+
 app/views/sesions/_form.html.erb:45:in `block (2 levels) in _app_views_sesions__form_html_erb___2611687882361858665_69888960520300'
 app/views/sesions/_form.html.erb:16:in `block in _app_views_sesions__form_html_erb___2611687882361858665_69888960520300'
 app/views/sesions/_form.html.erb:1:in `_app_views_sesions__form_html_erb___2611687882361858665_69888960520300'
@@ -5871,16 +5871,16 @@ Processing by NutriologoPagesController#mis_sesiones as HTML
 Completed 500 Internal Server Error in 268ms (ActiveRecord: 17.9ms)
 
 
-  
+
 ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
     16:         <td><%= getHora(sesion.hora_id) %></td>
-    17: 
+    17:
     18:         <td><%= link_to 'Edit', edit_sesion_path(sesion) %></td>
     19:         <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+to_s(sesion.paciente_id) %></td>
-    20: 
+    20:
     21:       </tr>
     22:     <% end %>
-  
+
 app/views/nutriologo_pages/mis_sesiones.html.erb:19:in `to_s'
 app/views/nutriologo_pages/mis_sesiones.html.erb:19:in `block in _app_views_nutriologo_pages_mis_sesiones_html_erb___1506413796259385800_69888854441900'
 app/views/nutriologo_pages/mis_sesiones.html.erb:13:in `_app_views_nutriologo_pages_mis_sesiones_html_erb___1506413796259385800_69888854441900'
@@ -5905,9 +5905,9 @@ Completed 200 OK in 303ms (Views: 301.3ms | ActiveRecord: 0.9ms)
 
 
 Started GET "/sesiones_paciente/1" for 127.0.0.1 at 2018-11-10 19:37:44 -0600
-  
+
 ActionController::RoutingError (uninitialized constant SesionesController):
-  
+
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
@@ -5981,10 +5981,10 @@ Processing by NutriologoPagesController#sesiones_paciente as HTML
 Completed 500 Internal Server Error in 487ms (ActiveRecord: 0.0ms)
 
 
-  
+
 NameError (undefined local variable or method `paciente' for #<NutriologoPagesController:0x00007f2088673b80>
 Did you mean?  @paciente):
-  
+
 app/helpers/sesions_helper.rb:25:in `paciente_sesions'
 app/controllers/nutriologo_pages_controller.rb:14:in `sesiones_paciente'
 Started GET "/nutriologo_pages/mis_sesiones" for 127.0.0.1 at 2018-11-10 19:43:55 -0600
@@ -6175,17 +6175,17 @@ Processing by NutriologoPagesController#mis_pacientes as HTML
 Completed 500 Internal Server Error in 1291ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `current_current_pacientes_nutriologo' for #<#<Class:0x00007f2094fec7f0>:0x00007f2091496570>
 Did you mean?  current_pacientes_nutriologo):
      9:   </thead>
-    10: 
+    10:
     11:   <tbody>
     12:     <% current_current_pacientes_nutriologo.each do |paciente| %>
     13:       <tr>
     14:         <td><%= getPacienteName(paciente.paciente_id) %></td>
-    15: 
-  
+    15:
+
 app/views/nutriologo_pages/mis_pacientes.html.erb:12:in `_app_views_nutriologo_pages_mis_pacientes_html_erb__2536548090545710322_69888926615200'
 Started GET "/nutriologos" for 127.0.0.1 at 2018-11-10 20:02:26 -0600
 Processing by NutriologoPagesController#index as HTML
@@ -6214,16 +6214,16 @@ Processing by NutriologoPagesController#mis_pacientes as HTML
 Completed 500 Internal Server Error in 53ms (ActiveRecord: 6.5ms)
 
 
-  
+
 ActionView::Template::Error (SQLite3::SQLException: no such column: sesions.nutriologoe_id: SELECT DISTINCT "sesions"."paciente_id" FROM "sesions" WHERE "sesions"."nutriologoe_id" = ?):
      9:   </thead>
-    10: 
+    10:
     11:   <tbody>
     12:     <% current_pacientes_nutriologo.each do |paciente| %>
     13:       <tr>
     14:         <td><%= getPacienteName(paciente.paciente_id) %></td>
-    15: 
-  
+    15:
+
 app/views/nutriologo_pages/mis_pacientes.html.erb:12:in `_app_views_nutriologo_pages_mis_pacientes_html_erb__2536548090545710322_69888957866760'
 Started GET "/nutriologos" for 127.0.0.1 at 2018-11-10 20:03:27 -0600
 Processing by NutriologoPagesController#index as HTML
@@ -6289,7 +6289,7 @@ Processing by NutriologoPagesController#sesiones_paciente as HTML
 Completed 500 Internal Server Error in 109ms (ActiveRecord: 4.5ms)
 
 
-  
+
 ActionView::Template::Error (missing attribute: peso):
     26:         <tr>
     27:           <td><%=numS%></td>
@@ -6298,7 +6298,7 @@ ActionView::Template::Error (missing attribute: peso):
     30:           <td><%= sesion.estatura %></td>
     31:           <td><%= sesion.grasa %></td>
     32:           <td><%= sesion.musculo %></td>
-  
+
 app/views/nutriologo_pages/sesiones_paciente.html.erb:29:in `block in _app_views_nutriologo_pages_sesiones_paciente_html_erb___3982138237156518282_69888962312060'
 app/views/nutriologo_pages/sesiones_paciente.html.erb:24:in `_app_views_nutriologo_pages_sesiones_paciente_html_erb___3982138237156518282_69888962312060'
 Started GET "/nutriologo_pages/mis_pacientes" for 127.0.0.1 at 2018-11-10 20:39:39 -0600
@@ -6485,9 +6485,9 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 128ms (ActiveRecord: 0.4ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:14: syntax error, unexpected keyword_do, expecting keyword_end
-'.freeze;       @metas do |meta| 
+'.freeze;       @metas do |meta|
                        ^~
 /home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:25: syntax error, unexpected tSTRING_BEG, expecting ')'
 .../sesiones_paciente/"+@paciente".to_s() );@output_buffer.safe...
@@ -6498,7 +6498,7 @@ SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paci
 /home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:32: syntax error, unexpected end-of-input, expecting ')'
           end
              ^):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:14: syntax error, unexpected keyword_do, expecting keyword_end
 app/views/nutriologo_pages/metas_paciente.html.erb:25: syntax error, unexpected tSTRING_BEG, expecting ')'
 app/views/nutriologo_pages/metas_paciente.html.erb:32: unterminated string meets end of file
@@ -6522,7 +6522,7 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:25: syntax error, unexpected tSTRING_BEG, expecting ')'
 .../sesiones_paciente/"+@paciente".to_s() );@output_buffer.safe...
 ...                              ^
@@ -6532,7 +6532,7 @@ SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paci
 /home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:32: syntax error, unexpected end-of-input, expecting ')'
           end
              ^):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:25: syntax error, unexpected tSTRING_BEG, expecting ')'
 app/views/nutriologo_pages/metas_paciente.html.erb:32: unterminated string meets end of file
 app/views/nutriologo_pages/metas_paciente.html.erb:32: syntax error, unexpected end-of-input, expecting ')'
@@ -6686,11 +6686,11 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/nutriologos" for 127.0.0.1 at 2018-11-10 21:13:37 -0600
 Processing by NutriologoPagesController#index as HTML
@@ -6720,11 +6720,11 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/nutriologo_pages/mis_pacientes" for 127.0.0.1 at 2018-11-10 21:14:50 -0600
 Processing by NutriologoPagesController#mis_pacientes as HTML
@@ -6745,11 +6745,11 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-10 21:15:25 -0600
 Processing by NutriologoPagesController#metas_paciente as HTML
@@ -6759,11 +6759,11 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:36: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:36: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-10 21:15:31 -0600
 Processing by NutriologoPagesController#metas_paciente as HTML
@@ -6773,11 +6773,11 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:36: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:36: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/nutriologo_pages/mis_pacientes" for 127.0.0.1 at 2018-11-10 21:17:08 -0600
 Processing by NutriologoPagesController#mis_pacientes as HTML
@@ -6814,11 +6814,11 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/sesiones_paciente/1" for 127.0.0.1 at 2018-11-10 21:17:18 -0600
 Processing by NutriologoPagesController#sesiones_paciente as HTML
@@ -6853,11 +6853,11 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-10 21:17:49 -0600
 Processing by NutriologoPagesController#metas_paciente as HTML
@@ -6867,11 +6867,11 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.7ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:43: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/sesiones_paciente/1" for 127.0.0.1 at 2018-11-10 21:18:41 -0600
 Processing by NutriologoPagesController#sesiones_paciente as HTML
@@ -6915,17 +6915,17 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 643ms (ActiveRecord: 0.9ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `meta_index_path' for #<#<Class:0x00007f2095d842a0>:0x00007f20953148d8>
 Did you mean?  meta_path):
     2:   <h1>Metas Paciente <%=getPacienteName(@paciente)%></h1>
-    3: 
+    3:
     4:   <% @nueva_meta = Meta.new() %>
     5:     <%= form_for(@nueva_meta) do |f| %>
-    6: 
+    6:
     7:     <%= f.text_field :meta%>
-    8: 
-  
+    8:
+
 app/views/nutriologo_pages/metas_paciente.html.erb:5:in `_app_views_nutriologo_pages_metas_paciente_html_erb__489924928550264125_69888959359400'
 Started GET "/sesiones_paciente/1" for 127.0.0.1 at 2018-11-10 21:21:18 -0600
 Processing by NutriologoPagesController#sesiones_paciente as HTML
@@ -6960,17 +6960,17 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 594ms (ActiveRecord: 4.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `meta_index_path' for #<#<Class:0x00007f2095d842a0>:0x00007f20911eb460>
 Did you mean?  meta_path):
     2:   <h1>Metas Paciente <%=getPacienteName(@paciente)%></h1>
-    3: 
+    3:
     4:   <% @nueva_meta = Meta.new %>
     5:     <%= form_for(@nueva_meta) do |f| %>
-    6: 
+    6:
     7:     <%= f.text_field :meta%>
-    8: 
-  
+    8:
+
 app/views/nutriologo_pages/metas_paciente.html.erb:5:in `_app_views_nutriologo_pages_metas_paciente_html_erb__489924928550264125_69888925215800'
 Started GET "/sesiones_paciente/1" for 127.0.0.1 at 2018-11-10 21:28:25 -0600
 Processing by NutriologoPagesController#sesiones_paciente as HTML
@@ -6996,11 +6996,11 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:5: syntax error, unexpected =>, expecting keyword_end
 ...=  form_for(@nueva_meta), url=> meta_path do |f| @output_buf...
 ...                             ^~):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:5: syntax error, unexpected =>, expecting keyword_end
 Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-10 21:28:53 -0600
 Processing by NutriologoPagesController#metas_paciente as HTML
@@ -7010,11 +7010,11 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:5: syntax error, unexpected =>, expecting keyword_end
 ...  form_for(@nueva_meta), :url=> meta_path do |f| @output_buf...
 ...                             ^~):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:5: syntax error, unexpected =>, expecting keyword_end
 Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-10 21:29:25 -0600
 Processing by NutriologoPagesController#metas_paciente as HTML
@@ -7024,11 +7024,11 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/metas_paciente.html.erb:5: syntax error, unexpected tLABEL
 ...d=  form_for(@nueva_meta), url: meta_path do |f| @output_buf...
 ...                           ^~~~):
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:5: syntax error, unexpected tLABEL
 Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-10 21:30:48 -0600
 Processing by NutriologoPagesController#metas_paciente as HTML
@@ -7047,17 +7047,17 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 864ms (ActiveRecord: 0.7ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `meta_index_path' for #<#<Class:0x00007f2095d842a0>:0x00007f2095f133c8>
 Did you mean?  meta_path):
     2:   <h1>Metas Paciente <%=getPacienteName(@paciente)%></h1>
-    3: 
+    3:
     4:   <% @nueva_meta = Meta.new %>
     5:     <%= form_for(@nueva_meta)  do |f| %>
-    6: 
+    6:
     7:     <%= f.text_field :meta%>
-    8: 
-  
+    8:
+
 app/views/nutriologo_pages/metas_paciente.html.erb:5:in `_app_views_nutriologo_pages_metas_paciente_html_erb__489924928550264125_69888965656620'
 Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-10 21:33:07 -0600
 Processing by NutriologoPagesController#metas_paciente as HTML
@@ -7076,17 +7076,17 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 831ms (ActiveRecord: 14.8ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `meta_index_path' for #<#<Class:0x00007f2094d64fa0>:0x00007f2094d5b0e0>
 Did you mean?  meta_path):
     2:   <h1>Metas Paciente <%=getPacienteName(@paciente)%></h1>
-    3: 
+    3:
     4:   <% @nueva_meta = Meta.new %>
     5:     <%= form_for(get_new_meta)  do |f| %>
-    6: 
+    6:
     7:     <%= f.text_field :meta%>
-    8: 
-  
+    8:
+
 app/views/nutriologo_pages/metas_paciente.html.erb:5:in `_app_views_nutriologo_pages_metas_paciente_html_erb__489924928550264125_69888956378440'
 Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-10 21:34:10 -0600
 Processing by NutriologoPagesController#metas_paciente as HTML
@@ -7108,14 +7108,14 @@ Processing by MetaController#create as HTML
 Completed 500 Internal Server Error in 157ms (ActiveRecord: 63.0ms)
 
 
-  
+
 ActionView::MissingTemplate (Missing template meta/back, application/back with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
   * "/home/martin/Desktop/salud360/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/devise-4.5.0/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/rails_admin-1.4.2/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/kaminari-core-1.1.1/app/views"
 ):
-  
+
 app/controllers/meta_controller.rb:30:in `block (2 levels) in create'
 app/controllers/meta_controller.rb:26:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-10 21:40:25 -0600
@@ -7127,14 +7127,14 @@ Processing by MetaController#create as HTML
 Completed 500 Internal Server Error in 94ms (ActiveRecord: 48.9ms)
 
 
-  
+
 ActionView::MissingTemplate (Missing template meta/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
   * "/home/martin/Desktop/salud360/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/devise-4.5.0/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/rails_admin-1.4.2/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/kaminari-core-1.1.1/app/views"
 ):
-  
+
 app/controllers/meta_controller.rb:30:in `block (2 levels) in create'
 app/controllers/meta_controller.rb:26:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-10 21:40:54 -0600
@@ -7146,9 +7146,9 @@ Processing by MetaController#create as HTML
 Completed 500 Internal Server Error in 86ms (ActiveRecord: 20.5ms)
 
 
-  
+
 NoMethodError (undefined method `empty?' for nil:NilClass):
-  
+
 app/controllers/meta_controller.rb:30:in `block (2 levels) in create'
 app/controllers/meta_controller.rb:26:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-10 21:42:13 -0600
@@ -7157,13 +7157,13 @@ Processing by MetaController#create as HTML
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (7.8ms)[0m  [1m[32mINSERT INTO "meta" ("meta", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["meta", "jhgjhg"], ["created_at", "2018-11-11 03:42:13.757213"], ["updated_at", "2018-11-11 03:42:13.757213"]]
   [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
-Redirected to 
+Redirected to
 Completed 500 Internal Server Error in 764ms (ActiveRecord: 17.4ms)
 
 
-  
+
 NoMethodError (undefined method `back_url' for #<MetaController:0x00007f2095185490>):
-  
+
 app/controllers/meta_controller.rb:30:in `block in create'
 app/controllers/meta_controller.rb:26:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-10 21:42:54 -0600
@@ -7175,9 +7175,9 @@ Processing by MetaController#create as HTML
 Completed 500 Internal Server Error in 88ms (ActiveRecord: 38.6ms)
 
 
-  
+
 ArgumentError (missing keyword: fallback_location):
-  
+
 app/controllers/meta_controller.rb:30:in `block in create'
 app/controllers/meta_controller.rb:26:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-10 21:45:01 -0600
@@ -7190,9 +7190,9 @@ Redirected to http://localhost:3000/metas_paciente/1
 Completed 406 Not Acceptable in 92ms (ActiveRecord: 45.9ms)
 
 
-  
+
 ActionController::UnknownFormat (ActionController::UnknownFormat):
-  
+
 app/controllers/meta_controller.rb:26:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-10 21:45:47 -0600
 Processing by MetaController#create as HTML
@@ -7204,14 +7204,14 @@ Redirected to http://localhost:3000/metas_paciente/1
 Completed 406 Not Acceptable in 71ms (ActiveRecord: 21.1ms)
 
 
-  
+
 ActionController::UnknownFormat (ActionController::UnknownFormat):
-  
+
 app/controllers/meta_controller.rb:26:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-10 21:47:29 -0600
-  
+
 TypeError (no implicit conversion of Symbol into String):
-  
+
 config/routes.rb:8:in `format'
 config/routes.rb:8:in `block (2 levels) in <top (required)>'
 config/routes.rb:8:in `block in <top (required)>'
@@ -7226,9 +7226,9 @@ Redirected to http://localhost:3000/metas_paciente/1
 Completed 500 Internal Server Error in 165ms (ActiveRecord: 81.8ms)
 
 
-  
+
 AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
-  
+
 app/controllers/meta_controller.rb:31:in `block (2 levels) in create'
 app/controllers/meta_controller.rb:26:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-10 21:49:06 -0600
@@ -7241,9 +7241,9 @@ Redirected to http://localhost:3000/metas_paciente/1
 Completed 406 Not Acceptable in 82ms (ActiveRecord: 27.1ms)
 
 
-  
+
 ActionController::UnknownFormat (ActionController::UnknownFormat):
-  
+
 app/controllers/meta_controller.rb:26:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-10 21:52:34 -0600
 Processing by MetaController#create as JSON
@@ -7255,9 +7255,9 @@ Redirected to http://localhost:3000/metas_paciente/1
 Completed 406 Not Acceptable in 260ms (ActiveRecord: 251.8ms)
 
 
-  
+
 ActionController::UnknownFormat (ActionController::UnknownFormat):
-  
+
 app/controllers/meta_controller.rb:26:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-10 21:53:04 -0600
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -7270,9 +7270,9 @@ Redirected to http://localhost:3000/metas_paciente/1
 Completed 406 Not Acceptable in 84ms (ActiveRecord: 19.5ms)
 
 
-  
+
 ActionController::UnknownFormat (ActionController::UnknownFormat):
-  
+
 app/controllers/meta_controller.rb:26:in `create'
 Started GET "/sesiones_paciente/1" for 127.0.0.1 at 2018-11-10 21:53:59 -0600
 Processing by NutriologoPagesController#sesiones_paciente as HTML
@@ -7291,9 +7291,9 @@ Started POST "/meta" for 127.0.0.1 at 2018-11-10 21:54:01 -0600
 Completed 200 OK in 4225ms (Views: 2732.7ms | ActiveRecord: 1447.5ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/controllers/meta_controller.rb:50: syntax error, unexpected keyword_end, expecting end-of-input):
-  
+
 app/controllers/meta_controller.rb:50: syntax error, unexpected keyword_end, expecting end-of-input
 Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-10 21:54:12 -0600
 Processing by NutriologoPagesController#metas_paciente as HTML
@@ -7389,15 +7389,15 @@ Processing by NutriologoPagesController#metas_cita as HTML
 Completed 500 Internal Server Error in 1050ms (ActiveRecord: 0.9ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `paciente_id' for #<#<Class:0x00007f8f76110af0>:0x00007f8f76643068>
 Did you mean?  @paciente_id):
     1: <% @paciente_id=Sesion.find(@cita).paciente_id%>
     2:   <h1>Metas Paciente <%=getPacienteName(paciente_id)%></h1>
-    3: 
+    3:
     4: <h2>Agrega otra meta<h2>
     5:   <% @nueva_meta = Meta.new %>
-  
+
 app/views/nutriologo_pages/metas_cita.html.erb:2:in `_app_views_nutriologo_pages_metas_cita_html_erb__179365293194415442_70127071665520'
 Started GET "/sesiones_paciente/1" for 127.0.0.1 at 2018-11-10 22:00:20 -0600
 Processing by NutriologoPagesController#sesiones_paciente as HTML
@@ -7450,9 +7450,9 @@ Completed 200 OK in 271ms (Views: 268.8ms | ActiveRecord: 0.7ms)
 
 
 Started GET "/sesiones_paciente/" for 127.0.0.1 at 2018-11-10 22:00:46 -0600
-  
+
 ActionController::RoutingError (No route matches [GET] "/sesiones_paciente"):
-  
+
 actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -8811,18 +8811,13 @@ Migrating to CreateDieta (20181113204437)
 [0m
 Started GET "/pacientes/sign_in" for 127.0.0.1 at 2018-11-13 15:04:19 -0600
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/helpers/sesions_helper.rb:32: syntax error, unexpected <<, expecting keyword_end
-<<<<<<< HEAD
 ^~
 /home/martin/Desktop/salud360/app/helpers/sesions_helper.rb:41: syntax error, unexpected ===, expecting keyword_end
-=======
-^~~
-/home/martin/Desktop/salud360/app/helpers/sesions_helper.rb:60: syntax error, unexpected >>, expecting keyword_end
->>>>>>> c267f5d8b4e37bb9e70ce33...
 ^~
 /home/martin/Desktop/salud360/app/helpers/sesions_helper.rb:73: syntax error, unexpected end-of-input, expecting keyword_end):
-  
+
 app/helpers/sesions_helper.rb:32: syntax error, unexpected <<, expecting keyword_end
 app/helpers/sesions_helper.rb:41: syntax error, unexpected ===, expecting keyword_end
 app/helpers/sesions_helper.rb:60: syntax error, unexpected >>, expecting keyword_end
@@ -8835,9 +8830,9 @@ Processing by HomePageController#home as HTML
 Completed 500 Internal Server Error in 298ms
 
 
-  
+
 ActionView::Template::Error (couldn't find file 'highcharts' with type 'application/javascript'
-Checked in these paths: 
+Checked in these paths:
   /home/martin/Desktop/salud360/app/assets/config
   /home/martin/Desktop/salud360/app/assets/images
   /home/martin/Desktop/salud360/app/assets/javascripts
@@ -8868,13 +8863,13 @@ Checked in these paths:
   /home/martin/.rvm/gems/ruby-2.5.1/gems/materialize-sass-0.100.2/app/assets/fonts
   /home/martin/.rvm/gems/ruby-2.5.1/gems/materialize-sass-0.100.2/app/assets/images):
      5:     <%= csrf_meta_tags %>
-     6: 
+     6:
      7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
      8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      9:   </head>
-    10: 
+    10:
     11:   <body>
-  
+
 app/assets/javascripts/application.js:17
 app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3524834706133498613_69959791616280'
 Started GET "/" for 127.0.0.1 at 2018-11-13 15:05:26 -0600
@@ -8884,9 +8879,9 @@ Processing by HomePageController#home as HTML
 Completed 500 Internal Server Error in 89ms
 
 
-  
+
 ActionView::Template::Error (couldn't find file 'highcharts' with type 'application/javascript'
-Checked in these paths: 
+Checked in these paths:
   /home/martin/Desktop/salud360/app/assets/config
   /home/martin/Desktop/salud360/app/assets/images
   /home/martin/Desktop/salud360/app/assets/javascripts
@@ -8917,13 +8912,13 @@ Checked in these paths:
   /home/martin/.rvm/gems/ruby-2.5.1/gems/materialize-sass-0.100.2/app/assets/fonts
   /home/martin/.rvm/gems/ruby-2.5.1/gems/materialize-sass-0.100.2/app/assets/images):
      5:     <%= csrf_meta_tags %>
-     6: 
+     6:
      7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
      8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      9:   </head>
-    10: 
+    10:
     11:   <body>
-  
+
 app/assets/javascripts/application.js:17
 app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3524834706133498613_69959718978040'
 Started GET "/" for 127.0.0.1 at 2018-11-13 15:07:10 -0600
@@ -8980,15 +8975,15 @@ Completed 200 OK in 295ms (Views: 263.9ms | ActiveRecord: 29.6ms)
 
 
 Started GET "/admin" for 127.0.0.1 at 2018-11-13 15:17:30 -0600
-  
+
 ArgumentError (Missing :controller key on routes definition, please check your routes.):
-  
+
 config/routes.rb:26:in `block in <top (required)>'
 config/routes.rb:1:in `<top (required)>'
 Started GET "/admin" for 127.0.0.1 at 2018-11-13 15:18:28 -0600
-  
+
 ActionController::RoutingError (uninitialized constant UsersController):
-  
+
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
@@ -9046,9 +9041,9 @@ puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
 Started GET "/admin" for 127.0.0.1 at 2018-11-13 15:18:40 -0600
-  
+
 ActionController::RoutingError (uninitialized constant UsersController):
-  
+
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `const_get'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:269:in `block in constantize'
 activesupport (5.1.6) lib/active_support/inflector/methods.rb:267:in `each'
@@ -9648,9 +9643,9 @@ Processing by MetaController#create as JSON
 Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: meta):
-  
+
 app/controllers/meta_controller.rb:44:in `meta_params'
 app/controllers/meta_controller.rb:24:in `create'
 Started GET "/" for 127.0.0.1 at 2018-11-13 16:44:09 -0600
@@ -9786,9 +9781,9 @@ Processing by MetaController#create as JSON
 Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: meta):
-  
+
 app/controllers/meta_controller.rb:44:in `meta_params'
 app/controllers/meta_controller.rb:24:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-13 16:48:38 -0600
@@ -9797,9 +9792,9 @@ Processing by MetaController#create as JSON
 Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: meta):
-  
+
 app/controllers/meta_controller.rb:44:in `meta_params'
 app/controllers/meta_controller.rb:24:in `create'
 Started POST "/meta" for 127.0.0.1 at 2018-11-13 16:49:11 -0600
@@ -9808,9 +9803,9 @@ Processing by MetaController#create as JSON
 Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: meta):
-  
+
 app/controllers/meta_controller.rb:44:in `meta_params'
 app/controllers/meta_controller.rb:24:in `create'
 Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-13 16:49:34 -0600
@@ -9827,11 +9822,11 @@ Completed 200 OK in 523ms (Views: 519.7ms | ActiveRecord: 1.2ms)
 
 
 Started POST "/tips_ycomentarios" for 127.0.0.1 at 2018-11-13 16:49:39 -0600
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/controllers/tips_ycomentarios_controller.rb:46: syntax error, unexpected ',', expecting ')'
         , :remitente, :nutriologo_id,
         ^):
-  
+
 app/controllers/tips_ycomentarios_controller.rb:46: syntax error, unexpected ',', expecting ')'
 Started POST "/tips_ycomentarios" for 127.0.0.1 at 2018-11-13 16:50:10 -0600
 Processing by TipsYcomentariosController#create as HTML
@@ -9839,9 +9834,9 @@ Processing by TipsYcomentariosController#create as HTML
 Completed 400 Bad Request in 10ms
 
 
-  
+
 ActionController::ParameterMissing (param is missing or the value is empty: tips_ycomentarios):
-  
+
 app/controllers/tips_ycomentarios_controller.rb:45:in `tips_params'
 app/controllers/tips_ycomentarios_controller.rb:25:in `create'
 Started GET "/metas_paciente/1" for 127.0.0.1 at 2018-11-13 16:51:00 -0600
@@ -10068,16 +10063,16 @@ Processing by HomePageController#home as HTML
 Completed 500 Internal Server Error in 1482ms (ActiveRecord: 0.0ms)
 
 
-  
+
 ActionView::Template::Error (can't add a new key into hash during iteration):
      5:     <%= csrf_meta_tags %>
-     6: 
+     6:
      7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
      8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      9:      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     10:   </head>
-    11: 
-  
+    11:
+
 app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1187486611112594638_69812387310000'
   [1m[36mUser Load (400.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
 Completed 200 OK in 5161ms (Views: 4703.3ms | ActiveRecord: 400.0ms)
@@ -10130,7 +10125,7 @@ Processing by NutriologoPagesController#sesiones_paciente as HTML
 Completed 500 Internal Server Error in 194ms (ActiveRecord: 28.6ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `edad_matabolica' for #<Sesion:0x00007efcf746fe60>
 Did you mean?  edad_metabolica
                edad_metabolica?
@@ -10142,7 +10137,7 @@ Did you mean?  edad_metabolica
     68: <% end %>
     69: </tr>
     70: <tr>
-  
+
 app/views/nutriologo_pages/sesiones_paciente.html.erb:67:in `block in _app_views_nutriologo_pages_sesiones_paciente_html_erb__2688901888740751485_69812472799140'
 app/views/nutriologo_pages/sesiones_paciente.html.erb:66:in `_app_views_nutriologo_pages_sesiones_paciente_html_erb__2688901888740751485_69812472799140'
 Started GET "/nutriologo_pages/mis_sesiones" for 127.0.0.1 at 2018-11-13 17:33:03 -0600
@@ -10314,9 +10309,9 @@ Completed 200 OK in 444ms (Views: 441.4ms | ActiveRecord: 0.6ms)
 
 
 Started GET "/pacientes/ver_dietas" for 127.0.0.1 at 2018-11-13 20:31:24 -0600
-  
+
 ActionController::RoutingError (No route matches [GET] "/pacientes/ver_dietas"):
-  
+
 actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -10378,17 +10373,17 @@ Processing by NutriologoPagesController#dietas_paciente as HTML
 Completed 500 Internal Server Error in 1904ms (ActiveRecord: 0.5ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `dieta' for #<#<Class:0x00007f0903dfce70>:0x00007f0903540598>
 Did you mean?  @dietas):
     3: <h1>Dietas</h1>
-    4: 
+    4:
     5: <h2>Agregar dietas</h2>
     6: <%= form_with(model: dieta, local: true) do |form| %>
     7:   <% if dieta.errors.any? %>
     8:     <div id="error_explanation">
     9:       <h2><%= pluralize(dieta.errors.count, "error") %> prohibited this document from being saved:</h2>
-  
+
 app/views/nutriologo_pages/dietas_paciente.html.erb:6:in `_app_views_nutriologo_pages_dietas_paciente_html_erb__1870708867167588481_69838343636960'
 Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:32:42 -0600
 Processing by NutriologoPagesController#dietas_paciente as HTML
@@ -10406,17 +10401,17 @@ Processing by NutriologoPagesController#dietas_paciente as HTML
 Completed 500 Internal Server Error in 675ms (ActiveRecord: 0.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `dieta_index_path' for #<#<Class:0x00007f0903dfce70>:0x00007f0903268b18>
 Did you mean?  dieta_path):
     3: <h1>Dietas</h1>
-    4: 
+    4:
     5: <h2>Agregar dietas</h2>
     6: <%= form_with(model: Dieta, local: true) do |form| %>
     7:   <% if dieta.errors.any? %>
     8:     <div id="error_explanation">
     9:       <h2><%= pluralize(dieta.errors.count, "error") %> prohibited this document from being saved:</h2>
-  
+
 app/views/nutriologo_pages/dietas_paciente.html.erb:6:in `_app_views_nutriologo_pages_dietas_paciente_html_erb__1870708867167588481_69838342146720'
 Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:33:41 -0600
 Processing by NutriologoPagesController#dietas_paciente as HTML
@@ -10434,17 +10429,17 @@ Processing by NutriologoPagesController#dietas_paciente as HTML
 Completed 500 Internal Server Error in 651ms (ActiveRecord: 5.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `dieta_index_path' for #<#<Class:0x00007f0903dfce70>:0x00007f0903d7b910>
 Did you mean?  dieta_path):
-    4: 
+    4:
     5: <h2>Agregar dietas</h2>
     6: <% @dieta=Dieta.new%>
     7: <%= form_for(@dieta) do |form| %>
     8:   <% if dieta.errors.any? %>
     9:     <div id="error_explanation">
    10:       <h2><%= pluralize(dieta.errors.count, "error") %> prohibited this document from being saved:</h2>
-  
+
 app/views/nutriologo_pages/dietas_paciente.html.erb:7:in `_app_views_nutriologo_pages_dietas_paciente_html_erb__1870708867167588481_69838347960800'
 Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:34:16 -0600
 Processing by NutriologoPagesController#dietas_paciente as HTML
@@ -10454,11 +10449,11 @@ Processing by NutriologoPagesController#dietas_paciente as HTML
 Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/dietas_paciente.html.erb:7: syntax error, unexpected =>, expecting keyword_end
 ...end=  form_for(@dieta), :url => dieta_path do |form| @output...
 ...                             ^~):
-  
+
 app/views/nutriologo_pages/dietas_paciente.html.erb:7: syntax error, unexpected =>, expecting keyword_end
 Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:36:30 -0600
 Processing by NutriologoPagesController#dietas_paciente as HTML
@@ -10484,7 +10479,7 @@ Processing by NutriologoPagesController#dietas_paciente as HTML
 Completed 500 Internal Server Error in 1446ms (ActiveRecord: 0.8ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `dieta' for #<#<Class:0x00007f0903dfce70>:0x00007f09017facb8>
 Did you mean?  @dieta
                @dietas):
@@ -10494,8 +10489,8 @@ Did you mean?  @dieta
      8:   <% if dieta.errors.any? %>
      9:     <div id="error_explanation">
     10:       <h2><%= pluralize(dieta.errors.count, "error") %> prohibited this document from being saved:</h2>
-    11: 
-  
+    11:
+
 app/views/nutriologo_pages/dietas_paciente.html.erb:8:in `block in _app_views_nutriologo_pages_dietas_paciente_html_erb__1870708867167588481_69838328290160'
 app/views/nutriologo_pages/dietas_paciente.html.erb:7:in `_app_views_nutriologo_pages_dietas_paciente_html_erb__1870708867167588481_69838328290160'
 Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:38:14 -0600
@@ -10506,14 +10501,14 @@ Processing by NutriologoPagesController#dietas_paciente as HTML
 Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/dietas_paciente.html.erb:11: syntax error, unexpected =>, expecting keyword_end
 ...end=  form_for(@dieta), :url => dieta_path do |f| @output_bu...
 ...                             ^~
 /home/martin/Desktop/salud360/app/views/nutriologo_pages/dietas_paciente.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/nutriologo_pages/dietas_paciente.html.erb:11: syntax error, unexpected =>, expecting keyword_end
 app/views/nutriologo_pages/dietas_paciente.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:38:25 -0600
@@ -10524,11 +10519,11 @@ Processing by NutriologoPagesController#dietas_paciente as HTML
 Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/nutriologo_pages/dietas_paciente.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/nutriologo_pages/dietas_paciente.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/dietas_paciente/1" for 127.0.0.1 at 2018-11-13 20:38:40 -0600
 Processing by NutriologoPagesController#dietas_paciente as HTML
@@ -10549,14 +10544,14 @@ Processing by DietaController#create as HTML
 Completed 500 Internal Server Error in 1083ms (ActiveRecord: 32.9ms)
 
 
-  
+
 ActionView::MissingTemplate (Missing template dieta/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
   * "/home/martin/Desktop/salud360/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/devise-4.5.0/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/rails_admin-1.4.2/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/kaminari-core-1.1.1/app/views"
 ):
-  
+
 app/controllers/dieta_controller.rb:36:in `block (2 levels) in create'
 app/controllers/dieta_controller.rb:29:in `create'
 Started POST "/dieta" for 127.0.0.1 at 2018-11-13 20:44:46 -0600
@@ -10567,14 +10562,14 @@ Processing by DietaController#create as HTML
 Completed 500 Internal Server Error in 98ms (ActiveRecord: 14.1ms)
 
 
-  
+
 ActionView::MissingTemplate (Missing template paciente_dietas/1 with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
   * "/home/martin/Desktop/salud360/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/devise-4.5.0/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/rails_admin-1.4.2/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/kaminari-core-1.1.1/app/views"
 ):
-  
+
 app/controllers/dieta_controller.rb:36:in `block (2 levels) in create'
 app/controllers/dieta_controller.rb:29:in `create'
 Started POST "/dieta" for 127.0.0.1 at 2018-11-13 20:46:08 -0600
@@ -10585,9 +10580,9 @@ Processing by DietaController#create as HTML
 Completed 406 Not Acceptable in 74ms (ActiveRecord: 3.3ms)
 
 
-  
+
 ActionController::UnknownFormat (ActionController::UnknownFormat):
-  
+
 app/controllers/dieta_controller.rb:29:in `create'
 Started POST "/dieta" for 127.0.0.1 at 2018-11-13 20:46:29 -0600
 Processing by DietaController#create as HTML
@@ -10707,14 +10702,14 @@ Processing by MetaController#update as JSON
 Completed 500 Internal Server Error in 368ms (ActiveRecord: 227.9ms)
 
 
-  
+
 ActionView::MissingTemplate (Missing template meta/show, application/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
   * "/home/martin/Desktop/salud360/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/devise-4.5.0/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/rails_admin-1.4.2/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/kaminari-core-1.1.1/app/views"
 ):
-  
+
 app/controllers/meta_controller.rb:13:in `block (2 levels) in update'
 app/controllers/meta_controller.rb:10:in `update'
 Started GET "/pacientes_pages/programarCita" for 127.0.0.1 at 2018-11-15 08:35:55 -0600
@@ -10771,14 +10766,14 @@ Processing by MetaController#update as JSON
 Completed 500 Internal Server Error in 134ms (ActiveRecord: 60.5ms)
 
 
-  
+
 ActionView::MissingTemplate (Missing template pacientes_pages/ver_metas with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder, :haml]}. Searched in:
   * "/home/martin/Desktop/salud360/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/devise-4.5.0/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/rails_admin-1.4.2/app/views"
   * "/home/martin/.rvm/gems/ruby-2.5.1/gems/kaminari-core-1.1.1/app/views"
 ):
-  
+
 app/controllers/meta_controller.rb:13:in `block (2 levels) in update'
 app/controllers/meta_controller.rb:10:in `update'
 Started PATCH "/meta/14" for 127.0.0.1 at 2018-11-15 08:40:06 -0600
@@ -11273,9 +11268,9 @@ Completed 200 OK in 406ms (Views: 403.9ms | ActiveRecord: 1.2ms)
 
 
 Started GET "/sesions" for 127.0.0.1 at 2018-11-15 08:53:32 -0600
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -12004,9 +11999,9 @@ Completed 200 OK in 372ms (Views: 370.8ms | ActiveRecord: 0.5ms)
 
 
 Started GET "/sesions" for 127.0.0.1 at 2018-11-15 12:05:25 -0600
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -12878,16 +12873,16 @@ Processing by PacientesPagesController#mis_sesiones as HTML
 Completed 500 Internal Server Error in 1405ms (ActiveRecord: 5.5ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `peso' for #<Sesion::ActiveRecord_Relation:0x00007faf71123c70>):
      7: <%if current_paciente_sesions.first != nil%>
-     8: 
+     8:
      9:   <%= current_paciente_sesions.first.peso %>
     10:   <%= current_paciente_sesions.peso %>
     11:   <%= current_paciente_sesions.estatura %>
     12:   <%= current_paciente_sesions.grasa %>
     13:   <%= current_paciente_sesions.musculo %>
-  
+
 app/views/pacientes_pages/mis_sesiones.html.erb:10:in `_app_views_pacientes_pages_mis_sesiones_html_erb__1877052657669641774_70195747855260'
 Started GET "/pacientes_pages/mis_sesiones" for 127.0.0.1 at 2018-11-15 15:43:16 -0600
 Processing by PacientesPagesController#mis_sesiones as HTML
@@ -13224,9 +13219,9 @@ Completed 200 OK in 431ms (Views: 423.2ms | ActiveRecord: 7.2ms)
 
 
 Started GET "/sesions" for 127.0.0.1 at 2018-11-15 16:04:38 -0600
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -13415,56 +13410,56 @@ Completed 200 OK in 445ms (Views: 437.7ms | ActiveRecord: 6.0ms)
 
 Started GET "/" for 127.0.0.1 at 2018-11-23 16:51:41 -0600
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/helpers/application_helper.rb:4: syntax error, unexpected ')', expecting =>
 ...hora_disponible > DateTime.now).all
 ...                              ^):
-  
+
 app/helpers/application_helper.rb:4: syntax error, unexpected ')', expecting =>
 app/controllers/application_controller.rb:1:in `<top (required)>'
 app/controllers/home_page_controller.rb:1:in `<top (required)>'
 Started GET "/" for 127.0.0.1 at 2018-11-23 16:53:25 -0600
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/helpers/application_helper.rb:4: syntax error, unexpected '>'
 ...tada: false, hora_disponible: > DateTime.now).all
 ...                              ^
 /home/martin/Desktop/salud360/app/helpers/application_helper.rb:4: syntax error, unexpected ')', expecting keyword_end
 ...ora_disponible: > DateTime.now).all
 ...                              ^):
-  
+
 app/helpers/application_helper.rb:4: syntax error, unexpected '>'
 app/helpers/application_helper.rb:4: syntax error, unexpected ')', expecting keyword_end
 app/controllers/application_controller.rb:1:in `<top (required)>'
 app/controllers/home_page_controller.rb:1:in `<top (required)>'
 Started GET "/" for 127.0.0.1 at 2018-11-23 16:54:35 -0600
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/helpers/application_helper.rb:4: syntax error, unexpected ',', expecting =>
 ...: false, 'hora_disponible > ?', DateTime.now).all
 ...                              ^
 /home/martin/Desktop/salud360/app/helpers/application_helper.rb:4: syntax error, unexpected ')', expecting keyword_end
 ..._disponible > ?', DateTime.now).all
 ...                              ^):
-  
+
 app/helpers/application_helper.rb:4: syntax error, unexpected ',', expecting =>
 app/helpers/application_helper.rb:4: syntax error, unexpected ')', expecting keyword_end
 app/controllers/application_controller.rb:1:in `<top (required)>'
 app/controllers/home_page_controller.rb:1:in `<top (required)>'
 Started GET "/" for 127.0.0.1 at 2018-11-23 16:55:24 -0600
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/helpers/application_helper.rb:4: syntax error, unexpected ')', expecting =>
 ...disponible > ?', DateTime.now]).all
 ...                              ^):
-  
+
 app/helpers/application_helper.rb:4: syntax error, unexpected ')', expecting =>
 app/controllers/application_controller.rb:1:in `<top (required)>'
 app/controllers/home_page_controller.rb:1:in `<top (required)>'
 Started GET "/" for 127.0.0.1 at 2018-11-23 16:56:06 -0600
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/helpers/application_helper.rb:4: syntax error, unexpected '\n', expecting =>
 ..._disponible > ?', DateTime.now]
 ...                               ^
 /home/martin/Desktop/salud360/app/helpers/application_helper.rb:30: syntax error, unexpected end-of-input, expecting keyword_end):
-  
+
 app/helpers/application_helper.rb:4: syntax error, unexpected '\n', expecting =>
 app/helpers/application_helper.rb:30: syntax error, unexpected end-of-input, expecting keyword_end
 app/controllers/application_controller.rb:1:in `<top (required)>'
@@ -14723,7 +14718,7 @@ Processing by RailsAdmin::MainController#index as HTML
 Completed 500 Internal Server Error in 808ms (ActiveRecord: 30.8ms)
 
 
-  
+
 ActionView::Template::Error (can't add a new key into hash during iteration):
      7:     %meta{content: "NONE,NOARCHIVE", name: "robots"}
      8:     = csrf_meta_tag
@@ -14732,7 +14727,7 @@ ActionView::Template::Error (can't add a new key into hash during iteration):
     11:   %body.rails_admin
     12:     #admin-js{:'data-i18n-options' => I18n.t("admin.js").to_json}
     13:     -# Initialize JS simple i18n
-  
+
 /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/set.rb:189:in `replace'
 /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/set.rb:189:in `replace'
 /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/2.5.0/set.rb:405:in `collect!'
@@ -15401,9 +15396,9 @@ Processing by PacientesPagesController#programarCita as HTML
 Completed 500 Internal Server Error in 184ms (ActiveRecord: 16.4ms)
 
 
-  
+
 ActiveRecord::RecordNotFound (Couldn't find Nutriologo with 'id'=3):
-  
+
 app/helpers/application_helper.rb:18:in `getNutriologoName'
 app/views/pacientes_pages/programarCita.html.erb:19:in `block (2 levels) in _app_views_pacientes_pages_programar_ita_html_erb___3714439674615951911_70317123567360'
 app/views/pacientes_pages/programarCita.html.erb:17:in `block in _app_views_pacientes_pages_programar_ita_html_erb___3714439674615951911_70317123567360'
@@ -15787,16 +15782,16 @@ Processing by NutriologoPagesController#mis_sesiones as HTML
 Completed 500 Internal Server Error in 202ms (ActiveRecord: 15.8ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `where' for #<String:0x00007fe7f6e16578>):
     11:   </thead>
-    12: 
+    12:
     13:   <tbody>
     14:     <% current_nutriologo_sesions.each do |sesion| %>
     15:       <tr>
     16:         <td><%= getPacienteName(sesion.paciente_id) %></td>
     17:         <td><%= getHora(sesion.hora_id) %></td>
-  
+
 app/helpers/sesions_helper.rb:10:in `current_nutriologo_sesions'
 app/views/nutriologo_pages/mis_sesiones.html.erb:14:in `_app_views_nutriologo_pages_mis_sesiones_html_erb__2985987013211347161_70317128691820'
 Started GET "/nutriologos" for 127.0.0.1 at 2018-11-23 20:24:47 -0600
@@ -16393,7 +16388,7 @@ Processing by NutriologoPagesController#mis_sesiones as HTML
 Completed 500 Internal Server Error in 185ms (ActiveRecord: 4.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `sede' for #<Sesion:0x00007fe7f5e4a338>
 Did you mean?  send):
     15:     <% current_nutriologo_sesions.each do |sesion| %>
@@ -16401,9 +16396,9 @@ Did you mean?  send):
     17:         <td><%= getPacienteName(sesion.paciente_id) %></td>
     18:         <td><%= sesion.sede %></td>
     19:         <td><%= getHora(sesion.hora_id) %></td>
-    20: 
+    20:
     21:         <td><%= link_to 'Editar datos', edit_sesion_path(sesion) %></td>
-  
+
 app/views/nutriologo_pages/mis_sesiones.html.erb:18:in `block in _app_views_nutriologo_pages_mis_sesiones_html_erb__2985987013211347161_70317121656680'
 app/views/nutriologo_pages/mis_sesiones.html.erb:15:in `_app_views_nutriologo_pages_mis_sesiones_html_erb__2985987013211347161_70317121656680'
 Started GET "/nutriologos" for 127.0.0.1 at 2018-11-23 20:40:43 -0600
@@ -16416,7 +16411,7 @@ Processing by NutriologoPagesController#mis_sesiones as HTML
 Completed 500 Internal Server Error in 188ms (ActiveRecord: 1.3ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `horarios' for #<Sesion:0x000055fb86a49c50>
 Did you mean?  hora_id):
     15:     <% current_nutriologo_sesions.each do |sesion| %>
@@ -16424,9 +16419,9 @@ Did you mean?  hora_id):
     17:         <td><%= getPacienteName(sesion.paciente_id) %></td>
     18:         <td><%= sesion.horarios.sede %></td>
     19:         <td><%= getHora(sesion.hora_id) %></td>
-    20: 
+    20:
     21:         <td><%= link_to 'Editar datos', edit_sesion_path(sesion) %></td>
-  
+
 app/views/nutriologo_pages/mis_sesiones.html.erb:18:in `block in _app_views_nutriologo_pages_mis_sesiones_html_erb__2985987013211347161_47269387104420'
 app/views/nutriologo_pages/mis_sesiones.html.erb:15:in `_app_views_nutriologo_pages_mis_sesiones_html_erb__2985987013211347161_47269387104420'
 Started GET "/nutriologos" for 127.0.0.1 at 2018-11-23 20:41:21 -0600
@@ -16444,7 +16439,7 @@ Processing by NutriologoPagesController#mis_sesiones as HTML
 Completed 500 Internal Server Error in 2294ms (ActiveRecord: 5.5ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `sesion' for #<#<Class:0x00007fe7f5960f48>:0x00007fe7f59ba6d8>
 Did you mean?  sesion2
                session):
@@ -16453,9 +16448,9 @@ Did you mean?  sesion2
     36:         <td><%= getPacienteName(sesion2.paciente_id) %></td>
     37:         <td><%= getSede(sesion.hora_id) %></td>
     38:         <td><%= getHora(sesion2.hora_id) %></td>
-    39: 
+    39:
     40:         <td><%= link_to 'Editar datos', edit_sesion_path(sesion2) %></td>
-  
+
 app/views/nutriologo_pages/mis_sesiones.html.erb:37:in `block in _app_views_nutriologo_pages_mis_sesiones_html_erb__2985987013211347161_70317117213740'
 app/views/nutriologo_pages/mis_sesiones.html.erb:34:in `_app_views_nutriologo_pages_mis_sesiones_html_erb__2985987013211347161_70317117213740'
 Started GET "/nutriologos" for 127.0.0.1 at 2018-11-23 20:41:42 -0600
@@ -16809,32 +16804,32 @@ Processing by NutriologoPagesController#mis_sesiones as HTML
 Completed 500 Internal Server Error in 413ms (ActiveRecord: 326.0ms)
 
 
-  
+
 ActionView::Template::Error (SQLite3::SQLException: no such column: sesions.hora_disponible: SELECT "sesions".* FROM "sesions" INNER JOIN horarios ON horarios.id = sesions.hora_id WHERE "sesions"."nutriologo_id" = ? ORDER BY "sesions"."hora_disponible" DESC):
     12:   </thead>
-    13: 
+    13:
     14:   <tbody>
     15:     <% current_nutriologo_sesions.each do |sesion| %>
     16:       <tr>
     17:         <td><%= getPacienteName(sesion.paciente_id) %></td>
     18:         <td><%= getSede(sesion.hora_id) %></td>
-  
+
 app/views/nutriologo_pages/mis_sesiones.html.erb:15:in `_app_views_nutriologo_pages_mis_sesiones_html_erb__2985987013211347161_70317127566180'
 Started GET "/nutriologos" for 127.0.0.1 at 2018-11-23 20:53:01 -0600
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/helpers/sesions_helper.rb:10: syntax error, unexpected ':'
 ...order(horarios.hora_disponible: :desc).all
 ...                              ^):
-  
+
 app/helpers/sesions_helper.rb:10: syntax error, unexpected ':'
 app/controllers/application_controller.rb:1:in `<top (required)>'
 app/controllers/nutriologo_pages_controller.rb:1:in `<top (required)>'
 Started GET "/nutriologos" for 127.0.0.1 at 2018-11-23 20:53:25 -0600
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/helpers/sesions_helper.rb:10: syntax error, unexpected ':', expecting ')'
 ...er('horarios.hora_disponible' :desc).all
 ...                              ^):
-  
+
 app/helpers/sesions_helper.rb:10: syntax error, unexpected ':', expecting ')'
 app/controllers/application_controller.rb:1:in `<top (required)>'
 app/controllers/nutriologo_pages_controller.rb:1:in `<top (required)>'
@@ -16866,16 +16861,16 @@ Processing by NutriologoPagesController#mis_sesiones as HTML
 Completed 500 Internal Server Error in 74ms (ActiveRecord: 2.5ms)
 
 
-  
+
 ActionView::Template::Error (SQLite3::SQLException: no such column: horarios.hor_disponible: SELECT "sesions".* FROM "sesions" INNER JOIN horarios ON horarios.id = sesions.hora_id WHERE "sesions"."nutriologo_id" = ? ORDER BY horarios.hor_disponible desc):
     12:   </thead>
-    13: 
+    13:
     14:   <tbody>
     15:     <% current_nutriologo_sesions.each do |sesion| %>
     16:       <tr>
     17:         <td><%= getPacienteName(sesion.paciente_id) %></td>
     18:         <td><%= getSede(sesion.hora_id) %></td>
-  
+
 app/views/nutriologo_pages/mis_sesiones.html.erb:15:in `_app_views_nutriologo_pages_mis_sesiones_html_erb__2985987013211347161_70317122299400'
 Started GET "/nutriologos" for 127.0.0.1 at 2018-11-23 20:59:01 -0600
 Processing by NutriologoPagesController#mis_sesiones as HTML
@@ -18213,11 +18208,11 @@ Processing by NutriologoPagesController#mis_pacientes as HTML
 Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.7ms)
 
 
-  
+
 SyntaxError (/home/martin/Desktop/salud360/app/views/layouts/application.html.erb:87: syntax error, unexpected keyword_ensure, expecting end-of-input
           ensure
           ^~~~~~):
-  
+
 app/views/layouts/application.html.erb:87: syntax error, unexpected keyword_ensure, expecting end-of-input
 Started GET "/nutriologo_pages/mis_pacientes" for 127.0.0.1 at 2018-11-23 23:14:02 -0600
 Processing by NutriologoPagesController#mis_pacientes as HTML
@@ -18950,14 +18945,14 @@ Processing by PacientesPagesController#ver_metas as HTML
 Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `name' for #<Paciente:0x00007fc18d78b468>):
     1: <div class="card" style="width: 90%; margin: auto; text-align="center">
     2: <h1>Estas son tus metas <%=current_paciente.name%>, ¡¡Ánimo!!</h1>
     3: <br>
     4: <br>
     5: <%@metas = paciente_metas(current_paciente.id)%>
-  
+
 app/views/pacientes_pages/ver_metas.html.erb:2:in `_app_views_pacientes_pages_ver_metas_html_erb___4437785853413603193_70234639538720'
 Started GET "/pacientes_pages/ver_metas" for 127.0.0.1 at 2018-11-24 10:49:11 -0600
 Processing by PacientesPagesController#ver_metas as HTML
@@ -20047,9 +20042,9 @@ Completed 200 OK in 415ms (Views: 411.5ms | ActiveRecord: 2.6ms)
 
 
 Started GET "/sesions" for 127.0.0.1 at 2018-11-24 11:50:36 -0600
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -21391,9 +21386,9 @@ Completed 200 OK in 406ms (Views: 388.6ms | ActiveRecord: 3.1ms)
 
 
 Started GET "/sesions/3" for 127.0.0.1 at 2018-11-24 12:47:00 -0600
-  
+
 AbstractController::ActionNotFound (The action 'show' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -21672,9 +21667,9 @@ Completed 200 OK in 985ms (Views: 488.7ms | ActiveRecord: 479.3ms)
 
 
 Started GET "/sesions" for 127.0.0.1 at 2018-11-24 12:49:13 -0600
-  
+
 AbstractController::ActionNotFound (The action 'index' could not be found for SesionsController):
-  
+
 actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
 actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
 actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
@@ -22349,16 +22344,16 @@ Processing by NutriologoPagesController#metas_paciente as HTML
 Completed 500 Internal Server Error in 3579ms (ActiveRecord: 9.5ms)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `no' for #<#<Class:0x00007fc18edb1af8>:0x00007fc18eee9e70>):
     32:           <%if meta.cumplida%>
     33:           <td> <%= si %></td>
     34:           <%else%>
     35:           <td> <%= no %></td>
     36:           <%end%>
-    37: 
+    37:
     38:         </tr>
-  
+
 app/views/nutriologo_pages/metas_paciente.html.erb:35:in `block in _app_views_nutriologo_pages_metas_paciente_html_erb___4240563076725462463_70234651711280'
 app/views/nutriologo_pages/metas_paciente.html.erb:29:in `_app_views_nutriologo_pages_metas_paciente_html_erb___4240563076725462463_70234651711280'
 Started GET "/metas_paciente/2" for 127.0.0.1 at 2018-11-24 13:13:18 -0600
@@ -23251,9 +23246,9 @@ Processing by NutriologoPagesController#cambiar_objetivo as HTML
 Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms)
 
 
-  
+
 NoMethodError (undefined method `update' for nil:NilClass):
-  
+
 app/controllers/nutriologo_pages_controller.rb:34:in `cambiar_objetivo'
 Started PATCH "/cambiar_objetivo/1" for 127.0.0.1 at 2018-11-24 14:36:34 -0600
 Processing by NutriologoPagesController#cambiar_objetivo as HTML
@@ -23767,7 +23762,7 @@ Processing by HomePageController#home as HTML
 Completed 500 Internal Server Error in 1515ms (ActiveRecord: 2.0ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `dieta' for nil:NilClass):
     57:                 <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
     58:                 <li><a href="/documents">Programa Salud 360</a></li>
@@ -23776,7 +23771,7 @@ ActionView::Template::Error (undefined method `dieta' for nil:NilClass):
     61:                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
     62:               <% end %>
     63:             </ul>
-  
+
 app/views/layouts/application.html.erb:60:in `_app_views_layouts_application_html_erb__1902400226807325264_70182492287040'
 Started GET "/" for 127.0.0.1 at 2019-02-12 17:17:49 -0600
 Processing by HomePageController#home as HTML
@@ -23786,7 +23781,7 @@ Processing by HomePageController#home as HTML
 Completed 500 Internal Server Error in 275ms (ActiveRecord: 0.4ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `dieta' for #<Paciente:0x007fa9411aa9e0>):
     57:                 <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
     58:                 <li><a href="/documents">Programa Salud 360</a></li>
@@ -23795,7 +23790,7 @@ ActionView::Template::Error (undefined method `dieta' for #<Paciente:0x007fa9411
     61:                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
     62:               <% end %>
     63:             </ul>
-  
+
 app/views/layouts/application.html.erb:60:in `_app_views_layouts_application_html_erb__1902400226807325264_70182459692560'
 Started GET "/" for 127.0.0.1 at 2019-02-12 17:18:45 -0600
 Processing by HomePageController#home as HTML
@@ -23805,7 +23800,7 @@ Processing by HomePageController#home as HTML
 Completed 500 Internal Server Error in 261ms (ActiveRecord: 3.2ms)
 
 
-  
+
 ActionView::Template::Error (undefined method `dieta' for #<Paciente:0x007fa93feb91d8>
 Did you mean?  dietas
                dietas=):
@@ -23816,7 +23811,7 @@ Did you mean?  dietas
     61:                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
     62:               <% end %>
     63:             </ul>
-  
+
 app/views/layouts/application.html.erb:60:in `_app_views_layouts_application_html_erb__1902400226807325264_70182502335740'
 Started GET "/" for 127.0.0.1 at 2019-02-12 17:18:56 -0600
 Processing by HomePageController#home as HTML
@@ -24164,7 +24159,7 @@ Processing by RailsAdmin::MainController#delete as HTML
 Completed 500 Internal Server Error in 187ms (ActiveRecord: 3.6ms)
 
 
-  
+
 ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.dieta_id: SELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."dieta_id" = ? LIMIT ?):
      8:   - else
      9:     = wording
@@ -24173,7 +24168,7 @@ ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.
     12:       - humanized_association = @abstract_model.model.human_attribute_name association.name
     13:       - limit = children.count > 12 ? 10 : children.count
     14:       - children.first(limit).each do |child|
-  
+
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `initialize'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `new'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `prepare'
@@ -24351,7 +24346,7 @@ Processing by RailsAdmin::MainController#delete as HTML
 Completed 500 Internal Server Error in 130ms (ActiveRecord: 2.2ms)
 
 
-  
+
 ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.dieta_id: SELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."dieta_id" = ? LIMIT ?):
      8:   - else
      9:     = wording
@@ -24360,7 +24355,7 @@ ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.
     12:       - humanized_association = @abstract_model.model.human_attribute_name association.name
     13:       - limit = children.count > 12 ? 10 : children.count
     14:       - children.first(limit).each do |child|
-  
+
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `initialize'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `new'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `prepare'
@@ -24559,7 +24554,7 @@ Processing by RailsAdmin::MainController#edit as HTML
 Completed 500 Internal Server Error in 221ms (ActiveRecord: 2.4ms)
 
 
-  
+
 ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.dieta_id: SELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."dieta_id" = ? LIMIT ?):
      7:     selected = config.abstract_model.get(related_id)
      8:     selected_id = selected.send(field.associated_primary_key)
@@ -24568,7 +24563,7 @@ ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.
     11:     selected_id = field.selected_id
     12:     selected_name = field.formatted_value
     13:   end
-  
+
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `initialize'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `new'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `prepare'
@@ -24796,7 +24791,7 @@ Processing by RailsAdmin::MainController#edit as HTML
 Completed 500 Internal Server Error in 220ms (ActiveRecord: 3.0ms)
 
 
-  
+
 ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.dieta_id: SELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."dieta_id" = ? LIMIT ?):
      7:     selected = config.abstract_model.get(related_id)
      8:     selected_id = selected.send(field.associated_primary_key)
@@ -24805,7 +24800,7 @@ ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.
     11:     selected_id = field.selected_id
     12:     selected_name = field.formatted_value
     13:   end
-  
+
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `initialize'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `new'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `prepare'
@@ -25039,7 +25034,7 @@ Processing by RailsAdmin::MainController#show as HTML
 Completed 500 Internal Server Error in 118ms (ActiveRecord: 2.3ms)
 
 
-  
+
 ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.dieta_id: SELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."dieta_id" = ? LIMIT ?):
     1: - @model_config.show.with(object: @object, view: self, controller: self.controller).visible_groups.each do |fieldset|
     2:   - unless (fields = fieldset.with(object: @object, view: self, controller: self.controller).visible_fields).empty?
@@ -25047,7 +25042,7 @@ ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.
     4:       .fieldset
     5:         %h4
     6:           = fieldset.label
-  
+
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `initialize'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `new'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `prepare'
@@ -25211,7 +25206,7 @@ Processing by RailsAdmin::MainController#show as HTML
 Completed 500 Internal Server Error in 87ms (ActiveRecord: 2.2ms)
 
 
-  
+
 ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.dieta_id: SELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."dieta_id" = ? LIMIT ?):
     1: - @model_config.show.with(object: @object, view: self, controller: self.controller).visible_groups.each do |fieldset|
     2:   - unless (fields = fieldset.with(object: @object, view: self, controller: self.controller).visible_fields).empty?
@@ -25219,7 +25214,7 @@ ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.
     4:       .fieldset
     5:         %h4
     6:           = fieldset.label
-  
+
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `initialize'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `new'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `prepare'
@@ -25403,7 +25398,7 @@ Processing by RailsAdmin::MainController#index as HTML
 Completed 500 Internal Server Error in 162ms (ActiveRecord: 2.4ms)
 
 
-  
+
 ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.dieta_id: SELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."dieta_id" = ? LIMIT ?):
      99:             - if @other_left_link ||= other_left && index_path(params.except('set').merge(params[:set].to_i != 1 ? {set: (params[:set].to_i - 1)} : {}))
     100:               %td.other.left= link_to "...", @other_left_link, class: 'pjax'
@@ -25412,7 +25407,7 @@ ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.
     103:               %td{class: "#{property.css_class} #{property.type_css_class}", title: strip_tags(value.to_s)}= value
     104:             - if @other_right_link ||= other_right && index_path(params.merge(set: (params[:set].to_i + 1)))
     105:               %td.other.right= link_to "...", @other_right_link, class: 'pjax'
-  
+
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `initialize'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `new'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `prepare'
@@ -25589,7 +25584,7 @@ Processing by RailsAdmin::MainController#index as HTML
 Completed 500 Internal Server Error in 145ms (ActiveRecord: 2.9ms)
 
 
-  
+
 ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.dieta_id: SELECT  "nutriologos".* FROM "nutriologos" WHERE "nutriologos"."dieta_id" = ? LIMIT ?):
      99:             - if @other_left_link ||= other_left && index_path(params.except('set').merge(params[:set].to_i != 1 ? {set: (params[:set].to_i - 1)} : {}))
     100:               %td.other.left= link_to "...", @other_left_link, class: 'pjax'
@@ -25598,7 +25593,7 @@ ActionView::Template::Error (SQLite3::SQLException: no such column: nutriologos.
     103:               %td{class: "#{property.css_class} #{property.type_css_class}", title: strip_tags(value.to_s)}= value
     104:             - if @other_right_link ||= other_right && index_path(params.merge(set: (params[:set].to_i + 1)))
     105:               %td.other.right= link_to "...", @other_right_link, class: 'pjax'
-  
+
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `initialize'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `new'
 sqlite3 (1.3.13) lib/sqlite3/database.rb:91:in `prepare'
