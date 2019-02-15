@@ -2,7 +2,7 @@ module SesionsHelper
 
   def current_paciente_sesions
     @current_paciente_sesions ||=
-      paciente_sesions( current_paciente.id).all
+      paciente_sesions(current_paciente.id).all
   end
 
   def current_paciente_next_sessions
