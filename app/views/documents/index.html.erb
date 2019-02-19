@@ -7,27 +7,25 @@
     <h4>Bienvenido al programa...</h4>
   </div>
 </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Link</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @document.each do |document| %>
+  <div class="row">
+    <div class="col s12">
+      <div class="card" style="width: 91%; margin: auto; text-align='center'">
+        <div class="card-content blue-grey-text center-align">
 
-  <tbody>
-    <% @document.each do |document| %>
-      <tr>
-        <td><%= document.id %></td>
-        <td><%= link_to document.asset.file.filename, document.asset.url %></td>
-        <td><%= cl_image_tag(document.asset.file.public_id + ".png",
-          :width => 200, :height => 250, :crop => :fill) %> </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <div><%= cl_image_tag(document.asset.file.public_id + ".png",
+                                :width => 600, :height => 800, :crop => :fit) %> </div>
+          <span class="card-title"><%= document.asset.file.filename %></span>
+        </div>
 
-<br>
-                     </div>
+        <div class="card-action center-align blue lighten-4">
+          <%= link_to document.asset.url do %>
+          <%= content_tag :span, "Ver documento completo", :class => "blue-grey-text home-link" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
