@@ -18,14 +18,19 @@
     </div>
   <%end%>
 
+  <br>
 <div class="card" style="width: 90%; margin: auto; text-align="center">
-<h1>Agrega cita</h1>
+  <div class ="row">
+    <div class="col s12">
+      <h4>Agrega cita</h4>
+   </div>
+  </div>
   <br>
   <%if horarios_disponibles.length >0%>
-  <div class="row">
-  <div class="col offset-s1">
-    <h3> Elije un horario </h3>
-  </div>
+  <div class ="row">
+    <div class="col s12">
+      <h5> Elije un horario </h3>
+   </div>
   </div>
 
   <div class="row">
@@ -54,7 +59,11 @@
     </div>
     </div>
     <%else%>
-      <h2>Lo sentimos, pero por ahora no hay horarios disponibles</h2>
+      <div class ="row">
+        <div class="col s10 offset-s1 blue lighten-4">
+          <h5>Lo sentimos, pero por ahora no hay horarios disponibles</h5>
+        </div>
+      </div>
     <%end%>
 <br>
 
