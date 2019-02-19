@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-### User's case
+### Topic
 
 
 Tareas:
@@ -17,7 +17,8 @@ Criterios de Aceptación:
 - [ ] Todas las tareas completadas
 
 Definition of Done:
-- [ ] Funciona correctamente en produccion.
+- [ ] PR linked with issue closed 
+- [ ] Funciona correctamente en staging.
 - [ ] Pasar pruebas del documento de pruebas.
 - [ ] Cada tarea aprobada por un miembro del equipo que no trabajo en la tarea.
 - [ ] Diseño es aprovado por el product owner
