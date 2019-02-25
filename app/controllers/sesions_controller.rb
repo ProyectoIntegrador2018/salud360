@@ -48,6 +48,6 @@ class SesionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def sesion_params
       params.require(:sesion).permit(:peso, :estatura, :grasa,
-        :musculo, :agua, :imc, :grasa_vis, :edad_metabolica, :hora_id, :paciente_id)
+        :musculo, :cintura, :imc, :grasa_vis, :edad_metabolica, :hora_id, :paciente_id)
     end
 end
