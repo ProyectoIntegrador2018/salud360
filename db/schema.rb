@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181124201643) do
+ActiveRecord::Schema.define(version: 20190225033950) do
 
   create_table "dieta", force: :cascade do |t|
     t.string "dietaPDF"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20181124201643) do
     t.string "asset"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "description"
   end
 
   create_table "horarios", force: :cascade do |t|
@@ -84,7 +86,6 @@ ActiveRecord::Schema.define(version: 20181124201643) do
     t.float "estatura"
     t.float "grasa"
     t.float "musculo"
-    t.float "agua"
     t.float "imc"
     t.float "grasa_vis"
     t.integer "edad_metabolica"
@@ -93,6 +94,7 @@ ActiveRecord::Schema.define(version: 20181124201643) do
     t.integer "nutriologo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "cintura"
     t.index ["nutriologo_id"], name: "index_sesions_on_nutriologo_id"
     t.index ["paciente_id"], name: "index_sesions_on_paciente_id"
   end
