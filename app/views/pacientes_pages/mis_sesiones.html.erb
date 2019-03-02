@@ -238,7 +238,11 @@
     <%= link_to 'Ver Metas', "/pacientes_pages/ver_metas", class: "btn-large pink darken-1 btn-block" %>
   </div>
   <div class="col s4 offset-s0">
-    <%= link_to 'Ver Dietas', "/pacientes_pages/ver_dietas", class: "btn-large pink darken-1 btn-block" %>
+    <% if current_paciente.dieta.present? %>
+      <li><a><%= link_to 'Ver Dieta', current_paciente.dieta.dietaPDF.url, class: "btn-large pink darken-1 btn-block" %></a></li>
+    <% else %>
+      <li><a href="/pacientes_pages/ver_dietas" class="btn-large pink darken-1 btn-block">Ver Dieta</a></li>
+    <% end %>
   </div>
 
 
