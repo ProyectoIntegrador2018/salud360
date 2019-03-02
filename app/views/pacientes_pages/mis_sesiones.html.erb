@@ -17,64 +17,120 @@
   </div>
 
   <%if current_paciente_sesions.first != nil%>
+
+
   <div class="row">
-    <div class="col s1 offset-s2">
-      <div class="card center-align">
-        <span class="card-title">Peso</span>
-        <p> <%= current_paciente_sesions.first.peso %>kg </p>
+
+    <div class="col s10 offset-s1 m6 l3">
+      <div class="card">
+        <div class="card-content">
+          <div class="icon-block">
+            <div class="card-title">
+              <span class="center">Peso</span>
+            </div>
+            <p> <%= current_paciente_sesions.first.peso %> kg.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="col s1">
-      <div class="card center-align">
-        <span class="card-title">Estatura</span>
-        <p><%= current_paciente_sesions.first.estatura %>m</p>
+    <div class="col s10 offset-s1 m6 l3">
+      <div class="card">
+        <div class="card-content">
+          <div class="icon-block">
+            <div class="card-title">
+              <span class="center">Estatura</span>
+            </div>
+            <p><%= current_paciente_sesions.first.estatura %> m.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="col s1">
-      <div class="card center-align">
-        <span class="card-title">Grasa</span>
-        <p><%= current_paciente_sesions.first.grasa %>%</p>
-      </div>
-    </div>
-
-    <div class="col s1">
-      <div class="card center-align">
-        <span class="card-title">Musculo</span>
-        <p><%= current_paciente_sesions.first.musculo %>%</p>
-      </div>
-    </div>
-
-    <div class="col s1">
-      <div class="card center-align">
-        <span class="card-title">Cintura</span>
-        <p><%= current_paciente_sesions.first.cintura %> cm</p>
+    <div class="col s10 offset-s1 m6 l3">
+      <div class="card">
+        <div class="card-content">
+          <div class="icon-block">
+            <div class="card-title">
+              <span class="center">Grasa</span>
+            </div>
+            <p><%= current_paciente_sesions.first.grasa %>%</p>
+          </div>
+        </div>
       </div>
     </div>
 
 
-    <div class="col s1">
-      <div class="card center-align">
-        <span class="card-title">IMC</span>
-        <p><%= current_paciente_sesions.first.imc %></p>
+    <div class="col s10 offset-s1 m6 l3">
+      <div class="card">
+        <div class="card-content">
+          <div class="icon-block">
+            <div class="card-title">
+              <span class="center">Musculo</span>
+            </div>
+            <p><%= current_paciente_sesions.first.musculo %>%</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="col s1">
-      <div class="card center-align">
-        <span class="card-title">G.V.</span>
-        <p><%= current_paciente_sesions.first.grasa_vis %></p>
+    <div class="col s10 offset-s1 m6 l3">
+      <div class="card">
+        <div class="card-content">
+          <div class="icon-block">
+            <div class="card-title">
+              <span class="center">Cintura</span>
+            </div>
+            <p><%= current_paciente_sesions.first.cintura %> cm.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="col s1">
-      <div class="card center-align">
-        <span class="card-title">E.M.</span>
-        <p><%= current_paciente_sesions.first.edad_metabolica %></p>
+
+    <div class="col s10 offset-s1 m6 l3">
+      <div class="card">
+        <div class="card-content">
+          <div class="icon-block">
+            <div class="card-title">
+              <span class="center">IMC</span>
+            </div>
+            <p><%= current_paciente_sesions.first.imc %></p>
+          </div>
+        </div>
       </div>
     </div>
+
+
+    <div class="col s10 offset-s1 m6 l3">
+      <div class="card">
+        <div class="card-content">
+          <div class="icon-block">
+            <div class="card-title">
+              <span class="center">G.V.</span>
+            </div>
+            <p><%= current_paciente_sesions.first.grasa_vis %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col s10 offset-s1 m6 l3">
+      <div class="card">
+        <div class="card-content">
+          <div class="icon-block">
+            <div class="card-title">
+              <span class="center">E.M.</span>
+            </div>
+            <p><%= current_paciente_sesions.first.edad_metabolica %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 
 <% else %>
   <div class ="row">
