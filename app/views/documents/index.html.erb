@@ -25,7 +25,7 @@
 </div>
 
 <!-- Documentos -->
-<% @document.each do |document| %>
+<% @document.each_with_index do |document,index| %>
   <div class="row">
     <div class="col s12">
       <div class="card" style="width: 91%; margin: auto; text-align='center'">
