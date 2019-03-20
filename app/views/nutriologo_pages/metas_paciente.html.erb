@@ -1,9 +1,9 @@
 <div class="card" style="width: 90%; margin: auto; text-align="center">
-  <h1>Metas y Objetivo del paciente <%=getPacienteName(@paciente)%></h1>
+  <h4>Metas y Objetivo del paciente <%=getPacienteName(@paciente)%></h4>
   <br>
   <br>
 
-<h2>Cambia el objetivo del paciente</h2>
+<h5>Cambia el objetivo del paciente</h5>
 <%= form_for (@ppaciente) , :url => '/cambiar_objetivo/'+@paciente.to_s()  do |f| %>
 
 <%= f.text_field :objetivo%>
@@ -11,7 +11,7 @@
 <%= f.submit "Cambiar", class: "btn btn-primary" %>
 
 <% end %>
-<h2>Agrega otra meta</h2>
+<h5>Agrega otra meta</h5>
   <% @nueva_meta = Meta.new %>
     <%= form_for (@nueva_meta) , :url => meta_path  do |f| %>
 

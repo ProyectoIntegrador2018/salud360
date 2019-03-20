@@ -239,9 +239,9 @@
   </div>
   <div class="col s4 offset-s0">
     <% if current_paciente.dieta.present? %>
-      <li><a><%= link_to 'Ver Dieta', current_paciente.dieta.dietaPDF.url, class: "btn-large pink darken-1 btn-block" %></a></li>
+      <%= link_to 'Mi Dieta', current_paciente.dieta.dietaPDF.url, class: "btn-large pink darken-1 btn-block" %>
     <% else %>
-      <li><a href="/pacientes_pages/ver_dietas" class="btn-large pink darken-1 btn-block">Ver Dieta</a></li>
+      <%= link_to 'Mi Dieta', "/pacientes_pages/ver_dietas", class: "btn-large pink darken-1 btn-block" %>
     <% end %>
   </div>
 
