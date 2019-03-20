@@ -55,7 +55,7 @@
               <% end
               if paciente_signed_in? %>
                 <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
-                <li><a href="/documents">Programa Salud 360</a></li>
+                <li><a href="/documents">Material de Sesiones</a></li>
                 <li><a href="/pacientes_pages/programarCita">Citas</a></li>
                 <% if current_paciente.dieta.present? %>
                   <li><a><%= link_to 'Mi Dieta', current_paciente.dieta.dietaPDF.url %></a></li>
@@ -80,7 +80,7 @@
               <% end
                 if paciente_signed_in? %>
                 <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
-                <li><a href="/documents">Programa Salud 360</a></li>
+                <li><a href="/documents">Material de Sesiones</a></li>
                 <li><a href="/pacientes_pages/programarCita">Citas</a></li>
                 <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
               <% end %>

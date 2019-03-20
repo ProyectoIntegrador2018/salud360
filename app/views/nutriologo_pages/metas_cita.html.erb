@@ -1,8 +1,8 @@
 <% @paciente_id=Sesion.find(@cita).paciente_id%>
 <div class="card" style="width: 90%; margin: auto; text-align="center">
-  <h1>Metas Paciente <%=getPacienteName(@paciente_id)%></h1>
+  <h4>Metas Paciente <%=getPacienteName(@paciente_id)%></h4>
 
-<h2>Agrega otra meta</h2>
+<h5>Agrega otra meta</h5>
   <% @nueva_meta = Meta.new %>
     <%= form_for (@nueva_meta) , :url => meta_path  do |f| %>
 
