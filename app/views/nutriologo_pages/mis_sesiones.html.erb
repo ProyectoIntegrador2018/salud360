@@ -17,10 +17,8 @@
         <td><%= getPacienteName(sesion.paciente_id) %></td>
         <td><%= getSede(sesion.hora_id) %></td>
         <td><%= getHora(sesion.hora_id) %></td>
-
-        <td><%= link_to 'Editar datos', edit_sesion_path(sesion), class: "btn-small pink lighten-2 btn-block" %></td>
         <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+sesion.paciente_id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
-
+        <td></td>
       </tr>
     <% end %>
     <tr>
@@ -33,9 +31,8 @@
         <td><%= getSede(sesion2.hora_id) %></td>
         <td><%= getHora(sesion2.hora_id) %></td>
 
-        <td><%= link_to 'Editar datos', edit_sesion_path(sesion2), class: "btn-small pink lighten-2 btn-block" %></td>
         <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+sesion2.paciente_id.to_s() , class: "btn-small pink lighten-2 btn-block"%></td>
-
+        <td></td>
       </tr>
     <% end %>
   </tbody>
