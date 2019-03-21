@@ -11,6 +11,11 @@ class DocumentsController < ApplicationController
     @document = Document.find(params[:id])
   end
 
+  def show
+    @phase = params[:id]
+    @documents = Document.where(phase: params[:id])
+  end
+
   def update
     respond_to do |format|
       if @document.update(document_params)
