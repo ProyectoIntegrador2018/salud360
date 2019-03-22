@@ -1,11 +1,11 @@
 <div class="card" style="width: 90%; margin: auto; text-align="center">
-  <h1>Sesiones paciente <%=getPacienteName(@paciente) %></h1>
+  <h4>Sesiones paciente <%=getPacienteName(@paciente) %></h4>
 
   <% numS=1%>
   <table class="responsive-table centered highlight">
     <thead>
       <tr>
-        <th>Información <%=getPacienteName(@paciente)%></th>
+        <th>Indicadores</th>
         <% @sesions.each do |sesion| %>
           <th>Sesión <%=numS%></th>
           <% numS+=1%>
@@ -38,7 +38,7 @@
     <% end %>
   </tr>
   <tr>
-    <td>Musculo</td>
+    <td>Músculo</td>
   <% @sesions.each do |sesion| %>
       <td><%= sesion.musculo %></td>
   <% end %>
