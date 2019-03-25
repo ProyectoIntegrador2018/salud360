@@ -17,15 +17,19 @@
         <% else %>
 	        <% if @phase == '1' %>
           <span class="card-title">Video <%= @phase %>: 6 tipos de Salud 360</span>
-	      <video style="width: 640px; height: 385px;" controls>
-	          <source src="https://res.cloudinary.com/he98sycd1/video/upload/v1550518726/Salud_360.mp4" type="video/mp4">
-	      </video>
+          <div style="padding: 20px; resize: both; overflow: auto;">
+    	      <video style="height: 80%; width: 80%; object-fit: contain;" controls>
+    	          <source src="https://res.cloudinary.com/he98sycd1/video/upload/v1550518726/Salud_360.mp4" type="video/mp4">
+    	      </video>
+          </div>
 	      <p>El nutriólogo Adrián nos comparte en este video los 6 tips de Salud360 que nos ayudarán a lograr nuestra meta.</p>
 	      <% elsif @phase == '2' %>
           <span class="card-title">Video <%= @phase %>: Índice glucémico de los alimentos </span>
-	      <video style="width: 640px; height: 385px;" controls>
-	          <source src="https://res.cloudinary.com/hkm7dxrkk/video/upload/v1553031151/salud360/Pro_Salud_30_no.2.mp4" type="video/mp4">
-	      </video>
+          <div style="padding: 20px; resize: both; overflow: auto;">
+    	      <video style="height: 80%; width: 80%; object-fit: contain;" controls>
+    	          <source src="https://res.cloudinary.com/hkm7dxrkk/video/upload/v1553031151/salud360/Pro_Salud_30_no.2.mp4" type="video/mp4">
+    	      </video>
+          </div>
 	      <p>El nutriólogo Adrián nos explica como afecta el índice glucemico de los alimentos  en nuestro cuerpo.</p>
 	        <% end %>
         <% end %>
@@ -52,8 +56,9 @@
 	      <div class="card" style="width: 91%; margin: auto; text-align='center'">
 	        <div class="card-content blue-grey-text center-align">
 	          <span class="card-title"><%= document.title %></span>
-	          <div><%= cl_image_tag(document.asset.file.public_id + ".png",
-	                                :width => 600, :height => 800, :crop => :fit) %> </div>
+	          <div style="padding: 20px; resize: both; overflow: auto;">
+              <%= cl_image_tag(document.asset.file.public_id + ".png", :style => "height: 80%; width: 80%; object-fit: contain;") %>
+            </div>
 	          <p><%= document.description %></p>
 	        </div>
 

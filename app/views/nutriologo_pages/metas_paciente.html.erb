@@ -2,62 +2,68 @@
   <h4>Metas y Objetivo del paciente <%=getPacienteName(@paciente)%></h4>
   <br>
   <br>
-
-<h5>Cambia el objetivo del paciente</h5>
-<%= form_for (@ppaciente) , :url => '/cambiar_objetivo/'+@paciente.to_s()  do |f| %>
-
-<%= f.text_field :objetivo%>
-
-<%= f.submit "Cambiar", class: "btn btn-primary" %>
-
-<% end %>
-<h5>Agrega otra meta</h5>
-  <% @nueva_meta = Meta.new %>
-    <%= form_for (@nueva_meta) , :url => meta_path  do |f| %>
-
-    <%= f.text_field :meta%>
-    <%= f.hidden_field :paciente_id, :value=> @paciente  %>
-
-    <%= f.submit "Guardar", class: "btn btn-primary" %>
-
-    <% end %>
-<br>
-<br>
-<br>
-<h3>Avance: <%=@porcentaje%>%</h3>
-<div class = "row">
-<div class = "col s10 offset-s0 ">
-    <div id="progressbar" class="red lighten-2">
-      <div class="determinate green accent-4" style="width: <%= @porcentaje%>%"></div>
-  </div>
-</div>
-</div>
-<div class="flow-text">
-  <table>
-
-    <thead>
-      <tr>
-        <th>Descripcion</th>
-        <th>Lograda</th>
-        <th colspan="11"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @metas.each do |meta| %>
-        <tr>
-          <td><%= meta.meta %></td>
-          <%if meta.cumplida%>
-          <td class= "green darken-1 btn-block center"> Completada</td>
-          <%else%>
-          <td class= "red darken-1 btn-block center"> En proceso</td>
-          <%end%>
-
-        </tr>
+  <div class = "row">
+    <div class = "col">
+      <h5>Cambia el objetivo del paciente</h5>
+      <%= form_for (@ppaciente) , :url => '/cambiar_objetivo/'+@paciente.to_s()  do |f| %>
+      <%= f.text_field :objetivo%>
+      <%= f.submit "Cambiar", class: "btn btn-primary" %>
       <% end %>
-    </tbody>
-  </table>
-<div>
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col">
+      <h5>Agrega otra meta</h5>
+        <% @nueva_meta = Meta.new %>
+        <%= form_for (@nueva_meta) , :url => meta_path  do |f| %>
+        <%= f.text_field :meta%>
+        <%= f.hidden_field :paciente_id, :value=> @paciente  %>
+        <%= f.submit "Guardar", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+
+<br>
+<br>
+
+  <div class = "row">
+    <div class = "col s12 m12 l12">
+      <h5>Avance: <%=@porcentaje%>%</h5>
+        <div id="progressbar" class="red lighten-2">
+          <div class="determinate green accent-4" style="width: <%= @porcentaje%>%"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col s12 m12 l12">
+      <div class="flow-text">
+        <table style="font-size: 12pt;">
+          <thead>
+            <tr>
+              <th>Descripción</th>
+              <th>Lograda</th>
+              <th colspan="11"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @metas.each do |meta| %>
+              <tr>
+                <td><%= meta.meta %></td>
+                <%if meta.cumplida%>
+                <td class= "green darken-1 btn-block center"> Completada</td>
+                <%else%>
+                <td class= "red darken-1 btn-block center"> En proceso</td>
+                <%end%>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
 <!--
   <h2>Agrega otra comentario o algun tip<h2>
     <% @nuevo_comment = TipsYcomentario.new %>
@@ -94,14 +100,14 @@
 
 <br>
 <br>
-<br>
+
 <div class="row">
-<div class="col s4 offset-s1">
-  <%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+@paciente.to_s() , class: "btn-large pink darken-1 btn-block"%>
+  <div class="col s8 m6 l4">
+    <%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+@paciente.to_s() , class: "btn-large pink darken-1 btn-block"%>
+  </div>
 </div>
+
+
+
+<br>
 </div>
-
-
-
-  <br>
-                          </div>
