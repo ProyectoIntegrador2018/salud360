@@ -1,5 +1,5 @@
 <div class="card" style="width: 90%; margin: auto; text-align="center">
-<h1>Estas son tus metas <%=current_paciente.username%>, ¡¡Ánimo!!</h1>
+<h4>Estas son tus metas <%=current_paciente.username%>, ¡¡Ánimo!!</h4>
 <br>
 <br>
 <%@metas = paciente_metas(current_paciente.id)%>
@@ -17,7 +17,7 @@ end
       <div class="determinate light-green accent-4" style="width: <%= @porcentaje%>%"></div>
   </div>
   <br>
-  <h3>Llevas <%=@porcentaje%>% completado</h3>
+  <h5>Llevas <%=@porcentaje%>% completado</h5>
 </div>
 </div>
 <br>
@@ -53,12 +53,6 @@ end
       </div>
       </div>
     <% end %>
-    <div class="row">
-    <div class="col s4 offset-s4">
-      <%= link_to 'Dietas', "/pacientes_pages/ver_dietas", class: "btn-large pink darken-1 btn-block" %>
-    </div>
-  </div>
-
 <br>
 
 
