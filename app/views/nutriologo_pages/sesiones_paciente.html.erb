@@ -74,7 +74,7 @@
 <% end %>
 </tr>
 <tr>
-  <td>Nutriologo</td>
+  <td>Nutriólogo</td>
 <% @sesions.each do |sesion| %>
     <td><%=getNutriologoName(sesion.nutriologo_id) %></td>
 <% end %>
@@ -84,7 +84,9 @@
 <tr>
   <td>Datos</td>
 <% @sesions.each do |sesion| %>
-    <td><%=link_to 'Editar datos', edit_sesion_path(sesion), class: "btn-small pink lighten-2 btn-block" %></td>
+    <td style="padding-top: 9.3px; padding-bottom: 9.3px;">
+      <%=link_to 'Editar datos', edit_sesion_path(sesion), class: "btn-small pink lighten-2 btn-block" %>
+    </td>
 <% end %>
 
 
@@ -92,14 +94,18 @@
 <tr>
   <td>Citas</td>
 <% @sesions.each do |sesion| %>
-    <td><%=link_to 'Ver Metas Cita', "/metas_cita/"+sesion.id.to_s(), class: "btn-small pink lighten-2 btn-block"%></td>
+    <td style="padding-top: 9.3px; padding-bottom: 9.3px;">
+      <%=link_to 'Ver Metas Cita', "/metas_cita/"+sesion.id.to_s(), class: "btn-small pink lighten-2 btn-block"%>
+    </td>
 <% end %>
 
 
 </tr>
 
   <td>Dietas</td>
-  <td><%= link_to 'Dietas', "/dietas_paciente/"+@paciente.to_s(), class: "btn pink darken-1 btn-block" %></td>
+  <td style="padding-top: 9.3px; padding-bottom: 9.3px;">
+    <%= link_to 'Dietas', "/dietas_paciente/"+@paciente.to_s(), class: "btn pink darken-1 btn-block" %>
+  </td>
 
     </tbody>
   </table>
@@ -107,7 +113,7 @@
 <br>
 <br>
   <div class="row">
-  <div class="col s4 offset-s0">
+  <div class="col s4 m4 l4 offset-s0">
   <%= link_to 'Ver Metas y Objetivo Paciente', "/metas_paciente/"+@paciente.to_s(), class: "btn pink darken-1 btn-block" %>
 </div>
 </div>
