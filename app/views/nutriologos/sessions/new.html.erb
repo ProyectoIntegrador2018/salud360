@@ -1,47 +1,53 @@
 <br></br>
-<div class="card" style="width: 50%; margin: auto; text-align="center">
-<div class="row">
-                <br></br>
-      <div class="col s6 offset-s3"><span>Bienvenido al sistema Salud 360</span></div>
-                                   <br></br>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="col s6 offset-s3">
-  <div class="field">
-    <%= f.label :Usuario %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-  </div>
-  </div>
-  <div class="col s6 offset-s3">
-  <div class="field">
-    <%= f.label :Contraseña %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-  </div>
-  <div class="col s6 offset-s3">
-  <% if devise_mapping.rememberable? -%>
-    <label>
-      <%= f.check_box :remember_me %>
-      <span>Remember Me </span>
-    </label>
-  </div>
-  <% end -%>
-                      <br></br>
-  <div class="col s6 offset-s3">
-                               <br></br>
-  <div class="actions">
-    <%= f.submit "Iniciar Sesión", class: "waves-effect waves-light btn pink darken-1", style: "width: 100%" %>
-  </div>
-  </div>
-  <% if false %>
-  <div class="col s6 offset-s3">
-                               <br></br>
-  <%= render "nutriologos/shared/links" %>
+<div class="card" style="width: 60%; margin: auto; text-align="center">
+  <div class="row">
+    <br></br>
+    <div class="col s6 offset-s3">
+      <span>Bienvenido al sistema Salud 360</span>
+    </div>
+    <br></br>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="col s10 m8 l6 offset-l3 offset-m2 offset-s1">
+      <div class="field">
+        <%= f.label :Usuario %>
+        <br/>
+        <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+      </div>
+    </div>
+    <div class="col s10 m8 l6 offset-l3 offset-m2 offset-s1">
+      <div class="field">
+        <%= f.label :Contraseña %>
+        <br/>
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+    </div>
+    <div class="col s10 m8 l6 offset-l3 offset-m2 offset-s1">
+      <% if devise_mapping.rememberable? -%>
+      <label>
+        <%= f.check_box :remember_me %>
+        <span>Remember Me </span>
+      </label>
+    </div>
+    <% end -%>
+
+    <br></br>
+
+    <div class="col s10 m8 l6 offset-l3 offset-m2 offset-s1">
+      <br></br>
+      <div class="actions">
+        <%= f.submit "Iniciar Sesión", class: "waves-effect waves-light btn pink darken-1", style: "width: 100%" %>
+      </div>
+    </div>
+    <% if false %>
+      <div class="col s10 m8 l6 offset-l3 offset-m2 offset-s1">
+        <br></br>
+        <%= render "nutriologos/shared/links" %>
+      </div>
+    <% end %>
+
+    <div class="col s6 offset-s3">
+      <br></br>
+    </div>
   </div>
   <% end %>
-
-  <div class="col s6 offset-s3">
-                               <br></br>
-  </div>
-  </div>
-<% end %>
 </div>

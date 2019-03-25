@@ -2,7 +2,7 @@
 <%if (current_paciente_next_sessions.count > 0)%>
   <div class="card" style="width: 90%; margin: auto; text-align="center">
     <div>
-      <h1>Fechas de próximas sesiones:</h1>
+      <h4>Fechas de próximas sesiones:</h4>
     </div>
     <br>
         <div class="row">
@@ -29,31 +29,22 @@
   <%if horarios_disponibles.length >0%>
   <div class ="row">
     <div class="col s12">
-      <h5> Elije un horario </h3>
+      <h5> Elige un horario </h5>
    </div>
   </div>
 
   <div class="row">
   <div class="col s9 offset-s1">
       <%= form_for(@sesion) do |f| %>
-
-
-
-
         <%
           $a=[]
           horarios_disponibles.each do |horario|
 
               $a.push( [ horario.hora_disponible.strftime("El %d/%m/%Y a las %r") +" en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo_id), horario.id])
           end
-
-
         %>
         <%= f.select :hora_id,$a%>
-
         <%= f.hidden_field :paciente_id, :value=>current_paciente.id  %>
-
-
         <%= f.submit "Guardar", class: "btn btn-primary" %>
       <% end %>
     </div>
