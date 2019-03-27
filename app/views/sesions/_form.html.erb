@@ -13,37 +13,38 @@
   <% end %>
 
   <div class="row">
-  <div class="col-md-6 col-md-offset-3 col offset-s1 s3">
-    <div class="flow-text">
-    <%= form_for(@sesion) do |f| %>
-      <%= f.label :peso %>
-      <%= f.number_field :peso, step: :any %>
+    <div class="col s10 m8 l6">
+      <div class="flow-text">
+      <%= form_for(@sesion) do |f| %>
+        <%= f.label :peso %>
+        <%= f.number_field :peso, step: :any %>
 
-      <%= f.label :estatura %>
-      <%= f.number_field :estatura, step: :any %>
+        <%= f.label :estatura %>
+        <%= f.number_field :estatura, step: :any %>
 
-      <%= f.label :grasa%>
-      <%= f.number_field :grasa, step: :any %>
+        <%= f.label :grasa%>
+        <%= f.number_field :grasa, step: :any %>
 
-      <%= f.label :musculo %>
-      <%= f.number_field :musculo, step: :any %>
+        <%= f.label :musculo %>
+        <%= f.number_field :musculo, step: :any %>
 
-      <%= f.label :Cintura %>
-      <%= f.number_field :cintura, step: :any %>
+        <%= f.label :Cintura %>
+        <%= f.number_field :cintura, step: :any %>
 
-      <%= f.label :imc%>
-      <%= f.number_field :imc, step: :any %>
+        <%= f.label :imc%>
+        <%= f.number_field :imc, step: :any %>
 
-      <%= f.label :grasa_vis %>
-      <%= f.number_field :grasa_vis, step: :any %>
+        <%= f.label :grasa_vis %>
+        <%= f.number_field :grasa_vis, step: :any %>
 
-      <%= f.label :edad_metabolica %>
-      <%= f.number_field :edad_metabolica, step: :any %>
+        <%= f.label :edad_metabolica %>
+        <%= f.number_field :edad_metabolica, step: :any %>
 
-
-      <%= f.submit "Guardar", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+        <div style="padding-bottom: 30px; padding-top: 20px;">
+          <%= f.submit "Guardar", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 <% end %>
