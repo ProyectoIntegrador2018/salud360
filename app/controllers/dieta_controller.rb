@@ -1,5 +1,5 @@
 class DietaController < ApplicationController
-  before_action :set_dieta, only: [:edit, :update]
+  before_action :set_dieta, only: [:destroy, :edit, :update]
 
   def index
     @dietas = Dieta.all
@@ -7,6 +7,13 @@ class DietaController < ApplicationController
 
   def edit
     @dieta = Dieta.find(params[:id])
+  end
+
+  def destroy
+    @dieta = Dieta.find(params[:id])
+    @dieta.destroy
+
+    redirect_to request.referrer
   end
 
   def update
