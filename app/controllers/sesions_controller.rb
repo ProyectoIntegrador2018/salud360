@@ -1,6 +1,6 @@
 class SesionsController < ApplicationController
 
-  before_action :set_sesion, only: [:edit, :update]
+  before_action :set_sesion, only: [:edit, :update, :destroy]
 
   def edit
     @sesion = Sesion.find(params[:id])
@@ -16,6 +16,14 @@ class SesionsController < ApplicationController
         format.json { render json: @sesion.errors, status: :unprocessable_entity }
       end
     end
+  end
+  #elimina la sesion y actualiza la hora reservada
+  def destroy
+    @eliminar = Sesion.find(params[:id])
+    Horario.where(id: @eliminar.hora_id).update(apartada: false)
+    @eliminar.destroy
+    
+    redirect_to pacientes_pages_programarCita_path
   end
 
   def create
