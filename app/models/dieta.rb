@@ -2,6 +2,6 @@ class Dieta < ApplicationRecord
   mount_uploader :dietaPDF, AssetUploader
   validates :dietaPDF, presence: true
 
-  has_one :nutriologo
-  has_one :paciente
+  belongs_to :nutriologo
+  belongs_to :paciente
 end

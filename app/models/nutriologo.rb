@@ -5,6 +5,7 @@ class Nutriologo < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :sesions, dependent: :destroy
+  has_many :dieta
 
  def email_required?
    false
