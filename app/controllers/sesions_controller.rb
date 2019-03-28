@@ -18,6 +18,14 @@ class SesionsController < ApplicationController
     end
   end
 
+  def destroy
+    @eliminar = Sesion.find(params[:id])
+    Horario.where(id: @eliminar.hora_id).update(apartada: false)
+    @eliminar.destroy
+
+    redirect_to pacientes_pages_programarCita_path
+  end
+
   def create
 
 
