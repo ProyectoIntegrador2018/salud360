@@ -4,6 +4,7 @@ class SesionsController < ApplicationController
 
   def edit
     @sesion = Sesion.find(params[:id])
+    @paciente = Paciente.find(@sesion.paciente_id)
   end
 
   def update
