@@ -39,6 +39,15 @@
         <td><%= link_to dieta.dietaPDF.file.filename, dieta.dietaPDF.url %></td>
         <td><%= cl_image_tag(dieta.dietaPDF.file.public_id + ".png",
           :width => 200, :height => 250, :crop => :fill) %> </td>
+        <td  style="align:left">
+          <div class="row">
+            <div class="col s2">
+              <%= link_to '<i class="material-icons" style="color: #DC143C;">delete_forever</i>'.html_safe, "/dieta/#{dieta.id}",
+                         method: :delete,
+                         data: { confirm: '¿Estás seguro?' } %>
+            </div>
+          </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
