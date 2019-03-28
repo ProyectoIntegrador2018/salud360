@@ -10,4 +10,5 @@ user = User.new
 user.username = 'salud360admin'
 user.password = '5alud3^)'
 user.password_confirmation = '5alud3^)'
+user.role = 'Administrador'
 user.save!

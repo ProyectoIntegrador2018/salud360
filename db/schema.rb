@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190318135917) do
+ActiveRecord::Schema.define(version: 20190328063304) do
 
   create_table "dieta", force: :cascade do |t|
     t.string "dietaPDF"
@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(version: 20190318135917) do
     t.integer "paciente_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["nutriologo_id"], name: "index_dieta_on_nutriologo_id"
     t.index ["paciente_id"], name: "index_dieta_on_paciente_id"
+    t.index ["user_id"], name: "index_dieta_on_user_id"
   end
 
   create_table "documents", force: :cascade do |t|
@@ -96,8 +98,10 @@ ActiveRecord::Schema.define(version: 20190318135917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "cintura"
+    t.integer "user_id"
     t.index ["nutriologo_id"], name: "index_sesions_on_nutriologo_id"
     t.index ["paciente_id"], name: "index_sesions_on_paciente_id"
+    t.index ["user_id"], name: "index_sesions_on_user_id"
   end
 
   create_table "tips_ycomentarios", force: :cascade do |t|
@@ -119,6 +123,8 @@ ActiveRecord::Schema.define(version: 20190318135917) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role"
+    t.string "objetivo", default: "ser más saludable"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end

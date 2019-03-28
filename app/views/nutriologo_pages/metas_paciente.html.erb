@@ -71,8 +71,8 @@
 
       <%= f.text_field :tip%>
       <%= f.hidden_field :paciente_id, :value=> @paciente  %>
-      <%= f.hidden_field :nutriologo_id, :value=> current_nutriologo.id  %>
-      <%= f.hidden_field :remitente, :value=> current_nutriologo.username  %>
+      <%= f.hidden_field :nutriologo_id, :value=> current_user.id  %>
+      <%= f.hidden_field :remitente, :value=> current_user.username  %>
 
       <%= f.submit "Guardar", class: "btn btn-primary" %>
 

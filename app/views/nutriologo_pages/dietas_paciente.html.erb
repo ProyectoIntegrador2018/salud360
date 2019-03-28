@@ -14,7 +14,7 @@
       <%= f.file_field :dietaPDF %>
       <%= f.hidden_field :paciente_id, :value => @paciente%>
 
-      <%= f.hidden_field :nutriologo_id, :value => current_nutriologo.id%>
+      <%= f.hidden_field :nutriologo_id, :value => current_user.id%>
 
       <%= f.submit "Guardar", class: "btn btn-primary" %>
     <% end %>

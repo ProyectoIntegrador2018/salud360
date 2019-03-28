@@ -3,7 +3,7 @@
 
   <div class ="row">
     <div class="col s12">
-      <h4>Hola <%= current_paciente.username %>, tu plan es <%=current_paciente.objetivo%> y estos son tus datos:</h4>
+      <h4>Hola <%= current_user.username %>, tu plan es <%=current_user.objetivo%> y estos son tus datos:</h4>
     </div>
   </div>
 </div>
@@ -16,7 +16,7 @@
    </div>
   </div>
 
-  <%if current_paciente_sesions.first != nil%>
+  <%if current_user_sesions.first != nil%>
 
 
   <div class="row" style="font-size: 12pt;">
@@ -28,7 +28,7 @@
             <div class="card-title">
               <span class="center">Peso</span>
             </div>
-            <p> <%= current_paciente_sesions.first.peso %> kg.</p>
+            <p> <%= current_user_sesions.first.peso %> kg.</p>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@
             <div class="card-title">
               <span class="center">Estatura</span>
             </div>
-            <p><%= current_paciente_sesions.first.estatura %> m.</p>
+            <p><%= current_user_sesions.first.estatura %> m.</p>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
             <div class="card-title">
               <span class="center">Grasa</span>
             </div>
-            <p><%= current_paciente_sesions.first.grasa %>%</p>
+            <p><%= current_user_sesions.first.grasa %>%</p>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@
             <div class="card-title">
               <span class="center">Músculo</span>
             </div>
-            <p><%= current_paciente_sesions.first.musculo %>%</p>
+            <p><%= current_user_sesions.first.musculo %>%</p>
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@
             <div class="card-title">
               <span class="center">Cintura</span>
             </div>
-            <p><%= current_paciente_sesions.first.cintura %> cm.</p>
+            <p><%= current_user_sesions.first.cintura %> cm.</p>
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@
             <div class="card-title">
               <span class="center">IMC</span>
             </div>
-            <p><%= current_paciente_sesions.first.imc %></p>
+            <p><%= current_user_sesions.first.imc %></p>
           </div>
         </div>
       </div>
@@ -109,7 +109,7 @@
             <div class="card-title">
               <span class="center">G.V.</span>
             </div>
-            <p><%= current_paciente_sesions.first.grasa_vis %></p>
+            <p><%= current_user_sesions.first.grasa_vis %></p>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@
             <div class="card-title">
               <span class="center">E.M.</span>
             </div>
-            <p><%= current_paciente_sesions.first.edad_metabolica %></p>
+            <p><%= current_user_sesions.first.edad_metabolica %></p>
           </div>
         </div>
       </div>
@@ -178,7 +178,7 @@
   </thead>
 <% numS=1%>
   <tbody>
-    <% current_paciente_sesions.each do |sesion| %>
+    <% current_user_sesions.each do |sesion| %>
 
       <tr>
         <td><%=numS%></td>
@@ -218,13 +218,13 @@
 </h5>
   <br>
   <div class = "col s4">
-      <%= line_chart current_paciente_pesos %>
+      <%= line_chart current_user_pesos %>
   </div>
   <div class = "col s4">
-      <%= line_chart current_paciente_grasa %>
+      <%= line_chart current_user_grasa %>
   </div>
   <div class = "col s4">
-      <%= line_chart current_paciente_musculo %>
+      <%= line_chart current_user_musculo %>
   </div>
 
 </div>
@@ -238,8 +238,8 @@
     <%= link_to 'Ver Metas', "/pacientes_pages/ver_metas", class: "btn-large pink darken-1 btn-block" %>
   </div>
   <div class="col s4 offset-s0">
-    <% if current_paciente.dieta.present? %>
-      <%= link_to 'Mi Dieta', current_paciente.dieta.dietaPDF.url, class: "btn-large pink darken-1 btn-block" %>
+    <% if current_user.dieta.present? %>
+      <%= link_to 'Mi Dieta', current_user.dieta.dietaPDF.url, class: "btn-large pink darken-1 btn-block" %>
     <% else %>
       <%= link_to 'Mi Dieta', "/pacientes_pages/ver_dietas", class: "btn-large pink darken-1 btn-block" %>
     <% end %>

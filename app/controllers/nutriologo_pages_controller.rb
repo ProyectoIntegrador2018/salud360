@@ -1,7 +1,5 @@
 class NutriologoPagesController < ApplicationController
 
-before_action :user_is_nutriologo
-
   def metas_paciente
     @paciente = params[:id]
     @ppaciente = Paciente.find_by(id: @paciente)
@@ -39,11 +37,5 @@ before_action :user_is_nutriologo
        end
     end
     redirect_back(fallback_location: '/nutriologo_pages/mis_pacientes')
-  end
-
-  def user_is_nutriologo
-    unless nutriologo_signed_in?
-      redirect_to root_url
-    end
   end
 end

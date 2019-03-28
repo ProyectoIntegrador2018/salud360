@@ -1,8 +1,8 @@
 <div class="card" style="width: 90%; margin: auto; text-align="center">
-<h4>Estas son tus metas <%=current_paciente.username%>, ¡¡Ánimo!!</h4>
+<h4>Estas son tus metas <%=current_user.username%>, ¡¡Ánimo!!</h4>
 <br>
 <br>
-<%@metas = paciente_metas(current_paciente.id)%>
+<%@metas = paciente_metas(current_user.id)%>
 <%
 @porcentaje = 0
 if @metas.count >0

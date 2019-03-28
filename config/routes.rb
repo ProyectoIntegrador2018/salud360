@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-
-  get '/users/sign_up' => 'home_page#home'
-  get '/nutriologos/sign_up' => 'home_page#home'
-  get '/pacientes/sign_up' => 'home_page#home'
-
   devise_for :pacientes
   devise_for :nutriologos
   devise_for :users
@@ -50,5 +45,9 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'home_page#home'
+  devise_scope :user do
+    unauthenticated do
+      root 'devise/sessions#new'
+    end
+  end
 end

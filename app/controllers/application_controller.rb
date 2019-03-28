@@ -8,8 +8,18 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) do |u|
-  u.permit(:name, :username, :password, :password_confirmation)
-end
+      u.permit(:name, :username, :password, :password_confirmation)
+    end
+  end
+
+  def after_sign_in_path_for(resource)
+    if resource.role == 'Nutriólogo'
+      nutriologo_root_path
+    elsif resource.role == 'Paciente'
+      paciente_root_path
+    elsif resource.role == 'Administrador'
+      user_root_path
+    end
   end
 
 end
