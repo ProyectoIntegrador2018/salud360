@@ -1,41 +1,50 @@
 <div class="card" style="width: 90%; margin: auto; text-align="center">
-<h4>Mis Sesiones</h4>
+  <h4>Mis Sesiones</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Paciente</th>
-      <th>Sede</th>
-      <th>Fecha</th>
-      <th colspan="11"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% current_nutriologo_sesions.each do |sesion| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= getPacienteName(sesion.paciente_id) %></td>
-        <td><%= getSede(sesion.hora_id) %></td>
-        <td><%= getHora(sesion.hora_id) %></td>
-        <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+sesion.paciente_id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
-        <td></td>
+        <th>Paciente</th>
+        <th>Sede</th>
+        <th>Fecha</th>
+        <th colspan="11"></th>
       </tr>
-    <% end %>
-    <tr>
-      <td></td>
+    </thead>
 
-    </tr>
-    <% current_nutriologo_sesionss.each do |sesion2| %>
-      <tr>
-        <td><%= getPacienteName(sesion2.paciente_id) %></td>
-        <td><%= getSede(sesion2.hora_id) %></td>
-        <td><%= getHora(sesion2.hora_id) %></td>
-        <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+sesion2.paciente_id.to_s() , class: "btn-small pink lighten-2 btn-block"%></td>
-        <td></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <tbody>
+      <% current_nutriologo_sesions.each do |sesion| %>
+        <tr>
+          <td><%= getPacienteName(sesion.paciente_id) %></td>
+          <td><%= getSede(sesion.hora_id) %></td>
+          <td><%= getHora(sesion.hora_id) %></td>
+          <% if Time.now > Horario.find(sesion.hora_id).hora_disponible %>
+            <td> <i class="material-icons tooltipped" style="color: #ad190a;" data-position="top" data-tooltip="¡Ya paso la fecha de la sesión!">warning</i> </td>
+          <% end %>
+          <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+sesion.paciente_id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
+          <td></td>
+        </tr>
+      <% end %>
 
-<br>
-                      </div>
+      <% current_nutriologo_sesionss.each do |sesion2| %>
+        <tr>
+          <td><%= getPacienteName(sesion2.paciente_id) %></td>
+          <td><%= getSede(sesion2.hora_id) %></td>
+          <td><%= getHora(sesion2.hora_id) %></td>
+          <% if Time.now > Horario.find(sesion2.hora_id).hora_disponible %>
+            <td> <i class="material-icons tooltipped" style="color: #ad190a;" data-position="top" data-tooltip="¡Ya paso la fecha de la sesión!">warning</i> </td>
+          <% end %>
+          <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+sesion2.paciente_id.to_s() , class: "btn-small pink lighten-2 btn-block"%></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+</script>
