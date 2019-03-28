@@ -1,26 +1,32 @@
 <div class="card" style="width: 90%; margin: auto; text-align="center">
-<h4>Mis Pacientes</h4>
+  <h4>Mis Pacientes</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Paciente</th>
-      <th colspan="11"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% current_pacientes_nutriologo.each do |paciente| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= paciente.username %></td>
-
-        <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+paciente.id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
-        <td><%= link_to 'Ver Metas y Objetivo Paciente', "/metas_paciente/"+paciente.id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
-
+        <th>Paciente</th>
+        <th colspan="11"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% current_pacientes_nutriologo.each do |paciente| %>
+        <tr>
+          <td><%= paciente.username %></td>
+          <% unless paciente.dieta.present? %>
+            <td> <i class="material-icons tooltipped" style="color: #ad190a;" data-position="top" data-tooltip="¡El paciente no tiene dieta!">warning</i> </td>
+          <% end %>
+          <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+paciente.id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
+          <td><%= link_to 'Ver Metas y Objetivo Paciente', "/metas_paciente/"+paciente.id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <br>
-                      </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.tooltipped').tooltip();
+  });
+</script>
