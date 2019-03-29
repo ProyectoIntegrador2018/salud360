@@ -8,6 +8,10 @@ class SesionsController < ApplicationController
   end
 
   def update
+    if @sesion.peso != nil && @sesion.estatura != nil && @sesion.grasa != nil && @sesion.musculo != nil && @sesion.imc != nil && @sesion.grasa_vis != nil && @sesion.edad_metabolica != nil
+      @sesion.active = false
+      @sesion.save!
+    end
     respond_to do |format|
       if @sesion.update(sesion_params)
         format.html { render 'nutriologo_pages/mis_sesiones', notice: 'sesion was successfully updated.' }
