@@ -25,6 +25,11 @@ class MetaController < ApplicationController
       end
 
   end
+  
+  def destroy
+    @meta.destroy!
+    redirect_back(fallback_location: '/nutriologo_pages/metas_paciente')
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
