@@ -19,43 +19,47 @@
         Materialize.toast('<%= alert %>', 4000)
       </script>
     <% end %>
-
+    <style type="text/css">
+      @media #{$medium-and-down} {
+        align: left;
+      }
+    </style>
       <nav>
         <div class="nav-wrapper grey darken-4">
           <% if paciente_signed_in? %>
           <a href="/pacientes"
-               class="brand-logo">
+               class="brand-logo left">
                 <img src="<%= asset_path( 'logo.png' ) %>" height="60px" width="80px"/>
           </a>
           <% else %>
           <a href="/"
-               class="brand-logo">
+               class="brand-logo left">
                 <img src="<%= asset_path( 'logo.png' ) %>" height="60px" width="80px"/>
           </a>
           <% end %>
 
-          <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <!--<a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
 
-          <ul id="nav-mobile" class ="right hide-on-med-and-down">
+          <ul id="nav-mobile" class ="right" style="font-size: 2em;">
             <% if user_signed_in? %>
-              <li><a href="/users">Administración</a></li>
-              <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
+              <li><a href="/users"><h5>Administración</h5></a></li>
+              <li><a href="/users/sign_out" data-method="delete"><h5>Logout</h5></a></li>
             <% end
             if nutriologo_signed_in? %>
-              <li><a href="/nutriologo_pages/mis_sesiones">Mis Sesiones</a></li>
-              <li><a href="/nutriologo_pages/mis_pacientes">Mis Pacientes</a></li>
-              <li><a href="/nutriologos/sign_out" data-method="delete">Logout</a></li>
+              <li><a href="/nutriologo_pages/mis_sesiones"><h5>Mis Sesiones</h5></a></li>
+              <li><a href="/nutriologo_pages/mis_pacientes"><h5>Mis Pacientes</h5></a></li>
+              <li><a href="/nutriologos/sign_out" data-method="delete"><h5>Logout</h5></a></li>
             <% end
             if paciente_signed_in? %>
-              <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
-              <li><a href="/documents">Material de Sesiones</a></li>
-              <li><a href="/pacientes_pages/programarCita">Citas</a></li>
+              <li><a href="/pacientes_pages/mis_sesiones"><h5>Mi Perfil</h5></a></li>
+              <li><a href="/documents"><h5>Material de Sesiones</h5></a></li>
+              <li><a href="/pacientes_pages/programarCita"><h5>Citas</h5></a></li>
               <% if current_paciente.dieta.present? %>
-                <li><a><%= link_to 'Mi Dieta', current_paciente.dieta.dietaPDF.url %></a></li>
+                <li><a><h5><%= link_to 'Mi Dieta', current_paciente.dieta.dietaPDF.url, style: "font-size: 25px;" %></h5></a></li>
               <% else %>
-                <li><a href="/pacientes_pages/ver_dietas">Mi Dieta</a></li>
+                <li><a href="/pacientes_pages/ver_dietas"><h5>Mi Dieta</h5></a></li>
               <% end %>
-              <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
+              <li><a href="/pacientes/sign_out" data-method="delete"><h5>Logout</h5></a></li>
             <% end %>
           </ul>
 
@@ -65,7 +69,7 @@
 
 
 
-      <ul class="sidenav" id="mobile-demo">
+      <!--<ul class="sidenav" id="mobile-demo">
           <% if user_signed_in? %>
             <li><a href="/users"><h4>Administración</h4></a></li>
             <li><a href="/users/sign_out" data-method="delete"><h4>Logout</h4></a></li>
@@ -81,31 +85,8 @@
               <li><a href="/pacientes/sign_out" data-method="delete"><h5>Logout</h5></a></li>
             <% end %>
           <% end %>
-        </ul>
+        </ul>-->
 
     <%= yield %>
   </body>
 </html>
-
-
-
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-  var elems = document.querySelectorAll('.sidenav');
-  var instances = M.Sidenav.init(elems, {});
-});
-//$(document).ready(function(){
-/*$(document).on('turbolinks:load', function() {
-  $('.sidenav').sideNav();
-  $('.sidenav').sideNav('show');
-});*/
-
-//var elem = document.querySelector('.sidenav');
-//var instance = M.Sidenav.init(elem, {});
-/*
-  $('.sidenav-trigger').on('click', function() {
-    console.log("holaaaa");
-    var elems = document.querySelector('.sidenav');
-    var instances = M.Sidenav.init(elems, {});
- });*/
-</script>
