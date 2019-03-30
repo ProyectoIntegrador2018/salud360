@@ -3,36 +3,12 @@
   <head>
     <title>Salud360</title>
     <%= csrf_meta_tags %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
-
-  <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, {});
-  });
-  //$(document).ready(function(){
-  $(document).on('turbolinks:load', function() {
-    $('.sidenav').sideNav();
-    $('.sidenav').sideNav('show');
-  });
-
-  //var elem = document.querySelector('.sidenav');
-  //var instance = M.Sidenav.init(elem, {});
-/*
-    $('.sidenav-trigger').on('click', function() {
-      console.log("holaaaa");
-      var elems = document.querySelector('.sidenav');
-      var instances = M.Sidenav.init(elems, {});
-   });*/
-  </script>
-
     <% if notice %>
       <script type="text/javascript">
         Materialize.toast('<%= notice %>', 4000)
@@ -58,7 +34,7 @@
           </a>
           <% end %>
 
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger" id="trigger-sidenav-button"><i class="material-icons">menu</i></a>
+          <a href="" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
           <ul id="nav-mobile" class ="right hide-on-med-and-down">
             <% if user_signed_in? %>
@@ -110,3 +86,26 @@
     <%= yield %>
   </body>
 </html>
+
+
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems, {});
+});
+//$(document).ready(function(){
+/*$(document).on('turbolinks:load', function() {
+  $('.sidenav').sideNav();
+  $('.sidenav').sideNav('show');
+});*/
+
+//var elem = document.querySelector('.sidenav');
+//var instance = M.Sidenav.init(elem, {});
+/*
+  $('.sidenav-trigger').on('click', function() {
+    console.log("holaaaa");
+    var elems = document.querySelector('.sidenav');
+    var instances = M.Sidenav.init(elems, {});
+ });*/
+</script>
