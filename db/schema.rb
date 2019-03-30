@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20190318135917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "cintura"
+    t.boolean "active", default: true
     t.index ["nutriologo_id"], name: "index_sesions_on_nutriologo_id"
     t.index ["paciente_id"], name: "index_sesions_on_paciente_id"
   end

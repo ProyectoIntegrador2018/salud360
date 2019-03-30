@@ -43,6 +43,7 @@
           <thead>
             <tr>
               <th>Descripción</th>
+              <th>Actualizar meta</th>
               <th>Lograda</th>
               <th colspan="11"></th>
             </tr>
@@ -50,12 +51,16 @@
           <tbody>
             <% @metas.each do |meta| %>
               <tr>
-                <td><%= meta.meta %></td>
+                <%= form_for(meta) do |f| %>
+                  <td><%= f.text_field :meta%></td>
+                  <td><%= f.submit "Guardar", class: "btn btn-primary" %></td>
+                <% end %>
                 <%if meta.cumplida%>
-                <td class= "green darken-1 btn-block center"> Completada</td>
+                <td class= "green darken-1 center"> Completada</td>
                 <%else%>
-                <td class= "red darken-1 btn-block center"> En proceso</td>
+                <td class= "red darken-1 center"> En proceso</td>
                 <%end%>
+                <td><%= link_to 'Eliminar', metum_path(meta), class: "btn btn-primary" ,method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
               </tr>
             <% end %>
           </tbody>

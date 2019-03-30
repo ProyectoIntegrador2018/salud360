@@ -4,9 +4,14 @@ class SesionsController < ApplicationController
 
   def edit
     @sesion = Sesion.find(params[:id])
+    @paciente = Paciente.find(@sesion.paciente_id)
   end
 
   def update
+    if @sesion.peso != nil && @sesion.estatura != nil && @sesion.grasa != nil && @sesion.musculo != nil && @sesion.imc != nil && @sesion.grasa_vis != nil && @sesion.edad_metabolica != nil
+      @sesion.active = false
+      @sesion.save!
+    end
     respond_to do |format|
       if @sesion.update(sesion_params)
         format.html { render 'nutriologo_pages/mis_sesiones', notice: 'sesion was successfully updated.' }
@@ -16,6 +21,14 @@ class SesionsController < ApplicationController
         format.json { render json: @sesion.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def destroy
+    @eliminar = Sesion.find(params[:id])
+    Horario.where(id: @eliminar.hora_id).update(apartada: false)
+    @eliminar.destroy
+
+    redirect_to pacientes_pages_programarCita_path
   end
 
   def create
