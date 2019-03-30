@@ -3,6 +3,7 @@
   <head>
     <title>Salud360</title>
     <%= csrf_meta_tags %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -10,11 +11,26 @@
   </head>
 
   <body>
+
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, {});
   });
+  //$(document).ready(function(){
+  $(document).on('turbolinks:load', function() {
+    $('.sidenav').sideNav();
+    $('.sidenav').sideNav('show');
+  });
+
+  //var elem = document.querySelector('.sidenav');
+  //var instance = M.Sidenav.init(elem, {});
+/*
+    $('.sidenav-trigger').on('click', function() {
+      console.log("holaaaa");
+      var elems = document.querySelector('.sidenav');
+      var instances = M.Sidenav.init(elems, {});
+   });*/
   </script>
 
     <% if notice %>
@@ -42,49 +58,54 @@
           </a>
           <% end %>
 
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul id="nav-mobile" class ="right hide-on-med-and-down" style="font-size: 35px;">
-              <% if user_signed_in? %>
-                <li><a href="/users">Administración</a></li>
-                <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
-              <% end
-              if nutriologo_signed_in? %>
-                <li><a href="/nutriologo_pages/mis_sesiones">Mis Sesiones</a></li>
-                <li><a href="/nutriologo_pages/mis_pacientes">Mis Pacientes</a></li>
-                <li><a href="/nutriologos/sign_out" data-method="delete">Logout</a></li>
-              <% end
-              if paciente_signed_in? %>
-                <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
-                <li><a href="/documents">Material de Sesiones</a></li>
-                <li><a href="/pacientes_pages/programarCita">Citas</a></li>
-                <% if current_paciente.dieta.present? %>
-                  <li><a><%= link_to 'Mi Dieta', current_paciente.dieta.dietaPDF.url %></a></li>
-                <% else %>
-                  <li><a href="/pacientes_pages/ver_dietas">Mi Dieta</a></li>
-                <% end %>
-                <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger" id="trigger-sidenav-button"><i class="material-icons">menu</i></a>
+
+          <ul id="nav-mobile" class ="right hide-on-med-and-down">
+            <% if user_signed_in? %>
+              <li><a href="/users">Administración</a></li>
+              <li><a href="/users/sign_out" data-method="delete">Logout</a></li>
+            <% end
+            if nutriologo_signed_in? %>
+              <li><a href="/nutriologo_pages/mis_sesiones">Mis Sesiones</a></li>
+              <li><a href="/nutriologo_pages/mis_pacientes">Mis Pacientes</a></li>
+              <li><a href="/nutriologos/sign_out" data-method="delete">Logout</a></li>
+            <% end
+            if paciente_signed_in? %>
+              <li><a href="/pacientes_pages/mis_sesiones">Mi Perfil</a></li>
+              <li><a href="/documents">Material de Sesiones</a></li>
+              <li><a href="/pacientes_pages/programarCita">Citas</a></li>
+              <% if current_paciente.dieta.present? %>
+                <li><a><%= link_to 'Mi Dieta', current_paciente.dieta.dietaPDF.url %></a></li>
+              <% else %>
+                <li><a href="/pacientes_pages/ver_dietas">Mi Dieta</a></li>
               <% end %>
-            </ul>
+              <li><a href="/pacientes/sign_out" data-method="delete">Logout</a></li>
+            <% end %>
+          </ul>
+
         </div>
       </nav>
 
-  <ul class="sidenav" id="mobile-demo">
-              <% if user_signed_in? %>
-                <li><a href="/users"><h4>Administración</h4></a></li>
-                <li><a href="/users/sign_out" data-method="delete"><h4>Logout</h4></a></li>
-              <% else %>
-                <% if nutriologo_signed_in? %>
-                  <li><a href="/nutriologo_pages/mis_sesiones"><h4>Mis Sesiones</h4></a></li>
-                  <li><a href="/nutriologo_pages/mis_pacientes"><h4>Mis Pacientes</h4></a></li>
-                  <li><a href="/nutriologos/sign_out" data-method="delete"><h4>Logout</h4></a></li>
-                <% else %>
-                  <li><a href="/pacientes_pages/mis_sesiones"><h5>Mi Perfil</h5></a></li>
-                  <li><a href="/documents"><h5>Material de Sesiones</h5></a></li>
-                  <li><a href="/pacientes_pages/programarCita"><h5>Citas</h5></a></li>
-                  <li><a href="/pacientes/sign_out" data-method="delete"><h5>Logout</h5></a></li>
-                <% end %>
-              <% end %>
-  </ul>
+
+
+
+      <ul class="sidenav" id="mobile-demo">
+          <% if user_signed_in? %>
+            <li><a href="/users"><h4>Administración</h4></a></li>
+            <li><a href="/users/sign_out" data-method="delete"><h4>Logout</h4></a></li>
+          <% else %>
+            <% if nutriologo_signed_in? %>
+              <li><a href="/nutriologo_pages/mis_sesiones"><h4>Mis Sesiones</h4></a></li>
+              <li><a href="/nutriologo_pages/mis_pacientes"><h4>Mis Pacientes</h4></a></li>
+              <li><a href="/nutriologos/sign_out" data-method="delete"><h4>Logout</h4></a></li>
+            <% else %>
+              <li><a href="/pacientes_pages/mis_sesiones"><h5>Mi Perfil</h5></a></li>
+              <li><a href="/documents"><h5>Material de Sesiones</h5></a></li>
+              <li><a href="/pacientes_pages/programarCita"><h5>Citas</h5></a></li>
+              <li><a href="/pacientes/sign_out" data-method="delete"><h5>Logout</h5></a></li>
+            <% end %>
+          <% end %>
+        </ul>
 
     <%= yield %>
   </body>
