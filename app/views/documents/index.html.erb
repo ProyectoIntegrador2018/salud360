@@ -11,9 +11,10 @@
 <!-- Phases -->
 <div class="card" style="width: 90%; margin: auto; text-align='center'">
 <div class="row">
-  <div class="col s4 offset-s4">
+  <div class="col s4 offset-s4", style="margin-left:25.3%; width:49.33%;">
+    <% titles = ["","Cambio de Hábitos", "Combinación de alimentos","Lectura de etiquetas","Hábitos permanentes"] %>
     <% (1..4).each do |i| %>
-      <a style="margin: 3px;"> <%= link_to "Fase #{i}", "/documents/#{i}", class: "btn-large pink-text blue-grey lighten-4 btn-block" %></a>
+      <a style="margin: 3px;"> <%= link_to "Fase #{i} #{titles[i]}", "/documents/#{i}", class: "btn-large pink-text blue-grey lighten-4 btn-block" %></a>
     <% end %>
   </div>
 </div>
