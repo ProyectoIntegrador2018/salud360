@@ -10,7 +10,7 @@
 
           <%current_paciente_next_sessions.each_with_index do |sesion, index|%>
             <p class="flow-text">Sesión <%=(index+1)%>: <%=getHora(sesion.hora_id)%> con la nutrióloga <%=getNutriologoName(sesion.nutriologo_id)%>
-            <%= link_to 'Eliminar',sesion_path(sesion),method: :delete,class: "btn btn-primary", style: "margin-left: 2px; height:26px; line-height:26px", data {confirm: '¿Está seguro de elmiinar su cita?'} %>
+            <%= link_to 'Eliminar',sesion_path(sesion),method: :delete,class: "btn btn-primary", style: "margin-left: 2px; height:26px; line-height:26px", data: {confirm: '¿Está seguro de elmiinar su cita?'} %>
             </p>
           <%end%>
 
