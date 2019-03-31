@@ -43,7 +43,7 @@ class SesionsController < ApplicationController
 
 
       if @sesion.save
-        format.html { render 'pacientes_pages/mis_sesiones', notice: 'sesion was successfully created.' }
+        format.html { render 'pacientes_pages/programarCita', notice: 'sesion was successfully created.' }
         format.json { render :show, status: :created, location: @sesion }
       else
         format.html { render :new }
