@@ -25,6 +25,8 @@
                 </div>
                 <% if Time.now > Horario.find(sesion.hora_id).hora_disponible %>
                   <div class="col s2"><i class="material-icons tooltipped col s2" style="color: #ad190a;" data-position="top" data-tooltip="¡Ya paso la fecha de la sesión!">warning</i></div>
+                <% else %>
+                  <div class="col s2"><i class="material-icons tooltipped col s2" style="visibility: hidden; color: #ad190a;" data-position="top" data-tooltip="¡Ya paso la fecha de la sesión!">warning</i></div>
                 <% end %>
               </div>
             </td>
