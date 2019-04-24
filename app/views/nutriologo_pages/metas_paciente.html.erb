@@ -17,7 +17,7 @@
       <h5>Agrega otra meta</h5>
         <% @nueva_meta = Meta.new %>
         <%= form_for (@nueva_meta) , :url => meta_path  do |f| %>
-        <%= f.text_field :meta%>
+        <%= f.text_field :meta %>
         <%= f.hidden_field :paciente_id, :value=> @paciente  %>
         <%= f.submit "Guardar", class: "btn btn-primary" %>
         <% end %>
