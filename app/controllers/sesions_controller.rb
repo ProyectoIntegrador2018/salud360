@@ -46,7 +46,7 @@ class SesionsController < ApplicationController
         format.html { render 'pacientes_pages/programarCita', notice: 'sesion was successfully created.' }
         format.json { render :show, status: :created, location: @sesion }
       else
-        format.html { render :new }
+        format.html { render 'pacientes_pages/programarCita' }
         format.json { render json: @sesion.errors, status: :unprocessable_entity }
       end
     end
