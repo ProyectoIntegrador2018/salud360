@@ -48,6 +48,7 @@
             if nutriologo_signed_in? %>
               <li><a href="/nutriologo_pages/mis_sesiones"><h5>Mis Sesiones</h5></a></li>
               <li><a href="/nutriologo_pages/mis_pacientes"><h5>Mis Pacientes</h5></a></li>
+              <li><a href="/nutriologo_pages/comentarios"><h5>Comentarios</h5></a></li>
               <li><a href="/nutriologos/sign_out" data-method="delete"><h5>Logout</h5></a></li>
             <% end
             if paciente_signed_in? %>
@@ -59,6 +60,7 @@
               <% else %>
                 <li><a href="/pacientes_pages/ver_dietas"><h5>Mi Dieta</h5></a></li>
               <% end %>
+              <li><a href="/pacientes_pages/comentarios"><h5>Comentarios</h5></a></li>
               <li><a href="/pacientes/sign_out" data-method="delete"><h5>Logout</h5></a></li>
             <% end %>
           </ul>
