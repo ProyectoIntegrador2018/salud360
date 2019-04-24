@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :documents
   resources :tips_ycomentarios
   resources :dieta
+  resources :comments
 
   mount RailsAdmin::Engine => '/user', as: 'rails_admin'
   get 'static_pages/home'
