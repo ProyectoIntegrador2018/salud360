@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
-  belongs_to :paciente
-  belongs_to :nutriologo
+  belongs_to :paciente, optional: true
+  belongs_to :nutriologo, optional: true
 end
