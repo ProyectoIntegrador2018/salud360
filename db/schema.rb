@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190329054533) do
+ActiveRecord::Schema.define(version: 20190424235720) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "paciente_id"
+    t.integer "nutriologo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nutriologo_id"], name: "index_comments_on_nutriologo_id"
+    t.index ["paciente_id"], name: "index_comments_on_paciente_id"
+  end
 
   create_table "dieta", force: :cascade do |t|
     t.string "dietaPDF"
