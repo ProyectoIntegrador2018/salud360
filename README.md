@@ -102,41 +102,6 @@ In order to stop the server as a whole you can run:
 ```
 % CTRL+C
 ```
-### Deploy project to heroku
-
-If you haven't created a heroku app in the project directory run:
-```
-% heroku create
-```
-
-You should see:
-```
-% Creating app... done
-```
-
-Then run, for future deployments on this app just use this command:
-```
-% git push heroku master
-```
-### Workflow
-* Clone the repo locally in your computer
-* Checkout ```develop``` branch/ and update it (Pull all changes up-to-date)
-* Create a branch from develop
-* Make your changes
-* Create clean messages and commits
-* Push your branch to the repo
-* Make a PR to merge to develop
-* Get review from other members
-* Rebase and Merge branch to develop
-
-(Note: We have 2 apps in heroku to create a development/staging and production pipeline)
-
-* Manualy deploy in heroku the new changes from develop branch - https://dashboard.heroku.com/apps/staging-sistemasalud360/deploy/github
-* Check correct changes and ask for approval from client in staging link
-* After approval rebase and merge ```develop``` into ```master```
-* Deploy master in https://dashboard.heroku.com/apps/sistemasalud360/deploy/github
-
-(Optionally you can set heroku to deploy automatically when branch is pushed to github)
 
 
 ### Running specs
