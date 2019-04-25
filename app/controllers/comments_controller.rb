@@ -5,6 +5,10 @@ class CommentsController < ApplicationController
     @comments = Comment.all
   end
 
+  def new
+    @comment = Comment.new
+  end
+
   def edit
     @comment = Comment.find(params[:id])
   end
@@ -24,7 +28,7 @@ class CommentsController < ApplicationController
     if current_nutriologo != nil
       user = current_nutriologo
     end
-    
+
     if @comment.created_by == user
       if @comment.update(comment_params)
   			redirect_to comments_path
