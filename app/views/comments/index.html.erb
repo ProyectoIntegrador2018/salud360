@@ -1,0 +1,25 @@
+<div class="card" style="width: 90%; margin: auto; text-align="center">
+	<div class = "row">
+    <div class = "col s12 m12 l12">
+      <div class="flow-text">
+        <table style="font-size: 12pt;">
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Descripción</th>
+              <th colspan="11"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @comments.each do |comment| %>
+              <tr>
+                <td>comment.title</td>
+                <td>comment.description</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
