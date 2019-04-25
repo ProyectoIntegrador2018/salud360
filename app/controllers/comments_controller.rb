@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
       user = current_nutriologo
     end
 
-    if @comment.created_by == user
+    if @comment.paciente == user || @comment.nutriologo == user
       if @comment.update(comment_params)
   			redirect_to comments_path
   		else
@@ -42,14 +42,12 @@ class CommentsController < ApplicationController
     @comment= Comment.new(comment_params)
 
     if current_paciente != nil
-      user = current_paciente
+      @comment.paciente = current_paciente
     end
 
     if current_nutriologo != nil
-      user = current_nutriologo
+      @comment.nutriologo = current_nutriologo
     end
-
-    @comment.created_by = user
 
     if @comment.save
       redirect_to comments_path
