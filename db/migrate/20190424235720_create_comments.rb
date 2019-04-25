@@ -5,6 +5,7 @@ class CreateComments < ActiveRecord::Migration[5.1]
       t.string :description
       t.references :paciente, index: true
       t.references :nutriologo, index: true
+      t.references :created_by, index: true
 
       t.timestamps
     end
