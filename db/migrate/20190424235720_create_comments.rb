@@ -3,8 +3,8 @@ class CreateComments < ActiveRecord::Migration[5.1]
     create_table :comments do |t|
       t.string :title
       t.string :description
-      t.references :paciente, foreign_key: true
-      t.references :nutriologo, foreign_key: true
+      t.references :paciente, index: true
+      t.references :nutriologo, index: true
 
       t.timestamps
     end
