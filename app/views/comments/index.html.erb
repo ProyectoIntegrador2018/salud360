@@ -7,14 +7,20 @@
             <tr>
               <th>Título</th>
               <th>Descripción</th>
+              <th>Autor</th>
               <th colspan="11"></th>
             </tr>
           </thead>
           <tbody>
             <% @comments.each do |comment| %>
-              <tr>
+              <tr style="word-wrap: break-word;">
                 <td><%= comment.title %></td>
                 <td><%= comment.description %></td>
+                <% if comment.paciente != nil %>
+                  <td><%= comment.paciente.username %></td>
+                <% else %>
+                  <td><%= comment.nutriologo.username %></td>
+                <% end %>
                 <td class="center">
                   <%= link_to edit_comment_path(comment) do %>
                     <i class="material-icons black-text">create</i>
