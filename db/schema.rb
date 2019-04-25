@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 20190424235720) do
     t.string "description"
     t.integer "paciente_id"
     t.integer "nutriologo_id"
+    t.integer "created_by_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["created_by_id"], name: "index_comments_on_created_by_id"
     t.index ["nutriologo_id"], name: "index_comments_on_nutriologo_id"
     t.index ["paciente_id"], name: "index_comments_on_paciente_id"
   end
