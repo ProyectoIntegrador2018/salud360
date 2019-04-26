@@ -1,69 +1,551 @@
 <% @sesion = Sesion.new %>
 <%if (current_paciente_next_sessions.count > 0)%>
-  <div class="card" style="width: 90%; margin: auto; text-align="center">
-    <div>
-      <h4>Fechas de próximas sesiones:</h4>
-    </div>
-    <br>
-        <div class="row">
-        <div class="col s9 offset-s1">
+  <div class="card" style="width: 90%; margin: auto;">
+      <div class="row">
+        <h4>Fechas de próximas sesiones</h4>
+     </div>
+  </div>
 
-          <%current_paciente_next_sessions.each_with_index do |sesion, index|%>
-            <p class="flow-text">Sesión <%=(index+1)%>: <%=getHora(sesion.hora_id)%> con la nutrióloga <%=getNutriologoName(sesion.nutriologo_id)%>
-            <%= link_to 'Eliminar',sesion_path(sesion),method: :delete,class: "btn btn-primary", style: "margin-left: 2px; height:26px; line-height:26px", data: {confirm: '¿Está seguro de elmiinar su cita?'} %>
-            </p>
-          <%end%>
+  <div class="card" style="width: 90%; margin: auto; padding-top: 20px;">
+      <div class="row">
+        <div class="col s12 m10 l8 offset-s1 offset-m1">
+            <%current_paciente_next_sessions.each_with_index do |sesion, index|%>
+              <p class="flow-text" style="font-size: 15px;">Sesión <%=(index+1)%>: <%=getHora(sesion.hora_id)%> con la nutrióloga <%=getNutriologoName(sesion.nutriologo_id)%>
+              <%= link_to 'Eliminar',sesion_path(sesion),method: :delete,class: "btn btn-primary", style: "margin-left: 2px; height:26px; line-height:26px", data: {confirm: '¿Está seguro de elmiinar su cita?'} %>
+              </p>
+              <p class="hidden_date" hidden><%=getDia(sesion.hora_id)%></p>
+            <%end%>
+        </div>
 
+        <!-- CALENDAR -->
+        <div class="col s8 m6 l4 offset-s1 offset-m3">
+          <div class="calendar">
+            <div class="calendar__picture">
+              <h3 id="calendar_current_day"></h3>
+            </div>
+            <div class="calendar__date" id="calendar_insert">
+              <div class="calendar__day">D</div>
+              <div class="calendar__day">L</div>
+              <div class="calendar__day">M</div>
+              <div class="calendar__day">M</div>
+              <div class="calendar__day">J</div>
+              <div class="calendar__day">V</div>
+              <div class="calendar__day">S</div>
+            </div>
+          </div>
         </div>
-        </div>
-        <br>
+      </div>
+      <br>
     </div>
+
+
+    <!--Script for the first calendar (informative)-->
+    <script>
+      //Setting today's date to calendar header
+      var objToday = new Date(),
+        weekday = new Array('Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'),
+        dayOfWeek = weekday[objToday.getDay()],
+        dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() : objToday.getDate(),
+        months = new Array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'),
+        curMonth = months[objToday.getMonth()],
+        curYear = objToday.getFullYear();
+      var today = curMonth + ", " + curYear;
+      var current_day = document.getElementById("calendar_current_day");
+      current_day.innerHTML = today;
+
+
+      //Setting the "empty" spaces from where the first day of the month needs to start
+      var date = new Date();
+      var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+      var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+      var realFirstDay = firstDay.toString().substring(0, 3);
+      if (realFirstDay == "Mon") {
+        [1].forEach(function(i) {
+          var para = document.createElement("div");
+          para.className = "calendar__number";
+          var node = document.createTextNode("");
+          para.appendChild(node);
+          var element = document.getElementById("calendar_insert");
+          element.appendChild(para);
+        });
+      }
+      if (realFirstDay == "Tue") {
+        [1,2].forEach(function(i) {
+          var para = document.createElement("div");
+          para.className = "calendar__number";
+          var node = document.createTextNode("");
+          para.appendChild(node);
+          var element = document.getElementById("calendar_insert");
+          element.appendChild(para);
+        });
+      }
+      if (realFirstDay == "Wed") {
+        [1,2,3].forEach(function(i) {
+          var para = document.createElement("div");
+          para.className = "calendar__number";
+          var node = document.createTextNode("");
+          para.appendChild(node);
+          var element = document.getElementById("calendar_insert");
+          element.appendChild(para);
+        });
+      }
+      if (realFirstDay == "Thu") {
+        [1,2,3,4].forEach(function(i) {
+          var para = document.createElement("div");
+          para.className = "calendar__number";
+          var node = document.createTextNode("");
+          para.appendChild(node);
+          var element = document.getElementById("calendar_insert");
+          element.appendChild(para);
+        });
+      }
+      if (realFirstDay == "Fri") {
+        [1,2,3,4,5].forEach(function(i) {
+          var para = document.createElement("div");
+          para.className = "calendar__number";
+          var node = document.createTextNode("");
+          para.appendChild(node);
+          var element = document.getElementById("calendar_insert");
+          element.appendChild(para);
+        });
+      }
+      if (realFirstDay == "Sat") {
+        [1,2,3,4,5,6].forEach(function(i) {
+          var para = document.createElement("div");
+          para.className = "calendar__number";
+          var node = document.createTextNode("");
+          para.appendChild(node);
+          var element = document.getElementById("calendar_insert");
+          element.appendChild(para);
+        });
+      }
+
+      //Fill the calendar with the right amount of days depending on the month
+      var realLastDay = lastDay.toString().substring(8, 10);
+      var int_lastDay = parseInt(realLastDay);
+      var days_of_month = new Array(int_lastDay);
+      for(var i = 0; i < days_of_month.length; i++){
+        var day = i+1;
+        var stringDay = day.toString();
+        var para = document.createElement("div");
+        para.className = "calendar__number";
+        var node = document.createTextNode(stringDay);
+        para.appendChild(node);
+        var element = document.getElementById("calendar_insert");
+        element.appendChild(para);
+      }
+
+      // Color the dates where there is an appointment
+      var hidden_dates = document.getElementsByClassName("hidden_date");
+      var ancestor = document.getElementById("calendar_insert"),
+          descendents = ancestor.getElementsByTagName('*');
+      for (let dates of hidden_dates) {
+        var session_date = dates.textContent;
+        var day = session_date.substring(0, 2);
+        var month = session_date.substring(3, 5);
+        var year = session_date.substring(6, 10);
+
+        for (var i = 0; i < descendents.length; ++i) {
+          e = descendents[i];
+          var filtered_number = (parseInt(e.textContent) < 10) ? '0' + e.textContent : e.textContent;
+          if (filtered_number == day) {
+            e.classList.add("session_day_class");
+          }
+        }
+      }
+    </script>
   <%end%>
 
   <br>
-<div class="card" style="width: 90%; margin: auto; text-align="center">
-  <div class ="row">
-    <div class="col s12">
-      <h4>Agrega cita</h4>
-   </div>
-  </div>
-  <br>
-  <%if horarios_disponibles.length >0%>
-  <div class ="row">
-    <div class="col s12">
-      <h5> Elije un horario </h5>
-   </div>
+  <div class="card" style="width: 90%; margin: auto;">
+    <div class ="row">
+      <div class="col s12">
+        <h4>Agrega cita</h4>
+     </div>
+    </div>
   </div>
 
-  <div class="row">
-  <div class="col s9 offset-s1">
-      <%= form_for(@sesion) do |f| %>
-        <%
-          $a=[]
-          horarios_disponibles.each do |horario|
-              $a.push( [ horario.hora_disponible.strftime("El %d/%m/%Y a las %r") +" en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo_id), horario.id])
-          end
-        %>
-        <%= f.select :hora_id,$a%>
-        <%= f.hidden_field :paciente_id, :value=>current_paciente.id  %>
-        <%= f.submit "Guardar", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    </div>
-    <%else%>
-      <div class ="row">
-        <div class="col s10 offset-s1 blue lighten-4">
-          <h5>Lo sentimos, pero por ahora no hay horarios disponibles</h5>
+<div class="card" style="width: 90%; margin: auto; padding-top: 20px;">
+  <%if horarios_disponibles.length >0%>
+    <div class ="row">
+      <div class="col s10 m10 l8 offset-s1 offset-m1" id="available_appointments_info" autocomplete="off">
+        <h5 id="elije_horario"></h5>
+          <%= form_for(@sesion) do |f| %>
+            <%
+              $a=[]
+              $available_dates=[]
+              horarios_disponibles.each do |horario|
+                  $actual_date = horario.hora_disponible.strftime("%d/%m/%Y")
+                  $actual_date_long = [ horario.hora_disponible.strftime("El %d/%m/%Y a las %r") +" en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo_id), horario.id]
+                  $a.push($actual_date_long)
+                  $available_dates.push($actual_date)
+              end
+            %>
+            <div id="select_div">
+            <%= f.select :hora_id, $a %>
+            </div>
+            <p id="hidden_available_dates" hidden> <%= $available_dates %> </p>
+            <%= f.hidden_field :paciente_id, :value=>current_paciente.id  %>
+            <div id="save_div">
+            <%= f.submit "Guardar", class: "btn btn-primary" %>
+            </div>
+            <% end %>
+      </div>
+      <div class="col s8 m6 l4 offset-s1 offset-m3">
+        <div class="a_calendar">
+          <div class="a_calendar__picture">
+            <h3 id="a_calendar_current_day"></h3>
+          </div>
+          <div class="a_calendar__date" id="a_calendar_insert">
+            <div class="a_calendar__day">D</div>
+            <div class="a_calendar__day">L</div>
+            <div class="a_calendar__day">M</div>
+            <div class="a_calendar__day">M</div>
+            <div class="a_calendar__day">J</div>
+            <div class="a_calendar__day">V</div>
+            <div class="a_calendar__day">S</div>
+          </div>
         </div>
       </div>
-    <%end%>
-<br>
+    </div>
+  <%else%>
+    <div class ="row">
+      <div class="col s10 offset-s1 blue lighten-4">
+        <h5>Lo sentimos, pero por ahora no hay horarios disponibles</h5>
+      </div>
+    </div>
+  <%end%>
+  <br>
+</div>
 
-<script >
+
+
+
+
+
+<!--Script for the second calendar (add appointments)-->
+<script>
   M.AutoInit()
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, {});
   });
-	</script>
-												     </div>
+
+
+  //Setting today's date to calendar header
+  var objToday = new Date(),
+    weekday = new Array('Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'),
+    dayOfWeek = weekday[objToday.getDay()],
+    dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() : objToday.getDate(),
+    months = new Array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'),
+    curMonth = months[objToday.getMonth()],
+    curYear = objToday.getFullYear();
+  var today = curMonth + ", " + curYear;
+  var current_day = document.getElementById("a_calendar_current_day");
+  current_day.innerHTML = today;
+
+
+  //Setting the "empty" spaces from where the first day of the month needs to start
+  var date = new Date();
+  var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+  var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+  var realFirstDay = firstDay.toString().substring(0, 3);
+
+  if (realFirstDay == "Mon") {
+    [1].forEach(function(i) {
+      var para = document.createElement("div");
+      para.className = "a_calendar__number";
+      var node = document.createTextNode("");
+      para.appendChild(node);
+      var element = document.getElementById("a_calendar_insert");
+      element.appendChild(para);
+    });
+  }
+  if (realFirstDay == "Tue") {
+    [1,2].forEach(function(i) {
+      var para = document.createElement("div");
+      para.className = "a_calendar__number";
+      var node = document.createTextNode("");
+      para.appendChild(node);
+      var element = document.getElementById("a_calendar_insert");
+      element.appendChild(para);
+    });
+  }
+  if (realFirstDay == "Wed") {
+    [1,2,3].forEach(function(i) {
+      var para = document.createElement("div");
+      para.className = "a_calendar__number";
+      var node = document.createTextNode("");
+      para.appendChild(node);
+      var element = document.getElementById("a_calendar_insert");
+      element.appendChild(para);
+    });
+  }
+  if (realFirstDay == "Thu") {
+    [1,2,3,4].forEach(function(i) {
+      var para = document.createElement("div");
+      para.className = "a_calendar__number";
+      var node = document.createTextNode("");
+      para.appendChild(node);
+      var element = document.getElementById("a_calendar_insert");
+      element.appendChild(para);
+    });
+  }
+  if (realFirstDay == "Fri") {
+    [1,2,3,4,5].forEach(function(i) {
+      var para = document.createElement("div");
+      para.className = "calendar__number";
+      var node = document.createTextNode("");
+      para.appendChild(node);
+      var element = document.getElementById("calendar_insert");
+      element.appendChild(para);
+    });
+  }
+  if (realFirstDay == "Sat") {
+    [1,2,3,4,5,6].forEach(function(i) {
+      var para = document.createElement("div");
+      para.className = "a_calendar__number";
+      var node = document.createTextNode("");
+      para.appendChild(node);
+      var element = document.getElementById("a_calendar_insert");
+      element.appendChild(para);
+    });
+  }
+
+  //Fill the calendar with the right amount of days depending on the month
+  var realLastDay = lastDay.toString().substring(8, 10);
+  var int_lastDay = parseInt(realLastDay);
+  var days_of_month = new Array(int_lastDay);
+  for(var i = 0; i < days_of_month.length; i++){
+    var day = i+1;
+    var stringDay = day.toString();
+    var para = document.createElement("div");
+    para.className = "a_calendar__number";
+    var node = document.createTextNode(stringDay);
+    para.appendChild(node);
+    var element = document.getElementById("a_calendar_insert");
+    element.appendChild(para);
+  }
+
+  // Color the dates where there is an appointment
+  var select_div_init = document.getElementById("select_div");
+  select_div_init.style.display = "none";
+  var save_div_init = document.getElementById("save_div");
+  save_div_init.style.display = "none";
+  var ancestor = document.getElementById("a_calendar_insert"),
+      descendents = ancestor.getElementsByTagName('*');
+  var hidden_dates = document.getElementById("hidden_available_dates").textContent;
+  var clean_dates = hidden_dates.toString().substring(2, hidden_dates.length-2);
+  var dates = clean_dates.split(", ");
+  var todayDate = new Date();
+  var dd = String(todayDate.getDate()).padStart(2, '0');
+  var mm = String(todayDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = todayDate.getFullYear();
+  todayDate = dd + '/' + mm + '/' + yyyy;
+
+  for(var i = 0; i < dates.length; i++){
+    var date = dates[i];
+    var clean_date = date.substring(1, date.length-1);
+
+    var day = clean_date.substring(0,2);
+    var month = clean_date.substring(3, 5);
+    var year = clean_date.substring(6, 10);
+
+    if(parseInt(day) >= parseInt(dd) && parseInt(month) == parseInt(mm) && parseInt(year) == parseInt(yyyy)) {
+      for (var j = 0; j < descendents.length; ++j) {
+        e = descendents[j];
+        var filtered_number = (parseInt(e.textContent) < 10) ? '0' + e.textContent : e.textContent;
+        if (filtered_number == day) {
+          e.classList.add("available_day_class");
+          e.onclick = function() {
+            select_div_init.style.display = "block";
+            save_div_init.style.display = "block";
+
+            var elije_horario_header = document.getElementById("elije_horario");
+            elije_horario_header.innerHTML = '';
+            var text = document.createTextNode("Elije horario para el " + this.textContent + " de " + curMonth);
+            elije_horario_header.appendChild(text);
+
+            var day_to_filter = this.textContent + "/";
+            var select_div = document.getElementById("select_div"),
+              descendents_div = select_div.getElementsByTagName('*'),
+              all_content_div = descendents_div[0];
+            var nodes = all_content_div.getElementsByTagName('ul')[0].children;
+
+            for (var k = 0; k < nodes.length; ++k) {
+              nodes[k].style.display = "block";
+              var current_option = nodes[k].innerText;
+              if(current_option.search(day_to_filter) < 0 || current_option.search(day_to_filter) > 4) {
+                nodes[k].style.display = "none";
+              }
+            }
+          };
+        }
+      }
+    }
+  }
+</script>
+
+
+<style>
+  .calendar {
+    position: relative;
+    width: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 5px 50px rgba(#000, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  #calendar_current_day {
+    margin: 0px;
+  }
+
+  .calendar__picture {
+    text-align: center;
+    position: relative;
+    height: 70px;
+    padding: 10px;
+    color: #fff;
+    background: #262626;
+    text-shadow: 0 2px 2px rgba(#000, 0.2);
+    box-sizing: border-box;
+
+    &::before {
+      content: "";
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      background: linear-gradient(to top, rgba(#000, 0.25), rgba(#000, 0.1));
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    h3 {
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+
+  .calendar__date {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+    grid-gap: 10px;
+    box-sizing: border-box;
+  }
+
+  .calendar__day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    font-weight: 600;
+    color: #262626;
+
+    &:nth-child(7) {
+      color: #ff685d;
+    }
+  }
+
+  .calendar__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    color: #262626;
+  }
+
+  .session_day_class {
+      background-color: #009688;
+      color: #fff !important;
+      font-weight: 700;
+      cursor: pointer;
+  }
+
+
+
+  #a_calendar_current_day {
+    margin: 0px;
+  }
+
+  .a_calendar {
+    position: relative;
+    width: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 5px 50px rgba(#000, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .a_calendar__picture {
+    text-align: center;
+    position: relative;
+    height: 70px;
+    padding: 10px;
+    color: #fff;
+    background: #262626;
+    text-shadow: 0 2px 2px rgba(#000, 0.2);
+    box-sizing: border-box;
+
+    &::before {
+      content: "";
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      background: linear-gradient(to top, rgba(#000, 0.25), rgba(#000, 0.1));
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    h3 {
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+
+  .a_calendar__date {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+    grid-gap: 10px;
+    box-sizing: border-box;
+  }
+
+  .a_calendar__day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    font-weight: 600;
+    color: #262626;
+
+    &:nth-child(7) {
+      color: #ff685d;
+    }
+  }
+
+  .a_calendar__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    color: #262626;
+  }
+
+  .available_day_class {
+      color: #08a503 !important;
+      font-weight: 700;
+      cursor: pointer;
+  }
+</style>
