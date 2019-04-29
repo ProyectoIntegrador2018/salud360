@@ -4,6 +4,7 @@ module ApplicationHelper
       @horarios_disponibles ||=
         Horario.where(apartada: false).where( ['hora_disponible >= ?', DateTime.now.getlocal-0.3.day]).all
     else
+      @horarios_disponibles ||=
   end
   def getHora(hora_id)
     if(hora_id==nil)
