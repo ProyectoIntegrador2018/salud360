@@ -5,7 +5,7 @@ module ApplicationHelper
         Horario.where(apartada: false).where( ['hora_disponible >= ?', DateTime.now.getlocal-0.3.day]).all
     else
       @horarios_disponibles ||=
-        Horario.where(apartada: false).where( ['hora_disponible >= ?', DateTime.now.getlocal-0.3.day]).where(nutriologo_id: Nutriologo.find_by(id: current_paciente.first.nutriologo.id).all
+        Horario.where(apartada: false).where( ['hora_disponible >= ?', DateTime.now.getlocal-0.3.day]).where(nutriologo_id: Nutriologo.find_by(id: current_paciente.sesions.first.nutriologo.id).all
   end
   def getHora(hora_id)
     if(hora_id==nil)
