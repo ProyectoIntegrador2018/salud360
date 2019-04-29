@@ -3,6 +3,7 @@ module ApplicationHelper
     if current_paciente.sesions.size == 0
       @horarios_disponibles ||=
         Horario.where(apartada: false).where( ['hora_disponible >= ?', DateTime.now.getlocal-0.3.day]).all
+    else
   end
   def getHora(hora_id)
     if(hora_id==nil)
