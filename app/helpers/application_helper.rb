@@ -1,6 +1,7 @@
 module ApplicationHelper
   def horarios_disponibles
     if current_paciente.sesions.size == 0
+      @horarios_disponibles ||=
   end
   def getHora(hora_id)
     if(hora_id==nil)
