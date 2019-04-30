@@ -2,7 +2,11 @@ class CommentsController < ApplicationController
 	before_action :set_comment, only: [:destroy, :edit, :update]
 
   def index
-    @comments = Comment.all
+    if current_paciente != nil
+      @comments = Comment.where(paciente: current_paciente).all
+    else
+      @comments = Comment.where(nutriologo: current_nutriologo).all
+    end
   end
 
   def new
