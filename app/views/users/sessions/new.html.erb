@@ -1,46 +1,25 @@
-<br></br>
-<div class="card" style="width: 50%; margin: auto; text-align="center">
 <div class="row">
-                <br></br>
-      <div class="col s6 offset-s3"><span>Bienvenido, Administrador</span></div>
-                                   <br></br>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="col s6 offset-s3">
-  <div class="field">
-    <%= f.label :Usuario %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+  <div class="col s12 no-padding-left">
+    <div class="card">
+      <div class="card-item rounded center">
+        <div class="card-title">
+          <p class="font-size-title">Bienvenido, Administrador</p>
+        </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field middle">
+            <i class="material-icons md-36 black">account_circle</i>
+            <%= f.text_field :username, :placeholder => "Usuario", autofocus: true, autocomplete: "username", class: "field-input font-size-text" %>
+          </div>
+          <div class="field middle">
+            <i class="material-icons md-36 black">fingerprint</i>
+            <%= f.password_field :password, :placeholder => "Contraseña", autocomplete: "current-password", class: "field-input font-size-text" %>
+          </div>
+          <% if devise_mapping.rememberable? -%>
+            <p class="font-size-small"><%= f.check_box :remember_me %> Remember Me</p>
+          <% end -%>
+          <%= f.submit "Iniciar Sesión", class: "card-action submit rounded" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  </div>
-  <div class="col s6 offset-s3">
-  <div class="field">
-    <%= f.label :Contraseña %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-  </div>
-  <div class="col s6 offset-s3">
-  <% if devise_mapping.rememberable? -%>
-  <label>
-    <%= f.check_box :remember_me %>
-    <span>Remember Me </span>
-  </label>
-  </div>
-  <% end -%>
-                      <br></br>
-  <div class="col s6 offset-s3">
-                               <br></br>
-  <div class="actions">
-    <%= f.submit "Iniciar Sesión", class: "waves-effect waves-light btn pink darken-1 white-text", style: "width: 100%" %>
-  </div>
-  </div>
-  <% if false %>
-  <div class="col s6 offset-s3">
-                               <br></br>
-  <%= render "users/shared/links" %>
-  </div>
-  <% end %>
-  <div class="col s6 offset-s3">
-                               <br></br>
-  </div>
-  </div>
-<% end %>
 </div>
