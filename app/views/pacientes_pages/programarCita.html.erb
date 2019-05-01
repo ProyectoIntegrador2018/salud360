@@ -1,12 +1,14 @@
 <% @sesion = Sesion.new %>
 <%if (current_paciente_next_sessions.count > 0)%>
-  <div class="card" style="width: 90%; margin: auto;">
-      <div class="row">
-        <h4>Fechas de próximas sesiones</h4>
-     </div>
+  <div class="card rounded" style="width: 90%; margin: auto;">
+    <div class="row">
+      <div class="col s12">
+        <p class="font-size-title">Fechas de próximas sesiones</p>
+      </div>
+    </div>
   </div>
 
-  <div class="card" style="width: 90%; margin: auto; padding-top: 20px;">
+  <div class="card rounded" style="width: 90%; margin: auto; padding-top: 20px;">
       <div class="row">
         <div class="col s12 m10 l8 offset-s1 offset-m1">
             <%current_paciente_next_sessions.each_with_index do |sesion, index|%>
@@ -157,19 +159,19 @@
   <%end%>
 
   <br>
-  <div class="card" style="width: 90%; margin: auto;">
+  <div class="card rounded" style="width: 90%; margin: auto;">
     <div class ="row">
       <div class="col s12">
-        <h4>Agrega cita</h4>
+        <p class="font-size-title">Agrega cita</p>
      </div>
     </div>
   </div>
 
-<div class="card" style="width: 90%; margin: auto; padding-top: 20px;">
+<div class="card rounded" style="width: 90%; margin: auto; padding-top: 20px;">
   <%if horarios_disponibles.length >0%>
     <div class ="row">
       <div class="col s10 m10 l8 offset-s1 offset-m1" id="available_appointments_info" autocomplete="off">
-        <h5 id="elije_horario"></h5>
+        <p class="font-size-title" id="elije_horario"></p>
           <%= form_for(@sesion) do |f| %>
             <%
               $a=[]
@@ -209,9 +211,9 @@
       </div>
     </div>
   <%else%>
-    <div class ="row">
+    <div class ="row rounded">
       <div class="col s10 offset-s1 blue lighten-4">
-        <h5>Lo sentimos, pero por ahora no hay horarios disponibles</h5>
+        <p class="font-size-text">Lo sentimos, pero por ahora no hay horarios disponibles</p>
       </div>
     </div>
   <%end%>
