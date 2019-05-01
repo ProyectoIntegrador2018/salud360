@@ -1,7 +1,7 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:edit, :update]
   before_action :user_is_not_nutriologo
-
+  layout "pacientes_pages"
 
   def index
     @document = Document.all
