@@ -1,14 +1,16 @@
-<div class="card" style="width: 90%; margin: auto; text-align="center">
-	<div class = "row">
-		<div class = "col">
-			<h5>Nuevo comentario</h5>
-			<%= form_for (@comment) do |f| %>
-			<%= f.label :title %>
-			<%= f.text_field :title %>
-			<%= f.label :description %>
-			<%= f.text_field :description %>
-			<%= f.submit "Crear comentario", class: "btn btn-primary" %>
-			<% end %>
-		</div>
+<div class="card rounded" style="width: 90%; margin: auto; text-align='center'">
+  <div class="card-content">
+  	<div class = "row">
+  		<div class = "col">
+  			<p class="font-size-title">Nuevo comentario</p>
+  			<%= form_for (@comment) do |f| %>
+  			<%= f.label :title %>
+  			<%= f.text_field :title %>
+  			<%= f.label :description %>
+  			<%= f.text_field :description %>
+  			<%= f.submit "Crear comentario", class: "btn btn-primary" %>
+  			<% end %>
+      </div>
+    </div>
 	</div>
 </div>

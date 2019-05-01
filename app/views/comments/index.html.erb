@@ -1,44 +1,50 @@
-<div class="card" style="width: 90%; margin: auto; text-align="center">
-	<div class = "row">
-    <div class = "col s12 m12 l12">
-      <div class="flow-text">
-        <table style="font-size: 12pt;">
-          <thead>
-            <tr>
-              <th>Título</th>
-              <th>Descripción</th>
-              <th>Autor</th>
-              <th colspan="11"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @comments.each do |comment| %>
-              <tr style="word-wrap: break-word;">
-                <td><%= comment.title %></td>
-                <td><%= comment.description %></td>
-                <% if comment.paciente != nil %>
-                  <td><%= comment.paciente.username %></td>
-                <% else %>
-                  <td><%= comment.nutriologo.username %></td>
-                <% end %>
-                <td class="center">
-                  <%= link_to edit_comment_path(comment) do %>
-                    <i class="material-icons black-text">create</i>
-                  <% end %>
-                </td>
-                <td class="center">
-                  <%= link_to comment_path(comment), method: :delete, data: { confirm: '¿Esta seguro?' } do %>
-                    <i class="material-icons red-text">delete</i>
-                  <% end %>
-                </td>
+<div class="card rounded" style="width: 90%; margin: auto; text-align='center'">
+  <div class="card-content">
+    <div class = "row">
+      <div class = "col s12 m12 l12">
+        <div class="flow-text">
+          <table style="font-size: 12pt;">
+            <thead>
+              <tr>
+                <th><p>Título</p></th>
+                <th><p>Descripción</p></th>
+                <th><p>Autor</p></th>
+                <th colspan="11"></th>
               </tr>
-            <% end %>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <% @comments.each do |comment| %>
+                <tr style="word-wrap: break-word;">
+                  <td><p><%= comment.title %></p></td>
+                  <td><p><%= comment.description %></p></td>
+                  <% if comment.paciente != nil %>
+                    <td><p><%= comment.paciente.username %></p></td>
+                  <% else %>
+                    <td><p><%= comment.nutriologo.username %></p></td>
+                  <% end %>
+                  <td class="center">
+                    <p>
+                    <%= link_to edit_comment_path(comment) do %>
+                      <i class="material-icons black-text">create</i>
+                    <% end %>
+                    </p>
+                  </td>
+                  <td class="center">
+                    <p>
+                    <%= link_to comment_path(comment), method: :delete, data: { confirm: '¿Esta seguro?' } do %>
+                      <i class="material-icons red-text">delete</i>
+                    <% end %>
+                    </p>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-  <div class="action">
-    <%= link_to 'Nuevo Comentario', new_comment_path, class: "waves-effect waves-light btn" %>
+  <div class="card-action rounded-25">
+    <%= link_to 'Nuevo Comentario', new_comment_path, class: "btn btn-primary" %>
   </div>
 </div>

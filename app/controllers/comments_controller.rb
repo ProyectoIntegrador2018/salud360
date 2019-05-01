@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	before_action :set_comment, only: [:destroy, :edit, :update]
+	layout :set_layout
 
   def index
     if current_paciente != nil
@@ -35,10 +36,10 @@ class CommentsController < ApplicationController
 
     if @comment.paciente == user || @comment.nutriologo == user
       if @comment.update(comment_params)
-  			redirect_to comments_path
-  		else
-  			render 'edit'
-  		end
+        redirect_to comments_path
+      else
+        render 'edit'
+      end
     end
   end
 
@@ -61,6 +62,13 @@ class CommentsController < ApplicationController
   end
 
   private
+  # Sets layout depending on user
+    def set_layout
+      if current_paciente != nil
+        "pacientes_pages"
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
