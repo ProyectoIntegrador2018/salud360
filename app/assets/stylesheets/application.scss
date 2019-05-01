@@ -10,29 +10,23 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
  @import "materialize";
 
 body {
-      background: rgb(233, 235, 238);
-    }
+  background: white;
+}
 
+#progressbar {
+  background-color: black;
+  border-radius: 13px;
+  padding: 2px; /* (height of inner div) / 2 + padding */
+}
 
-
-    #progressbar {
-      background-color: black;
-      border-radius: 13px;
-      /* (height of inner div) / 2 + padding */
-      padding: 2px;
-    }
-
-    #progressbar>div {
-      background-color: orange;
-
-      /* Adjust with JavaScript */
-      height: 20px;
-      border-radius: 10px;
-    }
+#progressbar>div {
+  background-color: orange;
+  height: 20px; /* Adjust with JavaScript */
+  border-radius: 10px;
+}
