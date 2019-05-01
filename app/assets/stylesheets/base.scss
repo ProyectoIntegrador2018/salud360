@@ -1,0 +1,181 @@
+@import "variables";
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-120 { font-size: 120px; }
+
+.red {
+  color: red;
+}
+
+.black {
+  color: $font-color;
+}
+
+.white {
+  color: white;
+}
+
+.background {
+  color: $base-color;
+  background: repeating-linear-gradient(
+    45deg,
+    $quaternary-color,
+    $quaternary-color 10px,
+    $base-color 10px,
+    $base-color 20px
+  );
+}
+
+#progressbar {
+  background-color: black;
+  border-radius: 13px;
+  padding: 2px; /* (height of inner div) / 2 + padding */
+}
+
+#progressbar>div {
+  background-color: orange;
+  height: 20px; /* Adjust with JavaScript */
+  border-radius: 10px;
+}
+
+.card.rounded {
+  border-radius: 25px !important;
+}
+
+.rounded-25 {
+  border-radius: 25px !important;
+}
+
+.nav-salud {
+  z-index: 500;
+  position: fixed;
+  background-color: $main-color;
+  border-radius: 0 50px 50px 0;
+  width: 99%;
+}
+
+.nav-logo-container {
+  width: 198px !important;
+  height: 64px;
+}
+
+.nav-name {
+  display: block;
+  height: 64px;
+  width: auto;
+  border-right: 3px solid white;
+  border-left: 2px dashed white;
+  box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.14), 5px 0px 1px 0 rgba(0, 0, 0, 0.12), 1px 0px 0px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0 50px 50px 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 0;
+}
+
+.nav-logo {
+  width: 80px;
+  height: 60px;
+  margin-left:25px;
+}
+
+.nav-salud a.rounded {
+  border-radius: 50px;
+}
+
+.sidenav-salud {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: $base-color;
+  overflow-x: hidden;
+  margin-top: 64px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sidenav-salud a {
+  display: block;
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  border-bottom: 2px solid $main-color;
+  border-radius: 0 0 50px 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px 2px rgba(0, 0, 0, 0.12), 0 1px 0px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sidenav-salud a:hover {
+  -moz-box-shadow: inset 0 0 10px $main-color;
+  -webkit-box-shadow: inset 0 0 10px $main-color;
+  box-shadow: inset 0 0 10px $main-color;
+  border: 1px solid $main-color;
+}
+
+.container-salud {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  padding: 40px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+p {
+
+  font-family: $font-family-base;
+  font-size: $font-size-text;
+  color: $font-color;
+}
+
+.font-size-title {
+  font-size: $font-size-title;
+}
+
+.font-size-text {
+  font-size: $font-size-text;
+}
+
+.font-size-small {
+  font-size: $font-size-small;
+}
+
+.btn.btn-primary {
+  font-family: $font-family-base !important;
+  color: $font-color !important;
+}
+
+.field {
+  display: inline-block;
+  margin: 10px;
+  width: 60%;
+  height: 60px;
+}
+
+.field-input {
+  background: none;
+  border: none;
+  width: 80%;
+  height: 75%;
+  border: 1px solid $font-color;
+  border-radius: 25px;
+  padding-left: 20px;
+}
+
+.field-input:focus {
+  -moz-box-shadow: inset 0 0 10px $main-color;
+  -webkit-box-shadow: inset 0 0 10px $main-color;
+  box-shadow: inset 0 0 10px $main-color;
+  border: 1px solid $main-color;
+}
+
+.field-input:hover {
+  border: 1px solid $main-color;
+}
+
+.middle > * {
+  vertical-align: middle;
+}
