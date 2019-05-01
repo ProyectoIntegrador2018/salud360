@@ -29,6 +29,7 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
 
   config.actions do
+    config.current_user_method(&:current_user) ## Adds logout button to rails_admin layout
     dashboard                     # mandatory
     index                         # mandatory
     new
