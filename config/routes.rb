@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/users' => 'user#index', as: :user_root
   get '/admin', to: redirect('/users/sign_in')
   get '/nutriologos' => 'nutriologo_pages#mis_sesiones', as: :nutriologo_root
-  get '/pacientes' => 'pacientes_pages#index', as: :paciente_root
+  get '/pacientes' => 'pacientes_pages#mis_sesiones', as: :paciente_root
   get 'pacientes_pages/programarCita'
   get 'pacientes_pages/ver_metas'
   get '/nutriologo_pages/mis_pacientes'
@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   end
 
   namespace :paciente do
-    root 'pacientes_pages#index'
+    root 'pacientes_pages#mis_sesiones'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
