@@ -1,69 +1,60 @@
-<div class="card" style="width: 90%; margin: auto; text-align="center">
-<h4>Estas son tus metas <%=current_paciente.username%>, ¡¡Ánimo!!</h4>
-<br>
-<br>
 <%@metas = paciente_metas(current_paciente.id)%>
-<%
-@porcentaje = 0
-if @metas.count >0
-  @porcentaje = (@metas.where(cumplida: true).count*1.0/(@metas.count*1.0)*100).to_i()
-end
-
-
+<% @porcentaje = 0
+  if @metas.count >0
+    @porcentaje = (@metas.where(cumplida: true).count*1.0/(@metas.count*1.0)*100).to_i()
+  end
 %>
-<div class = "row">
-<div class = "col s10 offset-s1 ">
-    <div id="progressbar" class = "teal lighten-4">
-      <div class="determinate light-green accent-4" style="width: <%= @porcentaje%>%"></div>
-  </div>
-  <br>
-  <h3>Llevas <%=@porcentaje%>% completado</h3>
-</div>
-</div>
-<br>
-<br>
-    <% @metas.each do |meta| %>
-      <div class = "row">
-      <div class = "col s10 offset-s1 ">
-      <div class="card">
-        <br>
-        <div class = "row">
-          <div class = "col s10 offset-s1 ">
-          <div class="flow-text">
-            <%=meta.meta%>
-          </div>
-          </div>
-          <br>
-          <br>
-          <div class = "col s10 offset-s1 ">
-          <%= form_for(meta) do |f| %>
 
-          <label>
-            <%= f.check_box :cumplida %>
-            <span>Cumplida&nbsp&nbsp&nbsp&nbsp</span>
-          </label>
-
-          <%= f.submit "Guardar", class: "btn btn-primary" %>
-
-          <% end %>
+<div class="row">
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
+        <div class="row">
+          <div class="col s12">
+            <p class="font-size-title">Estas son tus metas <%=current_paciente.username%>, ¡¡Ánimo!!</p>
           </div>
         </div>
-        <br>
-      </div>
-      </div>
-      </div>
-    <% end %>
 
-<br>
+        <div class="row">
+          <div class="col s10 offset-s1">
+            <p>Llevas <%=@porcentaje%>% completado</p>
+          </div>
 
+          <div class="col s10 offset-s1">
+            <div id="progressbar" class = "teal lighten-4">
+              <div class="determinate light-green accent-4" style="width: <%= @porcentaje%>%"></div>
+            </div>
+          </div>
+        </div>
 
+        <div class="row">
+          <div class="col s12">
+            <% @metas.each do |meta| %>
+              <div class = "row">
+                <div class = "col s10 offset-s1 ">
+                  <div class="card rounded">
+                    <%= form_for(meta) do |f| %>
+                      <div class="card-content">
+                        <label>
+                          <%= f.check_box :cumplida %>
+                          <span><p><%=meta.meta%></p>&nbsp&nbsp&nbsp&nbsp</span>
+                        </label>
+                      </div>
+
+                      <div class="card-action">
+                        <%= f.submit "Guardar", class: "btn btn-primary" %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<!-- Compiled and minified JavaScript -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			$('checkbox').material_select();
-		});
-	</script>
-												     </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
