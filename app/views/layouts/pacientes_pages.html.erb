@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Salud360</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'pacientes_pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body class="background">
+    <nav class="nav-salud">
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left">
+          <li class="nav-logo-container">
+            <img class="nav-logo" src="<%= asset_path( 'logo.png' ) %>"/>
+          </li>
+          <li class="nav-name">
+            <p class="rounded font-size-title white"><%= current_paciente.username %></p>
+          </li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a class="rounded" href="/pacientes/sign_out" data-method="delete">
+              <i class="material-icons md-36">power_settings_new</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="sidenav-salud">
+      <a href="/pacientes"><p>Mi Perfil</p></a>
+      <a href="/pacientes_pages/ver_metas"><p>Ver Metas</p></a>
+      <a href="/documents"><p>Material de Sesiones</p></a>
+      <a href="/pacientes_pages/programarCita"><p>Citas</p></a>
+      <% if current_paciente.dieta.present? %>
+        <%= link_to current_paciente.dieta.dietaPDF.url do %>
+          <p>Mi Dieta</p>
+        <% end %>
+      <% else %>
+        <a href="/pacientes_pages/ver_dietas"><p>Mi Dieta</p></a>
+      <% end %>
+      <%= link_to comments_path do %>
+        <p>Comentarios</p>
+      <% end %>
+    </div>
+
+    <div class="container-salud">
+      <%= yield %>
+    </div>
+  </body>
+</html>
