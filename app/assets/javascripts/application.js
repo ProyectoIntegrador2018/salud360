@@ -17,3 +17,8 @@
 //= require highcharts
 //= require chartkick
 //= require_tree .
+
+$(document).ready(function() {
+  $('checkbox').material_select();
+});
+
