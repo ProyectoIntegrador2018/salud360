@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Salud360</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'home_page', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body class="background">
+    <div class="container card-container">
+      <div class="row">
+        <div class="col s12 center">
+          <img src="<%= asset_path( 'logo.png' ) %>" height="90px" width="120px"/>
+        </div>
+      </div>
+    <%= yield %>
+    </div>
+  </body>
+</html>
