@@ -1,6 +1,7 @@
 class SesionsController < ApplicationController
 
   before_action :set_sesion, only: [:edit, :update]
+  layout :set_layout
 
   def edit
     @sesion = Sesion.find(params[:id])
@@ -53,6 +54,13 @@ class SesionsController < ApplicationController
   end
 
   private
+    # Sets layout depending on user
+    def set_layout
+      if current_paciente != nil
+        "pacientes_pages"
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_sesion
       @sesion = Sesion.find(params[:id])
