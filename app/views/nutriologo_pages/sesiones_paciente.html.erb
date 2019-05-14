@@ -1,18 +1,29 @@
-<div class="card" style="width: 90%; margin: auto; text-align="center">
-  <h4>Sesiones paciente <%=getPacienteName(@paciente) %></h4>
+<div class="row">
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
+        <p class="font-size-title">Sesiones paciente <%=getPacienteName(@paciente) %></p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
   <% numS=1%>
   <table class="centered highlight">
     <thead>
       <tr>
-        <th>Indicadores</th>
+        <th><p>Indicadores</p></th>
         <% @sesions.each do |sesion| %>
-          <th>Sesión <%=numS%></th>
+          <th><p>Sesión <%=numS%></p></th>
           <% numS+=1%>
         <% end %>
         <% if numS<7
             while numS<7%>
-              <th>Sesión <%=numS%></th>
+          <th><p>Sesión <%=numS%></p></th>
               <% numS+=1%>
             <%end
            end %>
@@ -20,92 +31,92 @@
         </thead>
         <tbody>
         <tr>
-          <td>Peso</td>
+          <td><p>Peso</p></td>
         <% @sesions.each do |sesion| %>
-            <td><%= sesion.peso %></td>
+            <td><p><%= sesion.peso %></p></td>
         <% end %>
       </tr>
       <tr>
-        <td>Estatura</td>
+        <td><p>Estatura</p></td>
       <% @sesions.each do |sesion| %>
-          <td><%= sesion.estatura %></td>
+          <td><p><%= sesion.estatura %></p></td>
       <% end %>
     </tr>
     <tr>
-      <td>Grasa</td>
+      <td><p>Grasa</p></td>
     <% @sesions.each do |sesion| %>
-        <td><%= sesion.grasa %></td>
+        <td><p><%= sesion.grasa %></p></td>
     <% end %>
   </tr>
   <tr>
-    <td>Músculo</td>
+    <td><p>Músculo</p></td>
   <% @sesions.each do |sesion| %>
-      <td><%= sesion.musculo %></td>
+      <td><p><%= sesion.musculo %></p></td>
   <% end %>
 </tr>
 <tr>
-  <td>Cintura</td>
+  <td><p>Cintura</p></td>
 <% @sesions.each do |sesion| %>
-    <td><%= sesion.cintura %></td>
+    <td><p><%= sesion.cintura %></p></td>
 <% end %>
 </tr>
 <tr>
-  <td>IMC</td>
+  <td><p>IMC</p></td>
 <% @sesions.each do |sesion| %>
-    <td><%= sesion.imc %></td>
+    <td><p><%= sesion.imc %></p></td>
 <% end %>
 </tr>
 <tr>
-  <td>Grasa Vis</td>
+  <td><p>Grasa Vis</p></td>
 <% @sesions.each do |sesion| %>
-    <td><%= sesion.grasa_vis %></td>
+    <td><p><%= sesion.grasa_vis %></p></td>
 <% end %>
 </tr>
 <tr>
-  <td>Edad Metabólica</td>
+  <td><p>Edad Metabólica</p></td>
 <% @sesions.each do |sesion| %>
-    <td><%= sesion.edad_metabolica %></td>
+    <td><p><%= sesion.edad_metabolica %></p></td>
 <% end %>
 </tr>
 <tr>
-  <td>Hora</td>
+  <td><p>Hora</p></td>
 <% @sesions.each do |sesion| %>
-    <td><%= getHora(sesion.hora_id) %></td>
+    <td><p><%= getHora(sesion.hora_id) %></p></td>
 <% end %>
 </tr>
 <tr>
-  <td>Nutriólogo</td>
+  <td><p>Nutriólogo</p></td>
 <% @sesions.each do |sesion| %>
-    <td><%=getNutriologoName(sesion.nutriologo_id) %></td>
+    <td><p><%=getNutriologoName(sesion.nutriologo_id) %></p></td>
 <% end %>
 
 
 </tr>
 <tr>
-  <td>Datos</td>
+  <td><p>Datos</p></td>
 <% @sesions.each do |sesion| %>
     <td style="padding-top: 9.3px; padding-bottom: 9.3px;">
-      <%=link_to 'Editar datos', edit_sesion_path(sesion), class: "btn-small pink lighten-2 btn-block" %>
-    </td>
+      <%=link_to 'Editar datos', edit_sesion_path(sesion), class: "col s12 btn btn-primary" %>
+    </p></td>
 <% end %>
 
 
 </tr>
 <tr>
-  <td>Citas</td>
+  <td><p>Citas</p></td>
 <% @sesions.each do |sesion| %>
     <td style="padding-top: 9.3px; padding-bottom: 9.3px;">
-      <%=link_to 'Ver Metas Cita', "/metas_cita/"+sesion.id.to_s(), class: "btn-small pink lighten-2 btn-block"%>
-    </td>
+      <%=link_to 'Ver Metas Cita', "/metas_cita/"+sesion.id.to_s(), class: "col s12 btn btn-primary"%>
+    </p></td>
 <% end %>
 
 
 </tr>
 
-  <td>Dietas</td>
+  <td><p>Dietas</p></td>
   <td style="padding-top: 9.3px; padding-bottom: 9.3px;">
-    <%= link_to 'Dietas', "/dietas_paciente/"+@paciente.to_s(), class: "btn pink darken-1 btn-block" %>
-  </td>
+    <%= link_to 'Dietas', "/dietas_paciente/"+@paciente.to_s(), class: "col s12 btn btn-primary" %>
+  </p></td>
 
     </tbody>
   </table>
@@ -114,8 +125,10 @@
 <br>
   <div class="row">
   <div class="col s4 offset-s0">
-  <%= link_to 'Ver Metas y Objetivo Paciente', "/metas_paciente/"+@paciente.to_s(), class: "btn pink darken-1 btn-block" %>
+  <%= link_to 'Ver Metas y Objetivo Paciente', "/metas_paciente/"+@paciente.to_s(), class: "btn btn-primary" %>
 </div>
 </div>
-  <br>
-                           </div>
+      </div>
+    </div>
+  </div>
+</div>

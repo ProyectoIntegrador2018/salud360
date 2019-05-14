@@ -1,9 +1,11 @@
 <div class="row">
-  <div class="col offset-s1 s12">
-    <h3> Editar Sesión del paciente: <%= @paciente.username %> </h3>
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
+        <p class="font-size-title">Editar Sesión del paciente: <%= @paciente.username %></p>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="row">
-  <%= render 'form', sesion: @sesion %>
-</div>
+<%= render 'form', sesion: @sesion %>

@@ -1,8 +1,21 @@
 <% @paciente_id=Sesion.find(@cita).paciente_id%>
-<div class="card" style="width: 90%; margin: auto; text-align="center">
-  <h4>Metas Paciente <%=getPacienteName(@paciente_id)%></h4>
 
-<h5>Agrega otra meta</h5>
+<div class="row">
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
+        <p class="font-size-title">Metas Paciente <%=getPacienteName(@paciente_id)%></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
+          <p class="card-title">Agrega otra meta</p>
   <% @nueva_meta = Meta.new %>
     <%= form_for (@nueva_meta) , :url => meta_path  do |f| %>
 
@@ -12,12 +25,9 @@
     <%= f.submit "Guardar", class: "btn btn-primary" %>
 
     <% end %>
-    <br>
-    <br>
-    <br>
-    <h5>Avance: <%=@porcentaje%>%</h5>
-    <div class = "row">
+    <div class = "row" style="margin-top: 25px;">
     <div class = "col s10 offset-s0 ">
+      <p>Avance: <%=@porcentaje%>%</p>
         <div id="progressbar" class="red lighten-2">
           <div class="determinate green accent-4" style="width: <%= @porcentaje%>%"></div>
       </div>
@@ -27,8 +37,8 @@
   <table>
     <thead>
       <tr>
-        <th>Descripcion</th>
-        <th>Lograda</th>
+        <th><p>Descripcion</p></th>
+        <th><p>Lograda</p></th>
         <th colspan="11"></th>
       </tr>
     </thead>
@@ -36,11 +46,11 @@
     <tbody>
       <% @metas.each do |meta| %>
         <tr>
-          <td><%= meta.meta %></td>
+          <td><p><%= meta.meta %></p></td>
           <%if meta.cumplida%>
-          <td class= "green darken-1 btn-block center"> Completada</td>
+            <td class= "green darken-1 btn-block center"><p> Completada</p></td>
           <%else%>
-          <td class= "red darken-1 btn-block center"> En proceso</td>
+            <td class= "red darken-1 btn-block center"><p> En proceso</p></td>
           <%end%>
 
         </tr>
@@ -48,17 +58,8 @@
     </tbody>
   </table>
 
-
-<br>
-<br>
-
-<div class="row">
+  <div class = "row" style="margin-top: 25px;">
   <div class="col s8 m6 l4">
-    <%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+@paciente.to_s() , class: "btn-large pink darken-1 btn-block"%>
+    <%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+@paciente_id.to_s() , class: "col s12 btn btn-primary"%>
   </div>
 </div>
-
-
-
-  <br>
-                        </div>

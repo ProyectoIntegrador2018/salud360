@@ -22,3 +22,7 @@ $(document).ready(function() {
   $('checkbox').material_select();
 });
 
+$(document).ready(function(){
+  $('.tooltipped').tooltip();
+});
+
