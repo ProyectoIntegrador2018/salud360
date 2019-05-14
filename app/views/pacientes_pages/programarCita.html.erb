@@ -178,7 +178,7 @@
               $available_dates=[]
               horarios_disponibles.each do |horario|
                   $actual_date = horario.hora_disponible.strftime("%d/%m/%Y")
-                  $actual_date_long = [ horario.hora_disponible.strftime("El %d/%m/%Y a las %r") +" en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo_id), horario.id]
+                  $actual_date_long = [horario.hora_disponible.strftime("El %d/%m/%Y a las %r") +" en " +horario.sede + " con "+ getNutriologoName(horario.nutriologo_id), horario.id]
                   $a.push($actual_date_long)
                   $available_dates.push($actual_date)
               end
@@ -187,7 +187,7 @@
             <%= f.select :hora_id, $a %>
             </div>
             <p id="hidden_available_dates" hidden> <%= $available_dates %> </p>
-            <%= f.hidden_field :paciente_id, :value=>current_paciente.id  %>
+            <%= f.hidden_field :paciente_id, :value=>current_paciente.id , class: "select-salud" %>
             <div id="save_div">
             <%= f.submit "Guardar", class: "btn btn-primary" %>
             </div>

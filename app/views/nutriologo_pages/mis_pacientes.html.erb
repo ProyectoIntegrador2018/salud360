@@ -1,34 +1,41 @@
-<div class="card" style="width: 90%; margin: auto; text-align="center">
-  <h4>Mis Pacientes</h4>
+<div class="row">
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
+        <p class="font-size-title">Mis Pacientes</p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
   <table>
     <thead>
       <tr>
-        <th>Paciente</th>
-        <th colspan="11"></th>
+        <th><p>Paciente</p></th>
+        <th colspan="11"><p></p></th>
       </tr>
     </thead>
 
     <tbody>
       <% current_pacientes_nutriologo.each do |paciente| %>
         <tr>
-          <td><%= paciente.username %></td>
+          <td><p><%= paciente.username %></p></td>
           <% unless paciente.dieta.present? %>
-            <td style='text-align: center;'> <i class="material-icons tooltipped" style="color: #ad190a;" data-position="top" data-tooltip="¡El paciente no tiene dieta!">warning</i> </td>
+            <td style='text-align: center;'> <i class="material-icons tooltipped" style="color: #ff6961;" data-position="top" data-tooltip="¡El paciente no tiene dieta!">warning</i> </td>
           <% else %>
-            <td style='text-align: center;'> <i class="material-icons tooltipped" style="visibility: hidden; color: #ad190a;" data-position="top" data-tooltip="¡El paciente no tiene dieta!">warning</i> </td>
+            <td style='text-align: center;'> <i class="material-icons tooltipped" style="visibility: hidden; color: #ff6961;" data-position="top" data-tooltip="¡El paciente no tiene dieta!">warning</i> </td>
           <% end %>
-          <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+paciente.id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
-          <td><%= link_to 'Ver Metas y Objetivo Paciente', "/metas_paciente/"+paciente.id.to_s(), class: "btn-small pink lighten-2 btn-block" %></td>
+          <td><%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+paciente.id.to_s(), class: "col s10 btn btn-primary" %></td>
+          <td><%= link_to 'Ver Metas y Objetivo Paciente', "/metas_paciente/"+paciente.id.to_s(), class: "col s10 btn btn-primary" %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-<br>
+      </div>
+    </div>
+  </div>
 </div>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.tooltipped').tooltip();
-  });
-</script>

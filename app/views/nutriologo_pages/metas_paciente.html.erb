@@ -1,10 +1,20 @@
-<div class="card" style="width: 90%; margin: auto; text-align="center">
-  <h4>Metas y Objetivo del paciente <%=getPacienteName(@paciente)%></h4>
-  <br>
-  <br>
+<div class="row">
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
+        <p class="font-size-title">Metas y Objetivo del paciente <%=getPacienteName(@paciente)%></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
   <div class = "row">
     <div class = "col">
-      <h5>Cambia el objetivo del paciente</h5>
+      <p>Cambia el objetivo del paciente</p>
       <%= form_for (@ppaciente) , :url => '/cambiar_objetivo/'+@paciente.to_s()  do |f| %>
       <%= f.text_field :objetivo%>
       <%= f.submit "Cambiar", class: "btn btn-primary" %>
@@ -14,7 +24,7 @@
 
   <div class = "row">
     <div class = "col">
-      <h5>Agrega otra meta</h5>
+      <p>Agrega otra meta</p>
         <% @nueva_meta = Meta.new %>
         <%= form_for (@nueva_meta) , :url => meta_path  do |f| %>
         <%= f.text_field :meta %>
@@ -29,7 +39,7 @@
 
   <div class = "row">
     <div class = "col s12 m12 l12">
-      <h5>Avance: <%=@porcentaje%>%</h5>
+      <p>Avance: <%=@porcentaje%>%</p>
         <div id="progressbar" class="red lighten-2">
           <div class="determinate green accent-4" style="width: <%= @porcentaje%>%"></div>
       </div>
@@ -42,25 +52,25 @@
         <table style="font-size: 12pt;">
           <thead>
             <tr>
-              <th>Descripción</th>
-              <th>Actualizar meta</th>
-              <th>Lograda</th>
-              <th colspan="11"></th>
+              <th><p>Descripción</p></th>
+              <th><p>Actualizar meta</p></th>
+              <th><p>Lograda</p></th>
+              <th colspan="11"></p></th>
             </tr>
           </thead>
           <tbody>
             <% @metas.each do |meta| %>
               <tr>
                 <%= form_for(meta) do |f| %>
-                  <td><%= f.text_field :meta%></td>
-                  <td><%= f.submit "Guardar", class: "btn btn-primary" %></td>
+                  <td><p><%= f.text_field :meta%></p></td>
+                  <td><p><%= f.submit "Guardar", class: "btn btn-primary" %></p></td>
                 <% end %>
                 <%if meta.cumplida%>
-                <td class= "green darken-1 center"> Completada</td>
+                <td class= "green darken-1 center"> Completada</p></td>
                 <%else%>
-                <td class= "red darken-1 center"> En proceso</td>
+                <td class= "red darken-1 center"> En proceso</p></td>
                 <%end%>
-                <td><%= link_to 'Eliminar', metum_path(meta), class: "btn btn-primary" ,method: :delete, data: { confirm: '¿Esta seguro?' } %></td>
+                <td><p><%= link_to 'Eliminar', metum_path(meta), class: "btn btn-primary" ,method: :delete, data: { confirm: '¿Esta seguro?' } %></p></td>
               </tr>
             <% end %>
           </tbody>
@@ -69,50 +79,8 @@
     </div>
   </div>
 
-<!--
-  <h2>Agrega otra comentario o algun tip<h2>
-    <% @nuevo_comment = TipsYcomentario.new %>
-      <%= form_for (@nuevo_comment)   do |f| %>
-
-      <%= f.text_field :tip%>
-      <%= f.hidden_field :paciente_id, :value=> @paciente  %>
-      <%= f.hidden_field :nutriologo_id, :value=> current_nutriologo.id  %>
-      <%= f.hidden_field :remitente, :value=> current_nutriologo.username  %>
-
-      <%= f.submit "Guardar", class: "btn btn-primary" %>
-
-      <% end %>
-
-
-    <table>
-      <thead>
-        <tr>
-          <th>Tip o comentario</th>
-          <th colspan="11"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @comentarios.each do |tip| %>
-          <tr>
-            <td><%= tip.tip %></td>
-
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
--->
-
-<br>
-<br>
-
 <div class="row">
   <div class="col s8 m6 l4">
-    <%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+@paciente.to_s() , class: "btn-large pink darken-1 btn-block"%>
+    <%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+@paciente.to_s() , class: "col s12 btn btn-primary"%>
   </div>
-</div>
-
-
-
-<br>
 </div>

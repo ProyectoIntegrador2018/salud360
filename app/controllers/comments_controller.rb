@@ -66,6 +66,8 @@ class CommentsController < ApplicationController
     def set_layout
       if current_paciente != nil
         "pacientes_pages"
+      else
+        "nutriologo_pages"
       end
     end
 

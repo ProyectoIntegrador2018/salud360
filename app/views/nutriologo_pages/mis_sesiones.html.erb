@@ -1,13 +1,24 @@
-<div class="card" style="width: 90%; margin: auto; text-align="center">
-  <h4>Mis Sesiones</h4>
+<div class="row">
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
+        <p class="font-size-title">Mis Sesiones</p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col s12">
+    <div class="card rounded" style="margin: auto; text-align='center'">
+      <div class="card-content">
   <table>
     <thead>
       <tr>
-        <th>Paciente</th>
-        <th>Sede</th>
-        <th>Fecha</th>
-        <th colspan="11"></th>
+        <th><p>Paciente</p></th>
+        <th><p>Sede</p></th>
+        <th><p>Fecha</p></th>
+        <th colspan="11"><p></p></th>
       </tr>
     </thead>
 
@@ -15,18 +26,18 @@
       <% current_nutriologo_sesions.each do |sesion| %>
         <% if sesion.active %>
           <tr>
-            <td><%= getPacienteName(sesion.paciente_id) %></td>
-            <td><%= getSede(sesion.hora_id) %></td>
-            <td><%= getHora(sesion.hora_id) %></td>
+            <td><p><%= getPacienteName(sesion.paciente_id) %></p></td>
+            <td><p><%= getSede(sesion.hora_id) %></p></td>
+            <td><p><%= getHora(sesion.hora_id) %></p></td>
             <td style='align:left'>
               <div class="row">
                 <div class="col s10">
-                  <%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+sesion.paciente_id.to_s(), class: "col s10 btn-small pink lighten-2 btn-block" %>
+                  <%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+sesion.paciente_id.to_s(), class: "col s10 btn btn-primary" %>
                 </div>
                 <% if Time.now > Horario.find(sesion.hora_id).hora_disponible %>
                   <div class="col s2"><i class="material-icons tooltipped col s2" style="color: #ad190a;" data-position="top" data-tooltip="¡Ya paso la fecha de la sesión!">warning</i></div>
                 <% else %>
-                  <div class="col s2"><i class="material-icons tooltipped col s2" style="visibility: hidden; color: #ad190a;" data-position="top" data-tooltip="¡Ya paso la fecha de la sesión!">warning</i></div>
+                  <div class="col s2"><i class="material-icons tooltipped col s2" style="visibility: hidden; color: #ff6961;" data-position="top" data-tooltip="¡Ya paso la fecha de la sesión!">warning</i></div>
                 <% end %>
               </div>
             </td>
@@ -38,16 +49,16 @@
       <% current_nutriologo_sesionss.each do |sesion2| %>
       <% if sesion2.active %>
           <tr>
-            <td><%= getPacienteName(sesion2.paciente_id) %></td>
-            <td><%= getSede(sesion2.hora_id) %></td>
-            <td><%= getHora(sesion2.hora_id) %></td>
+            <td><p><%= getPacienteName(sesion2.paciente_id) %></p></td>
+            <td><p><%= getSede(sesion2.hora_id) %></p></td>
+            <td><p><%= getHora(sesion2.hora_id) %></p></td>
             <td style='align:left'>
               <div class="row">
                 <div class="col s10">
-                  <%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+sesion2.paciente_id.to_s(), class: "col s10 btn-small pink lighten-2 btn-block" %>
+                  <%= link_to 'Ver Info Paciente', "/sesiones_paciente/"+sesion2.paciente_id.to_s(), class: "col s10 btn btn-primary" %>
                 </div>
                 <% if Time.now > Horario.find(sesion2.hora_id).hora_disponible %>
-                  <div class="col s2"><i class="material-icons tooltipped col s2" style="color: #ad190a;" data-position="top" data-tooltip="¡Ya paso la fecha de la sesión!">warning</i></div>
+                  <div class="col s2"><i class="material-icons tooltipped col s2" style="color: #ff6961;" data-position="top" data-tooltip="¡Ya paso la fecha de la sesión!">warning</i></div>
                 <% end %>
               </div>
             </td>
@@ -57,12 +68,7 @@
       <% end %>
     </tbody>
   </table>
-
-  <br>
+      </div>
+    </div>
+  </div>
 </div>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.tooltipped').tooltip();
-  });
-</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Salud360</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'pacientes_pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body class="background">
+    <nav class="nav-salud">
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left">
+          <li class="nav-logo-container">
+            <img class="nav-logo" src="<%= asset_path( 'logo.png' ) %>"/>
+          </li>
+          <li class="nav-name">
+            <p class="rounded font-size-title white"><%= current_nutriologo.username %></p>
+          </li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a class="rounded" href="/nutriologos/sign_out" data-method="delete">
+              <i class="material-icons md-36">power_settings_new</i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="sidenav-salud">
+      <a href="/nutriologo_pages/mis_sesiones"><p>Mis Sesiones</p></a>
+      <a href="/nutriologo_pages/mis_pacientes"><p>Mis Pacientes</p></a>
+      <%= link_to comments_path do %>
+        <p>Comentarios</p>
+      <% end %>
+    </div>
+
+    <div class="container-salud">
+      <%= yield %>
+    </div>
+  </body>
+</html>
