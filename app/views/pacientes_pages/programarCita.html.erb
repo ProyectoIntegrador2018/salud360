@@ -10,7 +10,7 @@
 
   <div class="card rounded" style="width: 90%; margin: auto; padding-top: 20px;">
       <div class="row">
-        <div class="col s12 m10 l8 offset-s1 offset-m1">
+        <div class="col s12 m12 l12 offset-s1 offset-m1">
             <%current_paciente_next_sessions.each_with_index do |sesion, index|%>
               <p class="flow-text" style="font-size: 15px;">Sesión <%=(index+1)%>: <%=getHora(sesion.hora_id)%> con la nutrióloga <%=getNutriologoName(sesion.nutriologo_id)%>
               <%= link_to 'Eliminar',sesion_path(sesion),method: :delete,class: "btn btn-primary", style: "margin-left: 2px; height:26px; line-height:26px", data: {confirm: '¿Está seguro de elmiinar su cita?'} %>
@@ -18,144 +18,9 @@
               <p class="hidden_date" hidden><%=getDia(sesion.hora_id)%></p>
             <%end%>
         </div>
-
-        <!-- CALENDAR -->
-        <div class="col s8 m6 l4 offset-s1 offset-m3">
-          <div class="calendar">
-            <div class="calendar__picture">
-              <h3 id="calendar_current_day"></h3>
-            </div>
-            <div class="calendar__date" id="calendar_insert">
-              <div class="calendar__day">D</div>
-              <div class="calendar__day">L</div>
-              <div class="calendar__day">M</div>
-              <div class="calendar__day">M</div>
-              <div class="calendar__day">J</div>
-              <div class="calendar__day">V</div>
-              <div class="calendar__day">S</div>
-            </div>
-          </div>
-        </div>
       </div>
       <br>
     </div>
-
-
-    <!--Script for the first calendar (informative)-->
-    <script>
-      //Setting today's date to calendar header
-      var objToday = new Date(),
-        weekday = new Array('Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'),
-        dayOfWeek = weekday[objToday.getDay()],
-        dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() : objToday.getDate(),
-        months = new Array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'),
-        curMonth = months[objToday.getMonth()],
-        curYear = objToday.getFullYear();
-      var today = curMonth + ", " + curYear;
-      var current_day = document.getElementById("calendar_current_day");
-      current_day.innerHTML = today;
-
-
-      //Setting the "empty" spaces from where the first day of the month needs to start
-      var date = new Date();
-      var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
-      var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-      var realFirstDay = firstDay.toString().substring(0, 3);
-      if (realFirstDay == "Mon") {
-        [1].forEach(function(i) {
-          var para = document.createElement("div");
-          para.className = "calendar__number";
-          var node = document.createTextNode("");
-          para.appendChild(node);
-          var element = document.getElementById("calendar_insert");
-          element.appendChild(para);
-        });
-      }
-      if (realFirstDay == "Tue") {
-        [1,2].forEach(function(i) {
-          var para = document.createElement("div");
-          para.className = "calendar__number";
-          var node = document.createTextNode("");
-          para.appendChild(node);
-          var element = document.getElementById("calendar_insert");
-          element.appendChild(para);
-        });
-      }
-      if (realFirstDay == "Wed") {
-        [1,2,3].forEach(function(i) {
-          var para = document.createElement("div");
-          para.className = "calendar__number";
-          var node = document.createTextNode("");
-          para.appendChild(node);
-          var element = document.getElementById("calendar_insert");
-          element.appendChild(para);
-        });
-      }
-      if (realFirstDay == "Thu") {
-        [1,2,3,4].forEach(function(i) {
-          var para = document.createElement("div");
-          para.className = "calendar__number";
-          var node = document.createTextNode("");
-          para.appendChild(node);
-          var element = document.getElementById("calendar_insert");
-          element.appendChild(para);
-        });
-      }
-      if (realFirstDay == "Fri") {
-        [1,2,3,4,5].forEach(function(i) {
-          var para = document.createElement("div");
-          para.className = "calendar__number";
-          var node = document.createTextNode("");
-          para.appendChild(node);
-          var element = document.getElementById("calendar_insert");
-          element.appendChild(para);
-        });
-      }
-      if (realFirstDay == "Sat") {
-        [1,2,3,4,5,6].forEach(function(i) {
-          var para = document.createElement("div");
-          para.className = "calendar__number";
-          var node = document.createTextNode("");
-          para.appendChild(node);
-          var element = document.getElementById("calendar_insert");
-          element.appendChild(para);
-        });
-      }
-
-      //Fill the calendar with the right amount of days depending on the month
-      var realLastDay = lastDay.toString().substring(8, 10);
-      var int_lastDay = parseInt(realLastDay);
-      var days_of_month = new Array(int_lastDay);
-      for(var i = 0; i < days_of_month.length; i++){
-        var day = i+1;
-        var stringDay = day.toString();
-        var para = document.createElement("div");
-        para.className = "calendar__number";
-        var node = document.createTextNode(stringDay);
-        para.appendChild(node);
-        var element = document.getElementById("calendar_insert");
-        element.appendChild(para);
-      }
-
-      // Color the dates where there is an appointment
-      var hidden_dates = document.getElementsByClassName("hidden_date");
-      var ancestor = document.getElementById("calendar_insert"),
-          descendents = ancestor.getElementsByTagName('*');
-      for (let dates of hidden_dates) {
-        var session_date = dates.textContent;
-        var day = session_date.substring(0, 2);
-        var month = session_date.substring(3, 5);
-        var year = session_date.substring(6, 10);
-
-        for (var i = 0; i < descendents.length; ++i) {
-          e = descendents[i];
-          var filtered_number = (parseInt(e.textContent) < 10) ? '0' + e.textContent : e.textContent;
-          if (filtered_number == day) {
-            e.classList.add("session_day_class");
-          }
-        }
-      }
-    </script>
   <%end%>
 
   <br>
@@ -170,7 +35,7 @@
 <div class="card rounded" style="width: 90%; margin: auto; padding-top: 20px;">
   <%if horarios_disponibles.length >0%>
     <div class ="row">
-      <div class="col s10 m10 l8 offset-s1 offset-m1" id="available_appointments_info" autocomplete="off">
+      <div class="col s10 m10 l6 offset-s1 offset-m1" id="available_appointments_info" autocomplete="off">
         <p class="font-size-title" id="elije_horario"></p>
           <%= form_for(@sesion) do |f| %>
             <%
@@ -184,7 +49,7 @@
               end
             %>
             <div id="select_div">
-            <%= f.select :hora_id, $a %>
+            <%= f.select :hora_id, $a, autocomplete: 'off' %>
             </div>
             <p id="hidden_available_dates" hidden> <%= $available_dates %> </p>
             <%= f.hidden_field :paciente_id, :value=>current_paciente.id , class: "select-salud" %>
@@ -193,7 +58,7 @@
             </div>
             <% end %>
       </div>
-      <div class="col s8 m6 l4 offset-s1 offset-m3">
+      <div class="col s8 m6 l6 offset-s1 offset-m2">
         <div class="a_calendar">
           <div class="a_calendar__picture">
             <h3 id="a_calendar_current_day"></h3>
