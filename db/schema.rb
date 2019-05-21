@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190424235720) do
+ActiveRecord::Schema.define(version: 20190430021708) do
 
   create_table "comments", force: :cascade do |t|
     t.string "title"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20190424235720) do
     t.float "estatura"
     t.float "grasa"
     t.float "musculo"
+    t.float "cintura"
     t.float "imc"
     t.float "grasa_vis"
     t.integer "edad_metabolica"
@@ -106,7 +107,6 @@ ActiveRecord::Schema.define(version: 20190424235720) do
     t.integer "nutriologo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "cintura"
     t.boolean "active", default: true
     t.index ["nutriologo_id"], name: "index_sesions_on_nutriologo_id"
     t.index ["paciente_id"], name: "index_sesions_on_paciente_id"
