@@ -13,7 +13,7 @@
         <div class="col s12 m10 l8 offset-s1 offset-m1">
           <%current_paciente_next_sessions.each_with_index do |sesion, index|%>
             <% if !(sesion.peso) && !(sesion.estatura) && !(sesion.grasa) && !(sesion.musculo) && !(sesion.cintura) && !(sesion.imc) && !(sesion.grasa_vis) && !(sesion.edad_metabolica) %>
-              <p class="flow-text" style="font-size: 15px; line-length:20">Sesión <%=(index+1)%>: <%=getHora(sesion.hora_id)%> con la nutrióloga <%=getNutriologoName(sesion.nutriologo_id).truncate(20)%>
+              <p class="flow-text" style="font-size: 15px; line-length:20">Sesión <%=(index+1)%>: <%=getHora(sesion.hora_id)%> con la nutrióloga <%=getNutriologoName(sesion.nutriologo_id).truncate(15)%>
               <%= link_to 'Eliminar',sesion_path(sesion),method: :delete,class: "btn btn-primary", style: "margin-left: 2px; height:26px; line-height:26px", data: {confirm: '¿Está seguro de elmiinar su cita?'} %>
               </p>
               <p class="hidden_date" hidden><%=getDia(sesion.hora_id)%></p>
